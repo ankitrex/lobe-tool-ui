@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- Evaluator Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>EVALUATOR DASHBOARD</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">View Analysis</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="settings.html">Settings</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 evaluator-panel">
+					<div class="row new-evaluator-pg">
+						<!-- New Evaluation -->
+						<h4>New Evaluation <span><i class="fas fa-caret-right"></i></span></h4>
+						<div class="col-sm-12 new-evaluator-pg-cnt">
+							<form action="" class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-1 control-label" for="grade"><span>*</span>Grade -</label>
+										<input type="text" name="grade" id="grade" class="form-control col-sm-7">
+								</div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label" for="subject">Subject -</label>
+										<input type="text" name="subject" id="subject" class="form-control col-sm-7">
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="chapter">Chapter Name -</label>
+										<input type="text" name="chapter" id="chapter" class="form-control col-sm-6">
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label" for="LO"><span>*</span>Name of the Learning object -</label>
+										<input type="text" name="LO" id="LO" class="form-control col-sm-7">
+								</div>
+								<div class="form-group">
+									<label class="col-sm-4 control-label" for="repo"><span>*</span>Learning object repository name <a href="javascript:void(0)" data-toggle="tooltip" title="Name of the company/creator">i</a> -</label>
+										<input type="text" name="repo" id="repo" class="form-control col-sm-6">
+								</div>
+								<button type="submit">START</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$(".evaluator-panel .new-evaluator h4").click(function () {
+			$(".new-evaluator-cnt").slideToggle();
+			$(".evaluator-panel .new-evaluator h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .incomp-rubric h4").click(function () {
+			$(".incomp-rubric-cnt").slideToggle();
+			$(".evaluator-panel .incomp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .comp-rubric h4").click(function () {
+			$(".comp-rubric-cnt").slideToggle();
+			$(".evaluator-panel .comp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .assign h4").click(function () {
+			$(".assign-cnt").slideToggle();
+			$(".evaluator-panel .assign h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .role h4").click(function () {
+			$(".role-cnt").slideToggle();
+			$(".evaluator-panel .role h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .track h4").click(function () {
+			$(".track-cnt").slideToggle();
+			$(".evaluator-panel .track h4 i").toggleClass("fa-rotate-90");
+		});
+	});
+</script>
+</html>

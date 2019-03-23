@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- Evaluator Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Main Content body -->
+				<div class="col-sm-12 lite_cont">
+					<h3>LOBE_LITE: Learning Object Evaluation Instrument (Abridged Version)</h3>
+					<span>LOBE_LITE is a 4-scale (Missing, Inadequate, Almost, Target) theory-informed checklist for quality evaluation of learning objects. It considers a learning object as a multimedia learning resource that contains dynamic visualizations (i.e. animations/simulations/videos) as its core component and either all or a subset of the following associated components – i) set of assessment questions, ii) learning activities, iii) solved examples.</span>
+
+					<h5>When to use LOBE_LITE?</h5>
+					<span>Use LOBE_LITE when you want to do a quick evaluation of the quality of the selected learning object. It has 9 questions along 3 dimensions of quality evaluation - content quality (2 questions), pedagogical alignment (4 questions) and technology integration (3 questions). If you want to test the support the learning object provides for collaborative learning, then LOBE_LITE will add an additional question for you under pedagogical alignment.</span>
+
+					<h5>NOTE:</h5>
+					<ul>
+						<li>LOBE_LITE is for quick but not thorough evaluation. Hence, the robustness of the instrument cannot be vouched for. For thorough evaluation, use LOBE_PREMIUM (38 questions) that has been tested for validity & reliability.</li>
+						<li>To maintain inter-rater reliability with LOBE_LITE, we recommend that multiple evaluators from your team should go through the instrument together before they start evaluation. They should decide together what should be the condition set to mark ‘Inadequate’ for a particular question. Similarly, for the other points in the scale – ‘Target’, ‘Almost’, ‘Missing’.</li>
+					</ul>
+					<a href="javascript:void(0)">NEXT</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$(".evaluator-panel .new-evaluator h4").click(function () {
+			$(".new-evaluator-cnt").slideToggle();
+			$(".evaluator-panel .new-evaluator h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .incomp-rubric h4").click(function () {
+			$(".incomp-rubric-cnt").slideToggle();
+			$(".evaluator-panel .incomp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .comp-rubric h4").click(function () {
+			$(".comp-rubric-cnt").slideToggle();
+			$(".evaluator-panel .comp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .assign h4").click(function () {
+			$(".assign-cnt").slideToggle();
+			$(".evaluator-panel .assign h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .role h4").click(function () {
+			$(".role-cnt").slideToggle();
+			$(".evaluator-panel .role h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .track h4").click(function () {
+			$(".track-cnt").slideToggle();
+			$(".evaluator-panel .track h4 i").toggleClass("fa-rotate-90");
+		});
+	});
+</script>
+</html>

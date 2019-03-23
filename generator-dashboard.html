@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- Generator Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>GENERATOR DASHBOARD</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">View Analysis</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="settings.html">Settings</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 generator-panel">
+					<div class="row new-rubric">
+						<!-- Generate New Rubric -->
+						<h4>Generate New Rubric <span><i class="fas fa-caret-right"></i></span></h4>
+						<div class="col-sm-12 new-rubric-cnt">
+							<p>Choose which version of LOBE you want to use</p>
+							<form action="">
+								<div class="input-group first-group">
+									<ul>
+										<li>
+											<input type="radio" name="lobe" id="lobe-1">
+											<label for="lobe-1">
+												LOBE LITE &nbsp;
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Fixed set of 10 questions for quick review.">i</a>
+											</label>
+										</li>
+										<li>
+											<input type="radio" name="lobe" id="lobe-2">
+											<label for="lobe-2">
+												LOBE PREMIUM &nbsp;
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Fixed set of 38 questions for a thorough review.">i</a>
+											</label>
+										</li>
+										<li>
+											<input type="radio" name="lobe" id="lobe-3">
+											<label for="lobe-3">
+												LOBE CUSTOM &nbsp;
+												<a href="javascript:void(0)" data-toggle="tooltip" title="YOU can pick and choose the questions you want in your rubric">i</a>
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="input-group second-grp">
+									<p>Choose which <b>QUALITY DIMENSIONS</b> YOU WANT IN YOUR RUBRIC (Multiple Selections)</p>
+									<ul>
+										<li>
+											<input type="checkbox" name="lobe-cst" id="lobe-cst-1">
+											<label for="lobe-cst-1">CONTENT QUALITY</label>
+										</li>
+										<li>
+											<input type="checkbox" name="lobe-cst" id="lobe-cst-2">
+											<label for="lobe-cst-2">PEDAGOGICAL ALIGNMENT</label>
+										</li>
+										<li>
+											<input type="checkbox" name="lobe-cst" id="lobe-cst-3">
+											<label for="lobe-cst-3">DESIGN EFFICACY</label>
+										</li>
+										<li>
+											<input type="checkbox" name="lobe-cst" id="lobe-cst-4">
+											<label for="lobe-cst-4">TECHNOLOGICAL INTEGRATION</label>
+										</li>
+									</ul>
+								</div>
+								<div class="input-group col-sm-12">
+									<button value="submit">Confirm</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<hr>
+					<div class="row incomp-rubric">
+						<!-- Incomplete Rubric -->
+						<h4>Incomplete Rubric Generated <span><i class="fas fa-caret-right"></i></span></h4>
+						<div class="col-sm-12 incomp-rubric-cnt">
+							<div class="row">
+								<div class="col-sm-1">
+									<span class="num">1.</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="title">LOBLELITE_2735</span>
+								</div>
+								<div class="col-sm-2">
+									<span class="date">DATE - 9-10-2018</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="percent">25%</span>
+									<div class="progress">
+										<div class="progressbar-25"></div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<a href="">RESUME</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-1">
+									<span class="num">2.</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="title">LOBLEPREMIUM_9846</span>
+								</div>
+								<div class="col-sm-2">
+									<span class="date">DATE - 19-8-2018</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="percent">50%</span>
+									<div class="progress">
+										<div class="progressbar-50"></div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<a href="">RESUME</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row comp-rubric">
+						<!-- Complete Rubric -->
+						<h4>Completed Generated Rubric <span><i class="fas fa-caret-right"></i></span></h4>
+						<div class="col-sm-12 comp-rubric-cnt">
+							<div class="row">
+								<div class="col-sm-1">
+									<span class="num">1.</span>
+								</div>
+								<div class="col-sm-4">
+									<span class="title">LOBLECUSTOM_6589</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="date">DATE - 9-10-2018</span>
+								</div>
+								<div class="col-sm-3">
+									<a href="">VIEW</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-1">
+									<span class="num">2.</span>
+								</div>
+								<div class="col-sm-4">
+									<span class="title">LOBLEPREMIUM_9846</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="date">DATE - 19-8-2018</span>
+								</div>
+								<div class="col-sm-3">
+									<a href="">VIEW</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-1">
+									<span class="num">3.</span>
+								</div>
+								<div class="col-sm-4">
+									<span class="title">LOBLELITE_1547</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="date">DATE - 9-10-2018</span>
+								</div>
+								<div class="col-sm-3">
+									<a href="">VIEW</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-1">
+									<span class="num">4.</span>
+								</div>
+								<div class="col-sm-4">
+									<span class="title">LOBLEPREMIUM_7845</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="date">DATE - 19-8-2018</span>
+								</div>
+								<div class="col-sm-3">
+									<a href="">VIEW</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-1">
+									<span class="num">5.</span>
+								</div>
+								<div class="col-sm-4">
+									<span class="title">LOBLELITE_5021</span>
+								</div>
+								<div class="col-sm-3">
+									<span class="date">DATE - 9-10-2018</span>
+								</div>
+								<div class="col-sm-3">
+									<a href="">VIEW</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row assign">
+						<!-- Assigning Rubric -->
+						<h4>Assigning the Rubric <span><i class="fas fa-caret-right"></i></span></h4>
+						<div class="col-sm-12 assign-cnt">
+							<span>Instruction :</span>
+							<span>From here you can send an email to your evaluator and assigning the rubric to be used in Evaluation.</span>
+							<ol>
+								<li>
+									Fill up the message box & mention the rubric code in your message. 	
+									This code will enable your evaluator to access the correct rubric.
+								</li>
+								<li>
+									The Evaluator needs to register in the LOBE tool to access the rubric
+								</li>
+							</ol>
+							<a href="message-body.html">NEXT</a>
+						</div>
+					</div>
+					<hr>
+					<div class="row track">
+						<!-- Track Evaluation -->
+						<h4>Track Evaluation <span><i class="fas fa-caret-right"></i></span></h4>
+						<div class="col-sm-12 track-cnt">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th><span>Rubric Code</span></th>
+										<th><span>Learning Object Name</span></th>
+										<th><span>Date</span></th>
+										<th><span>Status</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th><span>Rubric_101</span></th>
+										<th class="learning-tb">
+											<span>Learning-Object Name 1</span>
+											<span>Learning-Object Name 2</span>
+											<span>Learning-Object Name 3</span>
+										</th>
+										<th class="date-tb">
+											<span>19-11-2018</span>
+											<span>19-11-2018</span>
+											<span>19-11-2018</span>
+										</th>
+										<th class="progress-tb">
+											<div class="row">
+												<div class="col-sm-8">
+													<div class="progress">
+														<div class="progressbar-90"></div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<span>90%</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-8">
+													<div class="progress">
+														<div class="progressbar-30"></div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<span>45%</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-8">
+													<div class="progress">
+														<div class="progressbar-45"></div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<span>70%</span>
+												</div>
+											</div>
+										</th>
+									</tr>
+									<tr>
+										<th><span>Rubric_984</span></th>
+										<th class="learning-tb">
+											<span>Learning-Object Name 1</span>
+											<span>Learning-Object Name 2</span>
+										</th>
+										<th class="date-tb">
+											<span>5-11-2018</span>
+											<span>5-11-2018</span>
+										</th>
+										<th class="progress-tb">
+											<div class="row">
+												<div class="col-sm-8">
+													<div class="progress">
+														<div class="progressbar-70"></div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<span>70%</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-8">
+													<div class="progress">
+														<div class="progressbar-20"></div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<span>20%</span>
+												</div>
+											</div>
+										</th>
+									</tr>
+									<tr>
+										<th><span>Rubric_514</span></th>
+										<th class="learning-tb">
+											<span>Learning-Object Name 1</span>
+											<span>Learning-Object Name 2</span>
+											<span>Learning-Object Name 3</span>
+										</th>
+										<th class="date-tb">
+											<span>12-08-2018</span>
+											<span>12-08-2018</span>
+											<span>12-08-2018</span>
+										</th>
+										<th class="progress-tb">
+											<div class="row">
+												<div class="col-sm-8">
+													<div class="progress">
+														<div class="progressbar-15"></div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<span>15%</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-8">
+													<a href="javascript:void(0)"><i class="fas fa-eye"></i> &nbsp;View Results</a>
+												</div>
+												<div class="col-sm-4">
+													<span>100%</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-8">
+													<div class="progress">
+														<div class="progressbar-75"></div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<span>75%</span>
+												</div>
+											</div>
+										</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<hr>
+					<div class="row role">
+						<!-- Role Changing -->
+						<h4>Change Your Role To Generator <span><i class="fas fa-caret-right"></i></span></h4>
+						<div class="col-sm-12 role-cnt">
+							<span><b>Instruction</b> : To change the role from <b>GENERATOR TO EVALUATOR</b>, goto <b>SETTINGS</b></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$(".generator-panel .new-rubric h4").click(function () {
+			$(".new-rubric-cnt").slideToggle();
+			$(".generator-panel .new-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".first-group li label").click(function () {
+			$(".first-group label.selected").removeClass("selected");
+			$(this).addClass("selected");
+		});
+
+		$(".second-grp li label").click(function () {
+			$(this).addClass("selected");
+		});
+
+		$(".new-rubric-cnt #lobe-1").on("click", function () {
+			$(".new-rubric-cnt button").show();
+			$(".new-rubric-cnt .second-grp").hide();
+		});
+
+		$(".new-rubric-cnt #lobe-2").on("click", function () {
+			$(".new-rubric-cnt button").show();
+			$(".new-rubric-cnt .second-grp").hide();
+		});
+
+		$(".new-rubric-cnt #lobe-3").on("click", function () {
+			$(".new-rubric-cnt .second-grp").show();
+			$(".new-rubric-cnt button").show();
+		});
+
+		$(".generator-panel .incomp-rubric h4").click(function () {
+			$(".incomp-rubric-cnt").slideToggle();
+			$(".generator-panel .incomp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".generator-panel .comp-rubric h4").click(function () {
+			$(".comp-rubric-cnt").slideToggle();
+			$(".generator-panel .comp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".generator-panel .assign h4").click(function () {
+			$(".assign-cnt").slideToggle();
+			$(".generator-panel .assign h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".generator-panel .role h4").click(function () {
+			$(".role-cnt").slideToggle();
+			$(".generator-panel .role h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".generator-panel .track h4").click(function () {
+			$(".track-cnt").slideToggle();
+			$(".generator-panel .track h4 i").toggleClass("fa-rotate-90");
+		});
+	});
+</script>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- COMPARATIVE ANALYSIS RESULTS</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+				<div class="col-sm-3 go-bck-btn">
+					<a href="analytics-panel.html"><i class="fas fa-long-arrow-alt-left"></i> Go Back</a>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>GENERATOR DASHBOARD</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="javascript:void(0)" class="disabled-btn">View Analysis</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="settings.html">Settings</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 result-panel comp-form-results">
+					<div class="row new-comp">
+						<!-- Detailed Score -->
+						<h4>Comparative Analysis</h4>
+						<span class="legend-span">LEGEND :</span>
+						<div class="col-sm-12 new-comp-cnt">
+							<div class="row">
+								<div class="col-sm-3 zero">
+									<a href="javascript:void(0)" class="zero-link">
+										Zero to Minimal remedial effort &nbsp;<span data-toggle="tooltip" title="You are very strong in">i</span>
+									</a>
+								</div>
+
+								<div class="col-sm-3 moderate">
+									<a href="javascript:void(0)" class="mode-link">
+										Moderate remedial effort &nbsp;<span data-toggle="tooltip" title="You are strong in">i</span>
+									</a>
+								</div>
+
+								<div class="col-sm-3 high">
+									<a href="javascript:void(0)" class="high-link">
+										High remedial effort &nbsp;<span data-toggle="tooltip" title="You are weak in">i</span>
+									</a>
+								</div>
+
+								<div class="col-sm-3 danger">
+									<a href="javascript:void(0)" class="dang-link">
+										Danger Zone &nbsp;<span data-toggle="tooltip" title="You are very weak in">i</span>
+									</a>
+								</div>
+							</div>
+
+							<!-- Content Table -->
+							<div class="comp-table" id="comp-content">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th class="quality-company">
+												<span>CONTENT QUALITY</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 1</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 2</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 3</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<span>
+													C1. Is the content accurate?*
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="high-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="moderate-circle"></span>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<span>
+													C2. Is the content sufficient and up-to-date with respect to relevant advances in the topic in a grade appropriate manner?
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<span>
+													C3. Is the content situated in an appropriate context?
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="moderate-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- Pedagogy table -->
+							<div class="comp-table" id="comp-pedagogy">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th class="quality-company">
+												<span>PEDAGOGICAL ALIGNMENT</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 1</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 2</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 3</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<span>
+													P1. Is the content accurate?*
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="high-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="moderate-circle"></span>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<span>
+													P2. Is the content sufficient and up-to-date with respect to relevant advances in the topic in a grade appropriate manner?
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<span>
+													P3. Is the content situated in an appropriate context?
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="moderate-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- Design table -->
+							<div class="comp-table" id="comp-design">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th class="quality-company">
+												<span>DESIGN EFFICACY</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 1</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 2</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 3</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<span>
+													D1. Is the content accurate?*
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="high-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="moderate-circle"></span>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<span>
+													D2. Is the content sufficient and up-to-date with respect to relevant advances in the topic in a grade appropriate manner?
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<span>
+													D3. Is the content situated in an appropriate context?
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="moderate-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- Technological table -->
+							<div class="comp-table" id="comp-techno">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th class="quality-company">
+												<span>Technological Integration</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 1</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 2</span>
+											</th>
+											<th class="company-thead">
+												<span>COMPANY 3</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<span>
+													T1. Is the content accurate?*
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="high-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="moderate-circle"></span>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<span>
+													T2. Is the content sufficient and up-to-date with respect to relevant advances in the topic in a grade appropriate manner?
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<span>
+													T3. Is the content situated in an appropriate context?
+												</span>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="moderate-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="danger-circle"></span>
+												</div>
+											</th>
+											<th>
+												<div class="circle">
+													<span class="zero-circle"></span>
+												</div>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$('.select-rubric a').click(function () {
+			$('.learning-rubric').show();
+			$('.select-rubric a').hide();
+		});
+
+		$('.zero-link').click(function () {
+			$('.zero-display').show();
+			$('.high-display, .mode-display, .dang-display').hide();
+		});
+
+		$('.mode-link').click(function () {
+			$('.mode-display').show();
+			$('.high-display, .zero-display, .dang-display').hide();
+		});
+
+		$('.high-link').click(function () {
+			$('.high-display').show();
+			$('.zero-display, .mode-display, .dang-display').hide();
+		});
+
+		$('.dang-link').click(function () {
+			$('.dang-display').show();
+			$('.zero-display, .mode-display, .high-display').hide();
+		});
+	});
+</script>
+</html>

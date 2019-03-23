@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE - SIGN UP/SIGN IN</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+</head>
+<body>
+	<!-- Sign Up div -->
+	<section class="signup-mainbody">
+		<div class="signup container">
+			<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+			<form action="">
+				<div class="form-group">
+     			 	<input id="email-id" type="text" class="form-control" placeholder="Email ID">
+				</div>
+				<div class="form-group">
+					<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+				</div>
+				<a href="javascript:void(0)" class="btn-forget">Forget Password?</a>
+				<button type="submit">Login</button>
+				<a href="javascript:void(0)" class="signin-acc">Don't have an account? Signup</a>
+			</form>
+		</div>
+
+		<!-- Sign In div -->
+		<div class="signin container">
+			<h5>SIGN IN</h5>
+			<form action="">
+				<div class="input-group">
+					<div class="col-sm-4">
+						<h6>Email ID</h6>
+						<input id="email-id" type="text" class="form-control">
+					</div>
+					<div class="col-sm-4">
+						<h6>password</h6>
+						<input id="password" type="password" class="form-control" name="password">
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="col-sm-4">
+						<h6>name</h6>
+						<input id="name" type="text" name="name" class="form-control">
+					</div>
+					<div class="col-sm-4">
+						<h6>affiliation <a href="javascript:void(0)" data-toggle="tooltip" title="Company or Institute you are affiliated with!">i</a></h6>
+						<input id="affiliation" type="text" name="affiliation" class="form-control">
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="col-sm-12">
+						<h6>Choose the role in which you want to use the LOBE tool</h6>
+						<ul class="role-ul">
+							<li>
+								<input type="radio" name="options" id="role-1" value="Generate">
+								<label for="role-1">Generate evaluation rubric &nbsp;
+									<a href="javascript:void(0)" data-toggle="tooltip" title="Choose the questions to include">i</a>
+								</label>
+							</li>
+							<li>
+								<input type="radio" name="options" id="role-2" value="Evaluate">
+								<label for="role-2">Evaluate using Generated rubric &nbsp;
+									<a href="javascript:void(0)" data-toggle="tooltip" title="Evaluate the questions">i</a>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<button type="submit">Submit</button>
+				</div>
+				<div class="col-sm-12">
+					<a class="haveanacc" href="javascript:void(0)" class="signin-acc">Already have an account? Signin</a>
+				</div>
+			</form>
+		</div>
+
+		<div class="forget-paas container">
+			<h5>Enter your email id</h5>
+			<form action="">
+				<div class="form-group col-sm-3">
+     			 	<input id="email-id" type="text" class="form-control" placeholder="Email ID">
+				</div>
+				<div class="form-group">
+					<button type="submit">Submit</button>
+					<a href="javascript:void(0)" class="go-back">Go back</a>
+				</div>
+			</form>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('.signin-acc').click(function () {
+			$('.signin').show();
+			$('.signup').hide();
+		});
+
+		$('.haveanacc').click(function () {
+			$('.signup').show();
+			$('.signin').hide();
+		});
+
+		$('.btn-forget').click(function () {
+			$('.signup').hide();
+			$('.forget-paas').show();
+		});
+
+		$('.go-back').click(function () {
+			$('.forget-paas').hide();
+			$('.signup').show();
+		});
+
+		$('[data-toggle="tooltip"]').tooltip(); 
+
+		$(".role-ul label").click(function(){
+  			$(".role-ul label.selected").removeClass("selected");
+  			$(this).addClass("selected"); 
+		});
+	});
+</script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE-Settings</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>GENERATOR DASHBOARD</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">View Analysis</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="generator-dashboard.html">Dashboard</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 content-panel">
+					<h3>SETTINGS PANEL</h3>
+					<form action="">
+						<div class="form-group">
+							<h6>Role change setting</h6>
+							<span>Change your role to any one of the following :</span>
+							<ul class="setting-role">
+								<li>
+									<input type="radio" name="setting-opt" id="setting-1" value="Generate">
+									<label for="setting-1">Rubric Generator</label>
+								</li>
+								<li>
+									<input type="radio" name="setting-opt" id="setting-2" value="Evaluate">
+									<label for="setting-2">Learning Object Evaluator</label>
+								</li>
+							</ul>
+						</div>
+						<button type="submit">SUBMIT</button>
+					</form>
+					<form action="">
+						<div class="form-group">
+							<h6>Email ID & Password Settings</h6>
+							<span>Change your password or email-id if you want.</span>
+						</div>
+						<div class="input-group">
+							<div class="col-lg-3">
+								<input id="email-id-old" type="text" class="form-control" placeholder="Old Email ID">
+							</div>
+							<div class="col-lg-3">
+								<input id="email-id-new" type="text" class="form-control" placeholder="New Email ID">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="col-lg-3">
+								<input id="password-old" type="password" class="form-control" placeholder="Old Password">
+							</div>
+							<div class="col-lg-3">
+								<input id="password-new" type="password" class="form-control" placeholder="New Password">
+							</div>
+							<div class="col-lg-3">
+								<input id="password-cnf" type="password" class="form-control" placeholder="Confirm Password">
+							</div>
+						</div>
+						<button type="submit">SUBMIT</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('.setting-role li label').click(function () {
+			$('.setting-role li label.selected').removeClass('selected');
+			$(this).addClass('selected');
+		});
+	});
+</script>
+</html>

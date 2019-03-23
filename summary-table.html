@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- SUMMARY TABLE</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+				<div class="col-sm-3 go-bck-btn">
+					<a href="analytics-panel.html"><i class="fas fa-long-arrow-alt-left"></i> Go Back</a>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>GENERATOR DASHBOARD</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="javascript:void(0)" class="disabled-btn">View Analysis</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="settings.html">Settings</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 result-panel summary-form">
+					<div class="row new-summary">
+						<!-- Summary Table -->
+						<h4>Summary Table</h4>
+						<div class="col-sm-12 new-summary-cnt">
+							<form action="" class="form-horizontal">
+								<div class="select-rubric">
+									<div class="form-group">
+										<div class="row">
+											<label class="control-label col-sm-2">Select the Rubric :</label>
+											<div class="col-sm-3">
+										      <select class="form-control" id="rub-detailed">
+										        <option>Select the rubric</option>
+										        <option>2</option>
+										        <option>3</option>
+										        <option>4</option>
+										      </select>
+										    </div>
+										</div>
+									</div>
+									<a href="javascript:void(0)" id="select-rubric-a">NEXT</a>
+								</div>
+								<div class="learning-rubric">
+									<span>Select the Learning Objects &nbsp;<b data-toggle="tooltip" title="dynamic visualization (animation/simulation/video) as core component + associated components like learning activities/assessment questions/solved examples/stepwise lesson plans for teachers (either all or a subset of these components)">i</b> :</span>
+									<div class="row">
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-1</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-2</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-3</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-3</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-4</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-5</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-6</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-6</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-7</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-8</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-9</label>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="radio">
+												<label><input type="checkbox" name="sum-check">&nbsp; Learning Object-6</label>
+											</div>
+										</div>
+									</div><br/>
+									<button type="submit">NEXT</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$('.select-rubric a').click(function () {
+			$('.learning-rubric').show();
+			$('.select-rubric a').hide();
+		});
+	});
+</script>
+</html>

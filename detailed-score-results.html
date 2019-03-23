@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- DETAILED SCORES</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+				<div class="col-sm-3 go-bck-btn">
+					<a href="detailed-score.html"><i class="fas fa-long-arrow-alt-left"></i> Go Back</a>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>GENERATOR DASHBOARD</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="javascript:void(0)" class="disabled-btn">View Analysis</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="settings.html">Settings</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 result-panel detail-form-results">
+					<div class="row new-detail">
+						<!-- Detailed Score -->
+						<h4>Detailed Scores</h4>
+						<div class="col-sm-12 new-detail-cnt table-panel">
+							<span>Learning Object Name 1</span>
+							<table class="table table-bordered">
+								<thead>
+									<thead>
+										<tr>
+											<th class="question-tb">
+												<div class="score">
+													<span>SCORE</span>
+												</div>
+												<div class="question">
+													<span>QUESTION</span>
+												</div>
+											</th>
+											<th class="score-0">
+												<span>0</span>
+												<span>(Missing)</span>
+											</th>
+											<th class="score-1">
+												<span>1</span>
+												<span>(Inadequate)</span>
+											</th>
+											<th class="score-2">
+												<span>2</span>
+												<span>(Almost)</span>
+											</th>
+											<th class="score-3">
+												<span>3</span>
+												<span>(Target)</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<p>C1. Is the content accurate?*</p>
+												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+												<span class="hidden" id="example-1">
+													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+												</span>
+											</th>
+											<th>
+												<p>
+												</p>
+											</th>
+											<th>
+												<p>
+													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+												</p>
+											</th>
+											<th>
+												<p>
+													 
+												</p>
+											</th>
+											<th>
+												<p>
+													
+												</p>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<p>C2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
+												<a class="evaluate-1">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+												<span class="hidden" id="example-2">
+													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+												</span>
+											</th>
+											<th>
+												
+											</th>
+											<th>
+												
+											</th>
+											<th>
+												
+											</th>
+											<th>
+												<p>
+													Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
+												</p>
+											</th>
+										</tr>
+										<tr>
+											<th>
+												<p>C3. Is the content situated in an appropriate context?</p>
+												<a class="evaluate-2">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+												<span class="hidden" id="example-3">
+													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+												</span>
+											</th>
+											<th>
+												<p>
+													A relevant context is provided for the content. However, the context maynot be sufficient for the specific topic. 
+												</p>
+											</th>
+											<th>
+												
+											</th>
+											<th>
+												
+											</th>
+											<th>
+												
+											</th>
+										</tr>
+									</tbody>
+								</thead>
+							</table>
+						</div>
+						<!-- Back to top button -->
+						<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="imgs/up-arrow.png"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$('.select-rubric a').click(function () {
+			$('.learning-rubric').show();
+			$('.select-rubric a').hide();
+		});
+
+		$(".evaluate").click(function () {
+			$("span#example-1").slideToggle();
+		});
+
+		$(".evaluate-1").click(function () {
+			$("span#example-2").slideToggle();
+		});
+
+		$(".evaluate-2").click(function () {
+			$("span#example-3").slideToggle();
+		});
+	});
+</script>
+<script type="text/javascript">
+	// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		    document.getElementById("myBtn").style.display = "block";
+		  } else {
+		    document.getElementById("myBtn").style.display = "none";
+		  }
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+		  document.body.scrollTop = 0;
+		  document.documentElement.scrollTop = 0;
+		}
+</script>
+</html>

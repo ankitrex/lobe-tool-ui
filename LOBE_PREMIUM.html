@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- Evaluator Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Main Content body -->
+				<div class="col-sm-12 prem_cont">
+					<h3>LOBE_PREMIUM: Learning Object Evaluation Instrument</h3>
+					<h5>What is LOBE?</h5>
+					<ul>
+						<li>LOBE is an instrument to evaluate the teaching-learning effectiveness of e-learning content or learning objects.</li>
+						<li>LOBE evaluates quality of a learning object. A learning object is a multimedia teaching-learning resource that contains dynamic visualizations with voice-over (i.e. animations/simulations/videos) as its core component and either all or a subset of the following associated components – i) learning activities, ii) set of assessment questions, iii) solved examples, iv) stepwise lesson plans for teachers.</li>
+						<li>LOBE measures the quality of the learning objects along four dimensions - content quality, pedagogical alignment, design efficacy and technology integration.</li>
+						<li>Target users of LOBE are e-learning companies or academics involved in evaluation of quality of digital educational content like learning objects.</li>
+					</ul>
+
+					<h5>What is the scope of LOBE?</h5>
+					<ul>
+						<li>The learning objects, that LOBE evaluates, can be at the granularity level of a topic in a textbook chapter where a chapter would typically contain 3-6 topics.</li>
+						<li>LOBE is currently designed for topics in STEM domains.</li>
+						<li>LOBE has currently been tested for multiple topics at primary, secondary and higher secondary levels.</li>
+					</ul>
+
+					<h5>What is the structure of LOBE?</h5>
+					<ul>
+						<li>LOBE is organized according to the dimensions of: content quality (C) (5 questions), pedagogical alignment (P) (18 questions), design efficacy (10 questions) and technology integration (T) (5 questions).</li>
+						<li>The LOBE instrument is in the format of a 4-scale rubric. Each question evaluates how well the learning object addresses the evaluation criteria at different levels: Missing (score 0), Inadequate (score 1), Almost (score 2), Target (score 3).</li>
+						<li>The questions evaluate various aspects of the components of a learning object and the manner in which the components are integrated in the learning object. If a question pertains to one or more specific component, it will be indicated. However, the questions in the instrument are not organized component-by-component, since the unit of application is a learning object.</li>
+					</ul>
+					<a href="javascript:void(0)">NEXT</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$(".evaluator-panel .new-evaluator h4").click(function () {
+			$(".new-evaluator-cnt").slideToggle();
+			$(".evaluator-panel .new-evaluator h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .incomp-rubric h4").click(function () {
+			$(".incomp-rubric-cnt").slideToggle();
+			$(".evaluator-panel .incomp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .comp-rubric h4").click(function () {
+			$(".comp-rubric-cnt").slideToggle();
+			$(".evaluator-panel .comp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .assign h4").click(function () {
+			$(".assign-cnt").slideToggle();
+			$(".evaluator-panel .assign h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .role h4").click(function () {
+			$(".role-cnt").slideToggle();
+			$(".evaluator-panel .role h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .track h4").click(function () {
+			$(".track-cnt").slideToggle();
+			$(".evaluator-panel .track h4 i").toggleClass("fa-rotate-90");
+		});
+	});
+</script>
+</html>

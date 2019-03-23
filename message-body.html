@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- Assigning Rubric</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-6">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+				<div class="col-sm-3">
+					<!-- <span class="percent">25%</span>
+					<div class="progress">
+						<div class="progressbar-25"></div>
+					</div> -->
+				</div>
+				<div class="col-sm-1"></div>
+				<div class="col-sm-1">
+					<!-- <a href="javascript:void(0)">SAVE</a> -->
+				</div>
+				<div class="col-sm-1">
+					<a href="javascript:void(0)">LOGOUT</a>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Main Content body -->
+				<div class="col-sm-12 message-panel">
+					<div class="row">
+						<div class="container message-body">
+							<form action="">
+								<div class="form-group">
+								<span>GENERATE RUBRIC CODE</span>
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-3">
+												<div class="row">
+													<div class="col-sm-12">
+												      <select class="form-control" id="rub-detailed">
+												        <option>Select the LOBE</option>
+												        <option>2</option>
+												        <option>3</option>
+												        <option>4</option>
+												      </select>
+												    </div>
+												</div>
+											</div>
+											<div class="col-sm-4">
+												<input type="text" name="" placeholder="Code will be generate here">
+											</div>
+											<div class="col-sm-2">
+												<a href="javascript:void(0)">GENERATE</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<span>MESSAGE BODY</span>
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-9">
+												<input type="text" name="" placeholder="Write the title here">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-9">
+												<textarea placeholder="Write your message"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<span>Enter Learning Object Details</span>
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-4 select-lo">
+												<input type="text" name="email" id="email-invite" placeholder="*Enter the Learning Object name">
+											</div>
+											<div class="col-sm-4">
+												<a href="javascript:void(0)" class="add-a">ADD MORE &nbsp;<i class="fas fa-plus"></i></a>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 select-lo">
+												<input type="text" name="email" id="email-invite" placeholder="Enter the Learning Object URL">
+											</div>
+											<div class="col-sm-4">
+												<a href="javascript:void(0)" class="add-a">ADD MORE &nbsp;<i class="fas fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<span>INVITING EVALUATORS</span>
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-3 email-msg">
+												<input type="text" name="email" id="email-invite" placeholder="Enter the Email ID">
+											</div>
+											<div class="col-sm-3">
+												<a href="javascript:void(0)" class="add-a">ADD MORE &nbsp;<i class="fas fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<button type="submit">SUBMIT</button>
+								<a href="generator-dashboard.html">Go Back</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$(".generator-panel .new-rubric h4").click(function () {
+			$(".new-rubric-cnt").slideToggle();
+			$(".generator-panel .new-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".first-group li label").click(function () {
+			$(".first-group label.selected").removeClass("selected");
+			$(this).addClass("selected");
+		});
+
+		$(".second-grp li label").click(function () {
+			$(this).addClass("selected");
+		});
+
+		$(".new-rubric-cnt #lobe-1").on("click", function () {
+			$(".new-rubric-cnt button").show();
+			$(".new-rubric-cnt .second-grp").hide();
+		});
+
+		$(".new-rubric-cnt #lobe-2").on("click", function () {
+			$(".new-rubric-cnt button").show();
+			$(".new-rubric-cnt .second-grp").hide();
+		});
+
+		$(".new-rubric-cnt #lobe-3").on("click", function () {
+			$(".new-rubric-cnt .second-grp").show();
+			$(".new-rubric-cnt button").show();
+		});
+
+		$(".generator-panel .incomp-rubric h4").click(function () {
+			$(".incomp-rubric-cnt").slideToggle();
+			$(".generator-panel .incomp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".generator-panel .comp-rubric h4").click(function () {
+			$(".comp-rubric-cnt").slideToggle();
+			$(".generator-panel .comp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".generator-panel .assign h4").click(function () {
+			$(".assign-cnt").slideToggle();
+			$(".generator-panel .assign h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".generator-panel .role h4").click(function () {
+			$(".role-cnt").slideToggle();
+			$(".generator-panel .role h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".generator-panel .track h4").click(function () {
+			$(".track-cnt").slideToggle();
+			$(".generator-panel .track h4 i").toggleClass("fa-rotate-90");
+		});
+	});
+</script>
+</html>

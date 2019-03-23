@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- ANALYTICS PANEL</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>GENERATOR DASHBOARD</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="javascript:void(0)" class="disabled-btn">View Analysis</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="settings.html">Settings</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 result-panel">
+					<div class="row new-results">
+						<!-- Results Panel -->
+						<h4>Results Panel</h4>
+						<div class="col-sm-12 new-results-cnt">
+							<div class="row">
+								<div class="col-sm-6">
+									<img src="imgs/detailed.png">
+									<div class="side-cnt">
+										<h6>Detailed Scores</h6>
+										<span>Gives you evaluation scores, at criteria level for a single Learning Object <br/><br/>
+										<b>Target Audience </b>: Learning Object developers, Learning Object repositories, Learning solutions companies</span>
+										<a href="detailed-score.html">START</a>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<img src="imgs/summary.png">
+									<div class="side-cnt">
+										<h6>Summary Table</h6>
+										<span>Gives you a summary of the quality evaluation results across a set of Learning Objects evaluated<br/><br/>
+										<b>Target Audience </b>: Learning Object developers, Learning Object repositories, Learning solutions companies</span>
+										<a href="summary-table.html">START</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 new-results-cnt">
+							<div class="row">
+								<div class="col-sm-6">
+									<img src="imgs/s-w-analysis.png">
+									<div class="side-cnt">
+										<h6>Strength Weakness Analysis</h6>
+										<span>Gives you analysis of quality criteria where you are strong and weak, indicating the remedial effort required<br/><br/>
+										<b>Target Audience </b>: Learning Object developers, Learning Object repositories, Learning solutions companies</span>
+										<a href="strength-weakness.html">START</a>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<img src="imgs/comparative.png">
+									<div class="side-cnt">
+										<h6>Comparative Analysis</h6>
+										<span>Gives you a comparative report on strength and weakness of Learning Objects from multiple repositories<br/><br/>
+										<b>Target Audience </b>: Learning solutions companies, Principle or HOD of schools / colleges</span>
+										<a href="comparative.html">START</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- USER DETAILS</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>ADMIN PANEL</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="admin-panel.html" >Dashboard</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 user-panel">
+					<div class="row new-user">
+						<h4>User Details</h4>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Email- Id</th>
+									<th>Company</th>
+									<th>Role</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Rahul Dolui</td>
+									<td>abd@gmail.com</td>
+									<td>Company 2</td>
+									<td>Generator</td>
+									<td>
+										<div class="row">
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#company-modal-1" src="imgs/edit.png">
+												<!-- Company Edit Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="company-modal-1"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>EDIT</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<table class="table table-hover">
+																		<thead>
+																			<tr>
+																				<th>Name</th>
+																				<th>Email- Id</th>
+																				<th>Company</th>
+																				<th>Role</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>Rahul Dolui</td>
+																				<td>abd@gmail.com</td>
+																				<td>
+																					<input type="text" name="companyvalue" value="Company 2">
+																				</td>
+																				<td>Generator</td>
+																				</tr>
+																		</tbody>
+																	</table>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#email-modal-1" src="imgs/email.png">
+												<!-- Email Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="email-modal-1"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>Email</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<div class="input-group">
+																		<label>Message Title :</label>
+																		<input type="text" name="title">
+																	</div>
+																	<div class="input-group">
+																		<label>Message Body :</label>
+																		<textarea></textarea>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="submit" class="btn btn-default" data-dismiss="modal">Sent</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Ankit Mishra</td>
+									<td>abd@gmail.com</td>
+									<td>Company 4</td>
+									<td>Generator</td>
+									<td>
+										<div class="row">
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#company-modal-2" src="imgs/edit.png">
+												<!-- Company Edit Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="company-modal-2"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>EDIT</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<table class="table table-hover">
+																		<thead>
+																			<tr>
+																				<th>Name</th>
+																				<th>Email- Id</th>
+																				<th>Company</th>
+																				<th>Role</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>Ankit Mishra</td>
+																				<td>abd@gmail.com</td>
+																				<td>
+																					<input type="text" name="companyvalue" value="Company 4">
+																				</td>
+																				<td>Generator</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#email-modal-2" src="imgs/email.png">
+												<!-- Email Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="email-modal-2"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>Email</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<div class="input-group">
+																		<label>Message Title :</label>
+																		<input type="text" name="title">
+																	</div>
+																	<div class="input-group">
+																		<label>Message Body :</label>
+																		<textarea></textarea>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="submit" class="btn btn-default" data-dismiss="modal">Sent</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Siddhesh Walunj</td>
+									<td>abd@gmail.com</td>
+									<td>Company 1</td>
+									<td>Generator</td>
+									<td>
+										<div class="row">
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#company-modal-3" src="imgs/edit.png">
+												<!-- Company Edit Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="company-modal-3"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>EDIT</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<table class="table table-hover">
+																		<thead>
+																			<tr>
+																				<th>Name</th>
+																				<th>Email- Id</th>
+																				<th>Company</th>
+																				<th>Role</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>Siddhesh Walunj</td>
+																				<td>abd@gmail.com</td>
+																				<td>
+																					<input type="text" name="companyvalue" value="Company 1">
+																				</td>
+																				<td>Generator</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#email-modal-3" src="imgs/email.png">
+												<!-- Email Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="email-modal-3"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>Email</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<div class="input-group">
+																		<label>Message Title :</label>
+																		<input type="text" name="title">
+																	</div>
+																	<div class="input-group">
+																		<label>Message Body :</label>
+																		<textarea></textarea>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="submit" class="btn btn-default" data-dismiss="modal">Sent</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Ajit Mhatre</td>
+									<td>abd@gmail.com</td>
+									<td>Company 9</td>
+									<td>Evaluator</td>
+									<td>
+										<div class="row">
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#company-modal-4" src="imgs/edit.png">
+												<!-- Company Edit Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="company-modal-4"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>EDIT</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<table class="table table-hover">
+																		<thead>
+																			<tr>
+																				<th>Name</th>
+																				<th>Email- Id</th>
+																				<th>Company</th>
+																				<th>Role</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>Ajit Mhatre</td>
+																				<td>abd@gmail.com</td>
+																				<td>
+																					<input type="text" name="companyvalue" value="Company 9">
+																				</td>
+																				<td>Evaluator</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#email-modal-4" src="imgs/email.png">
+												<!-- Email Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="email-modal-4"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>Email</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<div class="input-group">
+																		<label>Message Title :</label>
+																		<input type="text" name="title">
+																	</div>
+																	<div class="input-group">
+																		<label>Message Body :</label>
+																		<textarea></textarea>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="submit" class="btn btn-default" data-dismiss="modal">Sent</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Pankaj Chavan</td>
+									<td>abd@gmail.com</td>
+									<td>Company 7</td>
+									<td>Evaluator</td>
+									<td>
+										<div class="row">
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#company-modal-5" src="imgs/edit.png">
+												<!-- Company Edit Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="company-modal-5"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>EDIT</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<table class="table table-hover">
+																		<thead>
+																			<tr>
+																				<th>Name</th>
+																				<th>Email- Id</th>
+																				<th>Company</th>
+																				<th>Role</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>Pankaj Chavan</td>
+																				<td>abd@gmail.com</td>
+																				<td>
+																					<input type="text" name="companyvalue" value="Company 7">
+																				</td>
+																				<td>Evaluator</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#email-modal-5" src="imgs/email.png">
+												<!-- Email Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="email-modal-5"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>Email</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<div class="input-group">
+																		<label>Message Title :</label>
+																		<input type="text" name="title">
+																	</div>
+																	<div class="input-group">
+																		<label>Message Body :</label>
+																		<textarea></textarea>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="submit" class="btn btn-default" data-dismiss="modal">Sent</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Kapil Kadam</td>
+									<td>abd@gmail.com</td>
+									<td>Company 6</td>
+									<td>Both</td>
+									<td>
+										<div class="row">
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#company-modal-7" src="imgs/edit.png">
+												<!-- Company Edit Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="company-modal-7"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>EDIT</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<table class="table table-hover">
+																		<thead>
+																			<tr>
+																				<th>Name</th>
+																				<th>Email- Id</th>
+																				<th>Company</th>
+																				<th>Role</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>Kapil Kadam</td>
+																				<td>abd@gmail.com</td>
+																				<td>
+																					<input type="text" name="companyvalue" value="Company 6">
+																				</td>
+																				<td>Both</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-3">
+												<img data-toggle="modal" data-target="#email-modal-7" src="imgs/email.png">
+												<!-- Email Dialog -->
+												<div class="modal fade cmnt-sect email-dialog" id="email-modal-7"  role="dialog">
+													<div class="modal-dialog modal-lg">
+														<!-- Modal content-->
+														<div class="modal-content">
+															<form action="">
+																<div class="modal-header">
+																	<h6>Email</h6>
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body">
+																	<div class="input-group">
+																		<label>Message Title :</label>
+																		<input type="text" name="title">
+																	</div>
+																	<div class="input-group">
+																		<label>Message Body :</label>
+																		<textarea></textarea>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="submit" class="btn btn-default" data-dismiss="modal">Sent</button>
+																</div>
+															</form>
+														</div>  
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+</html>

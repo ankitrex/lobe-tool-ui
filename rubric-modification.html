@@ -1,0 +1,3336 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- RUBRIC MODIFICATION</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>ADMIN PANEL</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="admin-panel.html" >Dashboard</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 rubric-modification-panel">
+					<div class="row new-rubric-modification">
+						<div class="col-sm-12 rubric-modification-heading">
+							<h4>Rubric Modifications</h4>
+						</div>
+						<div class="col-sm-12 new-detail-cnt">
+							<div class="select-rubric">
+								<div class="form-group">
+									<div class="row">
+										<label class="control-label col-sm-2">Select the Rubric :</label>
+										<div class="col-sm-3">
+									      <select class="form-control" id="rub-detailed">
+									        <option>Select the Rubric</option>
+									        <option>LOBE LITE</option>
+									        <option>LOBE PREMIUM</option>
+									      </select>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<!-- LOBE Questions -->
+							<div class="col-sm-12 rubric-modification-heading LOBE-header">
+								<h4></h4>
+							</div>
+							<div class="row rubric-body">
+								<div class="col-sm-12 table-panel">
+									<ul class="nav nav-tabs">
+										<li class="activated cont-li"><a class="active_a" data-toggle="tab" href="#content">Content Quality</a></li>
+										<li class="peda-li"><a data-toggle="tab" href="#pedagogical">Pedagogical Alignment</a></li>
+										<li class="des-li"><a data-toggle="tab" href="#design">Design Efficacy</a></li>
+										<li class="tech-li"><a data-toggle="tab" href="#technological">Technological Integration</a></li>
+									</ul>
+									<div class="tab-content">
+										<div id="content" class="tab-pane active">
+											<table class="table">
+												<thead>
+													<thead>
+														<tr>
+															<th class="question-tb">
+																<div class="score">
+																	<span>SCORE</span>
+																</div>
+																<div class="question">
+																	<span>QUESTION</span>
+																</div>
+															</th>
+															<th class="score-0">
+																<span>0</span>
+																<span>(Missing)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Missing Column"><i data-toggle="modal" data-target="#delete-table-content-missing" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-content-missing" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-1">
+																<span>1</span>
+																<span>(Inadequate)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Inadequate Column"><i data-toggle="modal" data-target="#delete-table-content-inadequate" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-content-inadequate" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-2">
+																<span>2</span>
+																<span>(Almost)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Almost Column"><i data-toggle="modal" data-target="#delete-table-content-almost" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-content-almost" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-3">
+																<span>3</span>
+																<span>(Target)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Target Column"><i data-toggle="modal" data-target="#delete-table-content-target" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-content-target" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th>
+																<p>C1. Is the content accurate?*</p>
+																<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-1">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																</p>
+															</th>
+															<th>
+																<ul class="modifi">
+																	<li data-toggle="tooltip" title="ADD"><i data-toggle="modal" data-target="#add-1" class="fas fa-plus"></i></li>
+																	<!-- Add -->
+																	<div class="modal fade" id="add-1" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question">
+																										<textarea rows="5" placeholder="Suggestion Answer"></textarea>
+																										<button type="button">Additional suggestion question & answer</button>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="EDIT"><i data-toggle="modal" data-target="#edit-1" class="fas fa-edit"></i></li>
+																	<!-- Edit -->
+																	<div class="modal fade" id="edit-1" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-edit-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here">C1. Is the content accurate?*</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question" value="To evaluate this question">
+																										<textarea rows="5" placeholder="Suggestion Answer">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0">Content is not accurate at all since it contains many incorrect facts, explanations or examples.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2">Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3">All the content is accurate, and contains correct facts, explanations, examples, and activity solutions.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="DELETE"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i></li>
+																	<!-- Delete -->
+																	<div class="modal fade" id="delete-1" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-del-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>C1. Is the content accurate?*</p>
+																												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																												<span class="hidden" id="example-1">
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																												</span>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i> DELETE AN ENTIRE ROW</button>
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																</ul>
+															</th>
+														</tr>
+														<tr>
+															<th>
+																<p>C2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
+																<a class="evaluate-1">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-2">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	Content is not sufficient to explain the topic completely.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is sufficient to explain the topic but does not include any mention of grade-appropriate relevant advances in the topic. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is sufficient to explain the topic and contains some description of grade-appropriate relevant advances in the topic, but the description may be incomplete or contain minor errors.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
+																</p>
+															</th>
+															<th>
+																<ul class="modifi">
+																	<li data-toggle="tooltip" title="ADD"><i data-toggle="modal" data-target="#add-2" class="fas fa-plus"></i></li>
+																	<!-- Add -->
+																	<div class="modal fade" id="add-2" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question">
+																										<textarea rows="5" placeholder="Suggestion Answer"></textarea>
+																										<button type="button">Additional suggestion question & answer</button>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="EDIT"><i data-toggle="modal" data-target="#edit-2" class="fas fa-edit"></i></li>
+																	<!-- Edit -->
+																	<div class="modal fade" id="edit-2" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-edit-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here">C1. Is the content accurate?*</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question" value="To evaluate this question">
+																										<textarea rows="5" placeholder="Suggestion Answer">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0">Content is not accurate at all since it contains many incorrect facts, explanations or examples.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2">Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3">All the content is accurate, and contains correct facts, explanations, examples, and activity solutions.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="DELETE"><i data-toggle="modal" data-target="#delete-3" class="fas fa-trash-alt"></i></li>
+																	<!-- Delete -->
+																	<div class="modal fade" id="delete-3" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-del-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>C1. Is the content accurate?*</p>
+																												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																												<span class="hidden" id="example-1">
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																												</span>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i> DELETE AN ENTIRE ROW</button>
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																</ul>
+															</th>
+														</tr>
+													</tbody>
+												</thead>
+											</table>
+										</div>
+										<div id="pedagogical" class="tab-pane fade">
+											<table class="table">
+												<thead>
+													<thead>
+														<tr>
+															<th class="question-tb">
+																<div class="score">
+																	<span>SCORE</span>
+																</div>
+																<div class="question">
+																	<span>QUESTION</span>
+																</div>
+															</th>
+															<th class="score-0">
+																<span>0</span>
+																<span>(Missing)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Missing Column"><i data-toggle="modal" data-target="#delete-table-pedagogical-missing" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-pedagogical-missing" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-1">
+																<span>1</span>
+																<span>(Inadequate)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Inadequate Column"><i data-toggle="modal" data-target="#delete-table-pedagogical-inadequate" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-pedagogical-inadequate" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-2">
+																<span>2</span>
+																<span>(Almost)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Almost Column"><i data-toggle="modal" data-target="#delete-table-pedagogical-almost" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-pedagogical-almost" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-3">
+																<span>3</span>
+																<span>(Target)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Target Column"><i data-toggle="modal" data-target="#delete-table-pedagogical-target" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-pedagogical-target" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th>
+																<p>P1. Is the content accurate?*</p>
+																<a class="evaluate-3">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-3">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																</p>
+															</th>
+															<th>
+																<ul class="modifi">
+																	<li data-toggle="tooltip" title="ADD"><i data-toggle="modal" data-target="#add-3" class="fas fa-plus"></i></li>
+																	<!-- Add -->
+																	<div class="modal fade" id="add-3" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question">
+																										<textarea rows="5" placeholder="Suggestion Answer"></textarea>
+																										<button type="button">Additional suggestion question & answer</button>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="EDIT"><i data-toggle="modal" data-target="#edit-3" class="fas fa-edit"></i></li>
+																	<!-- Edit -->
+																	<div class="modal fade" id="edit-3" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-edit-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here">C1. Is the content accurate?*</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question" value="To evaluate this question">
+																										<textarea rows="5" placeholder="Suggestion Answer">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0">Content is not accurate at all since it contains many incorrect facts, explanations or examples.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2">Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3">All the content is accurate, and contains correct facts, explanations, examples, and activity solutions.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="DELETE"><i data-toggle="modal" data-target="#delete-3" class="fas fa-trash-alt"></i></li>
+																	<!-- Delete -->
+																	<div class="modal fade" id="delete-3" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-del-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>C1. Is the content accurate?*</p>
+																												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																												<span class="hidden" id="example-1">
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																												</span>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i> DELETE AN ENTIRE ROW</button>
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																</ul>
+															</th>
+														</tr>
+														<tr>
+															<th>
+																<p>P2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
+																<a class="evaluate-4">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-4">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	Content is not sufficient to explain the topic completely.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is sufficient to explain the topic but does not include any mention of grade-appropriate relevant advances in the topic. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is sufficient to explain the topic and contains some description of grade-appropriate relevant advances in the topic, but the description may be incomplete or contain minor errors.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
+																</p>
+															</th>
+															<th>
+																<ul class="modifi">
+																	<li data-toggle="tooltip" title="ADD"><i data-toggle="modal" data-target="#add-4" class="fas fa-plus"></i></li>
+																	<!-- Add -->
+																	<div class="modal fade" id="add-4" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question">
+																										<textarea rows="5" placeholder="Suggestion Answer"></textarea>
+																										<button type="button">Additional suggestion question & answer</button>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="EDIT"><i data-toggle="modal" data-target="#edit-4" class="fas fa-edit"></i></li>
+																	<!-- Edit -->
+																	<div class="modal fade" id="edit-4" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-edit-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here">C1. Is the content accurate?*</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question" value="To evaluate this question">
+																										<textarea rows="5" placeholder="Suggestion Answer">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0">Content is not accurate at all since it contains many incorrect facts, explanations or examples.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2">Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3">All the content is accurate, and contains correct facts, explanations, examples, and activity solutions.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="DELETE"><i data-toggle="modal" data-target="#delete-4" class="fas fa-trash-alt"></i></li>
+																	<!-- Delete -->
+																	<div class="modal fade" id="delete-4" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-del-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>C1. Is the content accurate?*</p>
+																												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																												<span class="hidden" id="example-1">
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																												</span>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i> DELETE AN ENTIRE ROW</button>
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																</ul>
+															</th>
+														</tr>
+													</tbody>
+												</thead>
+											</table>
+										</div>
+										<div id="design" class="tab-pane fade">
+											<table class="table">
+												<thead>
+													<thead>
+														<tr>
+															<th class="question-tb">
+																<div class="score">
+																	<span>SCORE</span>
+																</div>
+																<div class="question">
+																	<span>QUESTION</span>
+																</div>
+															</th>
+															<th class="score-0">
+																<span>0</span>
+																<span>(Missing)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Missing Column"><i data-toggle="modal" data-target="#delete-table-design-missing" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-design-missing" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-1">
+																<span>1</span>
+																<span>(Inadequate)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Inadequate Column"><i data-toggle="modal" data-target="#delete-table-design-inadequate" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-design-inadequate" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-2">
+																<span>2</span>
+																<span>(Almost)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Almost Column"><i data-toggle="modal" data-target="#delete-table-design-almost" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-design-almost" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-3">
+																<span>3</span>
+																<span>(Target)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Target Column"><i data-toggle="modal" data-target="#delete-table-design-target" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-design-target" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th>
+																<p>D1. Is the content accurate?*</p>
+																<a class="evaluate-5">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-5">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																</p>
+																<!-- Images Slideshow questions -->
+																<a href="imgs/img1.jpg" id="sliderimgs" class="evaluate-3 html5lightbox" data-group="mygroup" data-thumbnail="imgs/img1.jpg" data-description="Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>
+															</th>
+															<th>
+																<p>
+																	Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																</p>
+															</th>
+															<th>
+																<ul class="modifi">
+																	<li data-toggle="tooltip" title="ADD"><i data-toggle="modal" data-target="#add-5" class="fas fa-plus"></i></li>
+																	<!-- Add -->
+																	<div class="modal fade" id="add-5" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question">
+																										<textarea rows="5" placeholder="Suggestion Answer"></textarea>
+																										<button type="button">Additional suggestion question & answer</button>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="EDIT"><i data-toggle="modal" data-target="#edit-5" class="fas fa-edit"></i></li>
+																	<!-- Edit -->
+																	<div class="modal fade" id="edit-5" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-edit-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here">C1. Is the content accurate?*</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question" value="To evaluate this question">
+																										<textarea rows="5" placeholder="Suggestion Answer">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0">Content is not accurate at all since it contains many incorrect facts, explanations or examples.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2">Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3">All the content is accurate, and contains correct facts, explanations, examples, and activity solutions.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="DELETE"><i data-toggle="modal" data-target="#delete-5" class="fas fa-trash-alt"></i></li>
+																	<!-- Delete -->
+																	<div class="modal fade" id="delete-5" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-del-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>C1. Is the content accurate?*</p>
+																												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																												<span class="hidden" id="example-1">
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																												</span>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i> DELETE AN ENTIRE ROW</button>
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																</ul>
+															</th>
+														</tr>
+														<tr>
+															<th>
+																<p>D2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
+																<a class="evaluate-6">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-6">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	Content is not sufficient to explain the topic completely.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is sufficient to explain the topic but does not include any mention of grade-appropriate relevant advances in the topic. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is sufficient to explain the topic and contains some description of grade-appropriate relevant advances in the topic, but the description may be incomplete or contain minor errors.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
+																</p>
+																<!-- Images Slideshow questions -->
+																<a href="imgs/img1.jpg" id="sliderimgs" class="evaluate-3 html5lightbox" data-group="mygroup" data-thumbnail="imgs/img1.jpg" data-description="Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>
+
+																<a href="imgs/img2.jpg" id="sliderimgs" class="html5lightbox slide-thumbsimgs" data-group="mygroup" data-thumbnail="imgs/img2.jpg"></a>
+															</th>
+															<th>
+																<ul class="modifi">
+																	<li data-toggle="tooltip" title="ADD"><i data-toggle="modal" data-target="#add-6" class="fas fa-plus"></i></li>
+																	<!-- Add -->
+																	<div class="modal fade" id="add-6" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question">
+																										<textarea rows="5" placeholder="Suggestion Answer"></textarea>
+																										<button type="button">Additional suggestion question & answer</button>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="EDIT"><i data-toggle="modal" data-target="#edit-6" class="fas fa-edit"></i></li>
+																	<!-- Edit -->
+																	<div class="modal fade" id="edit-6" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-edit-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here">C1. Is the content accurate?*</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question" value="To evaluate this question">
+																										<textarea rows="5" placeholder="Suggestion Answer">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0">Content is not accurate at all since it contains many incorrect facts, explanations or examples.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2">Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3">All the content is accurate, and contains correct facts, explanations, examples, and activity solutions.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="DELETE"><i data-toggle="modal" data-target="#delete-6" class="fas fa-trash-alt"></i></li>
+																	<!-- Delete -->
+																	<div class="modal fade" id="delete-6" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-del-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>C1. Is the content accurate?*</p>
+																												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																												<span class="hidden" id="example-1">
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																												</span>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i> DELETE AN ENTIRE ROW</button>
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																</ul>
+															</th>
+														</tr>
+													</tbody>
+												</thead>
+											</table>
+										</div>
+										<div id="technological" class="tab-pane fade">
+											<table class="table">
+												<thead>
+													<thead>
+														<tr>
+															<th class="question-tb">
+																<div class="score">
+																	<span>SCORE</span>
+																</div>
+																<div class="question">
+																	<span>QUESTION</span>
+																</div>
+															</th>
+															<th class="score-0">
+																<span>0</span>
+																<span>(Missing)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Missing Column"><i data-toggle="modal" data-target="#delete-table-technological-missing" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-technological-missing" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-1">
+																<span>1</span>
+																<span>(Inadequate)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Inadequate Column"><i data-toggle="modal" data-target="#delete-table-technological-inadequate" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-technological-inadequate" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-2">
+																<span>2</span>
+																<span>(Almost)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Almost Column"><i data-toggle="modal" data-target="#delete-table-technological-almost" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-technological-almost" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+															<th class="score-3">
+																<span>3</span>
+																<span>(Target)</span>
+																<a href="javascript:void(0)" data-toggle="tooltip" title="Delete the entire Target Column"><i data-toggle="modal" data-target="#delete-table-technological-target" class="fas fa-trash-alt"></i></a>
+																<div class="modal fade" id="delete-table-technological-target" role="dialog">
+																	<div class="modal-dialog modal-xl">
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			</div>
+																			<div class="modal-body">
+																				<span>Are you sure you want to delete</span>
+																			</div>
+																			<div class="modal-footer">
+																				<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">Yes</button>
+																			</div>
+																		</div>  
+																	</div>
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th>
+																<p>T1. Is the content accurate?*</p>
+																<a class="evaluate-7">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-7">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+
+																<a class="evaluate-8">What does visualization means &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-8">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+
+																<a class="evaluate-9">Why is this question important &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-9">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																</p>
+																<a class="evaluate-11">Why is this question important &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-11">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																</p>
+															</th>
+															<th>
+																<ul class="modifi">
+																	<li data-toggle="tooltip" title="ADD"><i data-toggle="modal" data-target="#add-8" class="fas fa-plus"></i></li>
+																	<!-- Add -->
+																	<div class="modal fade" id="add-8" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question">
+																										<textarea rows="5" placeholder="Suggestion Answer"></textarea>
+																										<button type="button">Additional suggestion question & answer</button>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="EDIT"><i data-toggle="modal" data-target="#edit-8" class="fas fa-edit"></i></li>
+																	<!-- Edit -->
+																	<div class="modal fade" id="edit-8" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-edit-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here">C1. Is the content accurate?*</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question" value="To evaluate this question">
+																										<textarea rows="5" placeholder="Suggestion Answer">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0">Content is not accurate at all since it contains many incorrect facts, explanations or examples.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2">Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3">All the content is accurate, and contains correct facts, explanations, examples, and activity solutions.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="DELETE"><i data-toggle="modal" data-target="#delete-8" class="fas fa-trash-alt"></i></li>
+																	<!-- Delete -->
+																	<div class="modal fade" id="delete-8" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-del-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>C1. Is the content accurate?*</p>
+																												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																												<span class="hidden" id="example-1">
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																												</span>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i> DELETE AN ENTIRE ROW</button>
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																</ul>
+															</th>
+														</tr>
+														<tr>
+															<th>
+																<p>T2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
+																<a class="evaluate-10">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																<span class="hidden" id="example-10">
+																	Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																</span>
+															</th>
+															<th>
+																<p>
+																	Content is not sufficient to explain the topic completely.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is sufficient to explain the topic but does not include any mention of grade-appropriate relevant advances in the topic. 
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is sufficient to explain the topic and contains some description of grade-appropriate relevant advances in the topic, but the description may be incomplete or contain minor errors.
+																</p>
+															</th>
+															<th>
+																<p>
+																	Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
+																</p>
+															</th>
+															<th>
+																<ul class="modifi">
+																	<li data-toggle="tooltip" title="ADD"><i data-toggle="modal" data-target="#add-9" class="fas fa-plus"></i></li>
+																	<!-- Add -->
+																	<div class="modal fade" id="add-9" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question">
+																										<textarea rows="5" placeholder="Suggestion Answer"></textarea>
+																										<button type="button">Additional suggestion question & answer</button>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3"></textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<button type="button">Additional suggestion Q & A</button>
+																										<div class="file-uploading">
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="EDIT"><i data-toggle="modal" data-target="#edit-9" class="fas fa-edit"></i></li>
+																	<!-- Edit -->
+																	<div class="modal fade" id="edit-9" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-edit-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<textarea rows="5" placeholder="Write your question here">C1. Is the content accurate?*</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Suggestion Question" value="To evaluate this question">
+																										<textarea rows="5" placeholder="Suggestion Answer">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 0">Content is not accurate at all since it contains many incorrect facts, explanations or examples.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 1">Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 2">Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																									<th>
+																										<textarea rows="5" placeholder="Descriptor 3">All the content is accurate, and contains correct facts, explanations, examples, and activity solutions.</textarea>
+																										<input type="text" name="suggestion-question" placeholder="Text Example">
+																										<div class="file-uploading">
+																											<span class="img-file-exists">existingimage.png &nbsp;
+																												<a href="javascript:void(0)"><i class="fas fa-trash-alt"></i></a></span>
+																											<span>Upload Image file</span>
+																											<input type="file">
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																	<li data-toggle="tooltip" title="DELETE"><i data-toggle="modal" data-target="#delete-9" class="fas fa-trash-alt"></i></li>
+																	<!-- Delete -->
+																	<div class="modal fade" id="delete-9" role="dialog">
+																		<div class="modal-dialog modal-xl">
+																			<!-- Modal content-->
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<button type="button" class="close" data-dismiss="modal">&times;</button>
+																				</div>
+																				<div class="modal-body">
+																					<table class="table modifications-del-table">
+																						<thead>
+																							<thead>
+																								<tr>
+																									<th class="question-tb">
+																										<div class="score">
+																											<span>SCORE</span>
+																										</div>
+																										<div class="question">
+																											<span>QUESTION</span>
+																										</div>
+																									</th>
+																									<th class="score-0">
+																										<span>0</span>
+																										<span>(Missing)</span>
+																									</th>
+																									<th class="score-1">
+																										<span>1</span>
+																										<span>(Inadequate)</span>
+																									</th>
+																									<th class="score-2">
+																										<span>2</span>
+																										<span>(Almost)</span>
+																									</th>
+																									<th class="score-3">
+																										<span>3</span>
+																										<span>(Target)</span>
+																									</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>C1. Is the content accurate?*</p>
+																												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
+																												<span class="hidden" id="example-1">
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
+																												</span>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Content is not accurate at all since it contains many incorrect facts, explanations or examples.
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																									<th>
+																										<div class="row">
+																											<div class="col-sm-12">
+																												<p>
+																													All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
+																												</p>
+																											</div>
+																											<div class="col-sm-12">
+																												<button class="trash-btn"><i class="fas fa-trash-alt"></i></button>
+																											</div>
+																										</div>
+																									</th>
+																								</tr>
+																							</tbody>
+																						</thead>
+																					</table>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-default modifi-btn"><i data-toggle="modal" data-target="#delete-1" class="fas fa-trash-alt"></i> DELETE AN ENTIRE ROW</button>
+																					<button type="button" class="btn btn-default modifi-btn" data-dismiss="modal">DONE</button>
+																				</div>
+																			</div>  
+																		</div>
+																	</div>
+																</ul>
+															</th>
+														</tr>
+													</tbody>
+												</thead>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$(".rubric-body .nav-tabs li").click(function () {
+			$(".rubric-body .nav-tabs li.activated").removeClass("activated")
+			$(this).addClass("activated");
+		});
+
+		$(".rubric-body .nav-tabs li a").click(function () {
+			$(".rubric-body .nav-tabs li a.active_a").removeClass("active_a")
+			$(this).addClass("active_a");
+		});
+
+		$(".evaluate").click(function () {
+			$("span#example-1").slideToggle();
+		});
+
+		$(".evaluate-1").click(function () {
+			$("span#example-2").slideToggle();
+		});
+
+		$(".evaluate-3").click(function () {
+			$("span#example-3").slideToggle();
+		});
+
+		$(".evaluate-4").click(function () {
+			$("span#example-4").slideToggle();
+		});
+
+		$(".evaluate-5").click(function () {
+			$("span#example-5").slideToggle();
+		});
+
+		$(".evaluate-6").click(function () {
+			$("span#example-6").slideToggle();
+		});
+
+		$(".evaluate-7").click(function () {
+			$("span#example-7").slideToggle();
+		});
+
+		$(".evaluate-8").click(function () {
+			$("span#example-8").slideToggle();
+		});
+
+		$(".evaluate-9").click(function () {
+			$("span#example-9").slideToggle();
+		});
+
+		$(".evaluate-10").click(function () {
+			$("span#example-10").slideToggle();
+		});
+
+		$(".evaluate-11").click(function () {
+			$("span#example-11").slideToggle();
+		});
+		$('#rub-detailed').change(function(){
+		  if($(this).val() == 'LOBE LITE'){
+		  	$(".LOBE-header h4").html("LOBE LITE");
+		  	$(".rubric-body, .LOBE-header").show();
+		  }
+		  else if($(this).val() == 'LOBE PREMIUM'){
+		  	$(".LOBE-header h4").html("LOBE PREMIUM");
+		  	$(".rubric-body, .LOBE-header").show();
+		  }
+		  else{
+		  	$(".rubric-body, .LOBE-header").hide();
+		  }
+		});
+	});
+</script>
+</html>

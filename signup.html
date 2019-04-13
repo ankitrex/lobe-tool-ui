@@ -14,13 +14,14 @@
 			<h5>LEARNING OBJECT EVALUATION TOOL</h5>
 			<form action="">
 				<div class="form-group">
-     			 	<input id="email-id" type="text" class="form-control" placeholder="Email ID">
+     			 	<input id="email-id-login" type="text" class="form-control" placeholder="Email ID">
 				</div>
 				<div class="form-group">
-					<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+					<input id="password-login" type="password" class="form-control" name="password" placeholder="Password">
+					<small id="search-error" class="text-danger"></small>
 				</div>
 				<a href="javascript:void(0)" class="btn-forget">Forget Password?</a>
-				<button type="submit">Login</button>
+				<button type="button" id="login-submit">Login</button>
 				<a href="javascript:void(0)" class="signin-acc">Don't have an account? Signup</a>
 			</form>
 		</div>
@@ -32,24 +33,25 @@
 				<div class="input-group">
 					<div class="col-sm-4">
 						<h6>Email ID</h6>
-						<input id="email-id" type="text" class="form-control">
+						<input id="email-id-register" type="text" class="form-control">
 					</div>
 					<div class="col-sm-4">
 						<h6>password</h6>
-						<input id="password" type="password" class="form-control" name="password">
+						<input id="password-register" type="password" class="form-control" name="password">
 					</div>
 				</div>
 				<div class="input-group">
 					<div class="col-sm-4">
 						<h6>name</h6>
-						<input id="name" type="text" name="name" class="form-control">
+						<input id="name-register" type="text" name="name" class="form-control">
 					</div>
 					<div class="col-sm-4">
 						<h6>affiliation <a href="javascript:void(0)" data-toggle="tooltip" title="Company or Institute you are affiliated with!">i</a></h6>
-						<input id="affiliation" type="text" name="affiliation" class="form-control">
+						<input id="affiliation-register" type="text" name="affiliation" class="form-control">
 					</div>
 				</div>
 				<div class="input-group">
+					<p id="register-error" class="text-danger"></p>
 					<div class="col-sm-12">
 						<h6>Choose the role in which you want to use the LOBE tool</h6>
 						<ul class="role-ul">
@@ -69,7 +71,7 @@
 					</div>
 				</div>
 				<div class="col-sm-12">
-					<button type="submit">Submit</button>
+					<button type="button" id="register-submit">Submit</button>
 				</div>
 				<div class="col-sm-12">
 					<a class="haveanacc" href="javascript:void(0)" class="signin-acc">Already have an account? Signin</a>
@@ -122,6 +124,92 @@
 		$(".role-ul label").click(function(){
   			$(".role-ul label.selected").removeClass("selected");
   			$(this).addClass("selected"); 
+		});
+
+		var rubrikGeneratorId, rubrikEvaluatorId;
+
+		$.ajax({
+			type: 'GET',
+			url: 'http://localhost:8080/open/get-roles',
+			dataType: 'json',
+			success: function(response){
+				response.data.forEach(function(role){
+					if(role.name=='generator'){
+						rubrikGeneratorId=role.id;
+					}
+					else if(role.name=='evaluator'){
+						rubrikEvaluatorId=role.id;
+					}
+				});
+			}
+		});
+
+		$('#register-submit').click(function(){
+			$('.text-danger').html('');
+
+			if(rubrikGeneratorId==undefined || rubrikEvaluatorId==undefined){
+				console.log('Role IDs not available');
+			}
+			else{
+				var userName = $('#email-id-register').val();
+				var password = $('#password-register').val();
+				var name = $('#name-register').val();
+				var affiliation = $('#affiliation-register').val();
+				var role = $('input[name=options]:checked').val();
+				var roleId = '';
+				if(role=='Generate'){
+					roleId = rubrikGeneratorId;
+				}
+				else if(role=='Evaluate'){
+					 roleId = rubrikEvaluatorId;
+				}
+				$.ajax({
+					type: 'POST',
+					url: 'http://localhost:8080/api/user/register',
+					data: { 'email': userName, 'password': password, 'name': name, 'affiliation': affiliation, 'roleId': roleId },
+					dataType: 'json',
+					success: function(response){
+						location.reload();
+					},
+					error: function(error){
+						var errorResp = error.responseJSON;
+						console.log(errorResp);
+						$('#register-error').html(errorResp.message);
+					}
+				});
+			}
+		});
+
+		$('#login-submit').click(function(){
+			$('.text-danger').html('');
+
+			var userName = $('#email-id-login').val();
+			var password = $('#password-login').val();
+			$.ajax({
+				type: 'GET',
+				url: 'http://localhost:8080/api/user/login',
+				data: { 'email': userName, 'password': password },
+				dataType: 'json',
+				success: function(response){
+					if(response.code==200){
+						localStorage.setItem("accessToken", response.accessToken);
+						localStorage.setItem("refreshToken", response.refreshToken);
+						var role=response.role;
+						if(role=="generator")
+							window.location.replace("generator-dashboard.html");
+						else if(role=="evaluator"){
+							window.location.replace("evaluator-dashboard.html");
+						}
+						else{
+							console.log("new role");
+							console.log("response");
+						}
+					}
+					else{
+						$('#search-error').html(response.message);
+					}
+				}
+			});
 		});
 	});
 </script>

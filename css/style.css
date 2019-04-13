@@ -21,6 +21,10 @@ input:focus, textarea:focus, button:focus, button:active, a:focus, a:active{
     -moz-box-shadow: none !important;
     box-shadow: none !important;
 }
+select.form-control:focus{
+	border: 1px solid #49468e;
+	box-shadow: none;
+}
 .disabled-btn{
 	border: none !important;
 	background-color: #d7d7d7 !important;
@@ -128,7 +132,18 @@ input:focus, textarea:focus, button:focus, button:active, a:focus, a:active{
 	background-color: #63468e;
 	color: #fff;
 }
-
+.admin-body .signup-mainbody{
+	padding-top: 3%;
+}
+.admin-body .admin-heading{
+	width: 40%;
+    margin: 0 auto 2%;
+    background: #63468e;
+    text-align: left;
+    padding: 1% 2%;
+    color: #fff;
+}
+.admin-heading h1{font-family: Monts-reg;}
 /*------------------------------------------------SIGN IN-----------------------------------------------------------*/
 .signin{
 	background-color: #fff;
@@ -354,7 +369,7 @@ input:focus, textarea:focus, button:focus, button:active, a:focus, a:active{
 }
 .dashboard-body .dashboard-panel{
 	background-color: #49468e;
-	padding: 7% 15px 17%;
+	padding: 8% 15px 17%;
 	text-align: center;
 	height: auto;
 }
@@ -1170,6 +1185,19 @@ input:focus, textarea:focus, button:focus, button:active, a:focus, a:active{
 	border: none;
 	cursor: pointer;
 }
+.new-results-cnt .shadow-div{
+	height: 100%;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+}
+.new-results .note{
+	font: 16px/20px Monts-reg;
+	color: #63468e;
+	display: block;
+    padding: 0 5px 15px;
+}
 /*------------------------------------------------Detailed Scores-------------------------------------------------------*/
 .dashboard-body .detail-form-results{height: auto;}
 .dashboard-body .go-bck-btn a{
@@ -1222,7 +1250,6 @@ input:focus, textarea:focus, button:focus, button:active, a:focus, a:active{
 }
 .new-detail-cnt table .question-tb{width: 20%;}
 .new-detail-cnt table .score-0, .new-detail-cnt table .score-1, .new-detail-cnt table .score-2, .new-detail-cnt table .score-3{width: 20%;}
-
 /*------------------------------------------------Summary Table-------------------------------------------------------*/
 .dashboard-body .summary-form-results{height: auto;}
 .dashboard-body .go-bck-btn a{
@@ -1641,3 +1668,385 @@ input:focus, textarea:focus, button:focus, button:active, a:focus, a:active{
     transition: .3s ease;
     display: inline-block;
 }
+/*-------------------------------------------Admin Panel-----------------------------------------------------------------*/
+.dashboard-body .admin-panel{
+	background-color: #efefef;
+	padding: 95px 15px;
+
+}
+.dashboard-body .admin-panel h4{
+	font: 40px/44px 'Orator';
+	color: #63468e;
+	margin: 0;
+	padding: 30px 0 20px;
+	width: 100%;
+}
+.admin-panel .new-admin{padding: 1% 3% 4%;}
+.new-admin .admin-cnt{display: flex;}
+.admin-cnt .panel-box{flex: 1;}
+.new-admin .panel-box{
+	padding: 15% 8% 30%;
+	background-color: #49468e;
+}
+.new-admin .panel-box h6{
+	display: block;
+	font: 18px/28px Monts-bld;
+	color: #fff;
+}
+.new-admin .panel-box span{
+	display: block;
+	font: 16px/20px Monts-reg;
+	color: #fff;
+}
+/*-------------------------------------------User Details-----------------------------------------------------------------*/
+.dashboard-body .user-panel{
+	background-color: #efefef;
+	padding: 15px 15px;
+
+}
+.dashboard-body .user-panel h4{
+	font: 40px/44px 'Monts-reg';
+	color: #63468e;
+	margin: 0;
+	padding: 30px 0 20px;
+	width: 100%;
+	position: relative;
+}
+.dashboard-body .user-panel h4:after{
+	position: absolute;
+	content: '';
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #63468e;
+}
+.user-panel .new-user{padding: 1% 15px 4%;}
+.new-user table{
+	background-color: #fff;
+	margin: 15px 0 0;
+}
+.new-user img{width: 60%;}
+.new-user table thead th{
+	font: 19px/23px Monts-bld;
+	color: #63468e;
+}
+.new-user table tbody td{
+	font: 16px/20px Monts-reg;
+	color: #63468e;
+}
+.email-dialog h6{
+	font: 30px/34px 'Monts-reg';
+	color: #63468e;
+	padding: 20px 0 0px;
+}
+.email-dialog input{
+	width: 100%;
+	border: 1px solid #63468e;
+	padding: 8px;
+	margin-bottom: 10px;
+}
+/*-------------------------------------------Tool Usage-----------------------------------------------------------------*/
+.dashboard-body .tool-panel{
+	background-color: #efefef;
+	padding: 15px 15px;
+
+}
+.dashboard-body .tool-panel h4{
+	font: 40px/44px 'Monts-reg';
+	color: #63468e;
+	margin: 0;
+	padding: 30px 0 20px;
+	width: 100%;
+	position: relative;
+}
+.dashboard-body .tool-panel h4:after{
+	position: absolute;
+	content: '';
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #63468e;
+}
+.dashboard-body .tool-panel h6{
+	font: 20px/24px 'Monts-reg';
+	color: #63468e;
+	margin: 0;
+	padding: 30px 0 10px;
+	width: 100%;
+}
+.tool-panel .new-tool{padding: 1% 15px 4%;}
+.new-tool table{
+	background-color: #fff;
+	margin: 15px 0 0;
+}
+.new-tool img{width: 60%;}
+.new-tool table thead{
+	background-color: #63468e;
+}
+.new-tool table thead th{
+	font: 19px/23px Monts-bld;
+	color: #fff;
+}
+.new-tool table tbody td{
+	font: 16px/20px Monts-reg;
+	color: #63468e;
+}
+.new-tool .tool_tb_username{width: 18%;}
+.new-tool .tool_tb_date, .new-tool .tool_tb_rubric{width: 18%;}
+.new-tool table span, .new-tool table a{
+	display: block;
+	padding: 10px 0;
+	color: #63468e;
+}
+.new-tool table span{margin-bottom: 1rem;}
+.tool-panel .nav-tabs li a{color: #63478e;}
+.tool-panel .nav-tabs li.activated{
+	background-color: #63468e;
+}
+.tool-panel .nav-tabs li a.active_a{
+    color: #fff;
+}
+.tool-panel table tbody a{padding: 10px 0; margin-bottom: 1rem;}
+.tool-panel select {
+	font: 13px/17px Monts-reg;
+	border: 1px solid #49468e;
+	padding: 5px 2px;
+}
+/*-------------------------------------------Analytics Admin Panel-----------------------------------------------------------------*/
+.dashboard-body .analytics-admin-panel{
+	background-color: #efefef;
+	padding: 15px 15px;
+
+}
+.dashboard-body .analytics-admin-heading{
+	border-bottom: 1px solid #63468e;
+	padding: 30px 0 20px;
+}
+.dashboard-body .analytics-admin-panel h4{
+	font: 40px/44px 'Monts-reg';
+	color: #63468e;
+	margin: 0;
+	display: inline-block;
+}
+.dashboard-body .analytics-admin-heading a{
+	font: 18px/22px Monts-reg;
+	color: #fff;
+	border-radius: 50px;
+	padding: 8px 24px;
+	background-color: #49468e;
+	float: right;
+}
+.dashboard-body .analytics-admin-panel h6{
+	font: 20px/24px 'Monts-reg';
+	color: #63468e;
+	margin: 0;
+	padding: 30px 0 10px;
+	width: 100%;
+}
+.analytics-admin-panel .new-analytics-admin{padding: 1% 15px 4%;}
+.new-analytics-admin table{
+	background-color: #fff;
+	margin: 15px 0 0;
+}
+.new-analytics-admin img{width: 60%;}
+.new-analytics-admin table thead{
+	background-color: #63468e;
+}
+.new-analytics-admin table thead th{
+	font: 19px/23px Monts-bld;
+	color: #fff;
+}
+.new-analytics-admin table tbody td{
+	font: 16px/20px Monts-reg;
+	color: #63468e;
+}
+.new-analytics-admin table span, .new-analytics-admin table a{
+	display: block;
+	padding: 5px 0;
+	color: #63468e;
+}
+.new-analytics-admin table .analytics-admin-name{width: 15%;}
+.new-analytics-admin table .analytics-admin-rubric{width: 20%;}
+.new-analytics-admin table .analytics-admin-detail, .new-analytics-admin table .analytics-admin-summary,
+.new-analytics-admin table .analytics-admin-str-weak, .new-analytics-admin table .analytics-admin-comp{width: 15%;}
+.analytics-admin-panel select {
+	font: 13px/17px Monts-reg;
+	border: 1px solid #49468e;
+	padding: 5px 2px;
+}
+/*-------------------------------------------Rubric Modifications Panel-----------------------------------------------------------------*/
+.rubric-modification-heading, .rubric-body{display: none;}
+.dashboard-body .rubric-modification-panel{
+	background-color: #efefef;
+	padding: 15px 15px;
+
+}
+.dashboard-body .rubric-modification-heading{
+	border-bottom: 1px solid #63468e;
+	padding: 30px 0 20px;
+}
+.dashboard-body .rubric-modification-panel h4{
+	font: 40px/44px 'Monts-reg';
+	color: #63468e;
+	margin: 0;
+	display: inline-block;
+}
+.dashboard-body .rubric-modification-heading a{
+	font: 18px/22px Monts-reg;
+	color: #fff;
+	border-radius: 50px;
+	padding: 8px 24px;
+	background-color: #49468e;
+	float: right;
+}
+.dashboard-body .rubric-modification-panel h6{
+	font: 20px/24px 'Monts-reg';
+	color: #63468e;
+	margin: 0;
+	padding: 30px 0 10px;
+	width: 100%;
+}
+.rubric-modification-panel .new-rubric-modification{padding: 1% 15px 4%;}
+.new-rubric-modification table{
+	background-color: #fff;
+	margin: 15px 0 0;
+}
+.new-rubric-modification img{width: 60%;}
+.rubric-body .nav-tabs li a{color: #63478e;}
+.rubric-body .nav-tabs li.activated{
+	background-color: #63468e;
+}
+.rubric-body .nav-tabs li a.active_a{
+    color: #fff;
+}
+.rubric-body .modifi{
+	list-style: none;
+	padding: 12px 8px;
+    background: #63468e;
+    border-radius: 30px;
+    color: #fff;
+}
+.rubric-body .modifi li{padding: 5px; cursor: pointer;}
+.modifications-table thead th{padding: 8px !important;}
+.modifications-table textarea, .modifications-table input[type="text"]{
+	width: 100%;
+	padding: 8px;
+	font: 14px/19px Monts-reg;
+	color: #63468e;
+	resize: none;
+	margin-bottom: 8px;
+}
+.modifications-table input[type="file"]{
+	width: 100%;
+	color: #000;
+}
+.modifications-table .file-uploading{
+	padding: 25px 0;
+	width: 100%;
+}
+.file-uploading span{
+	font: 15px/19px Monts-reg;
+	color: #49468e;
+	padding-bottom: 10px;
+}
+.modifications-table button{
+	background-color: #49468e;
+	border: none;
+	color: #fff;
+	font: 15px/19px Monts-reg;
+	padding: 8px 16px;
+	width: 100%;
+	cursor: pointer;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    border-radius: 3px;
+}
+.modifi-btn{
+	background-color: #49468e;
+	border: none;
+	color: #fff;
+	font: 15px/19px Monts-reg;
+	padding: 8px 26px;
+	cursor: pointer;
+	border-radius: 0px;
+}
+.modifi-btn:hover{
+	color: #fff;
+}
+.modifications-edit-table thead th{padding: 8px !important;}
+.modifications-edit-table textarea, .modifications-edit-table input[type="text"]{
+	width: 100%;
+	padding: 8px;
+	font: 14px/19px Monts-reg;
+	color: #63468e;
+	resize: none;
+	margin-bottom: 8px;
+}
+.modifications-edit-table input[type="file"]{
+	width: 100%;
+	color: #000;
+}
+.modifications-edit-table .file-uploading{
+	padding: 25px 0;
+	width: 100%;
+}
+.file-uploading span{
+	font: 15px/19px Monts-reg;
+	color: #49468e;
+	padding-bottom: 10px;
+}
+.modifications-edit-table button{
+	background-color: #49468e;
+	border: none;
+	color: #fff;
+	font: 15px/19px Monts-reg;
+	padding: 8px 16px;
+	width: 100%;
+	cursor: pointer;
+}
+.modifications-del-table thead th{padding: 8px !important;}
+.modifications-del-table textarea, .modifications-del-table input[type="text"]{
+	width: 100%;
+	padding: 8px;
+	font: 14px/19px Monts-reg;
+	color: #63468e;
+	resize: none;
+	margin-bottom: 8px;
+}
+.modifications-del-table input[type="file"]{
+	width: 100%;
+	color: #000;
+}
+.modifications-del-table .file-uploading{
+	padding: 25px 0;
+	width: 100%;
+}
+.modifications-del-table button{
+	background-color: #49468e;
+	border: none;
+	color: #fff;
+	font: 15px/19px Monts-reg;
+	padding: 8px 16px;
+	width: 100%;
+	cursor: pointer;
+}
+.modifications-del-table .trash-btn{
+	background-color: transparent;
+	color: #49468e;
+	font-size: 20px;
+}
+.new-rubric-modification .img-file-exists{
+	font: 15px/19px Monts-reg;
+    color: #fff;
+    padding: 8px 5px;
+    margin-bottom: 15px;
+    background-color: rgba(99,71,142,0.3);
+}
+.img-file-exists a{display: inline !important;}
+.new-rubric-modification .new-detail-cnt table .score-0, .new-rubric-modification .new-detail-cnt table .score-1, 
+.new-rubric-modification .new-detail-cnt table .score-2, .new-rubric-modification .new-detail-cnt table .score-3{text-align: center;}
+.new-rubric-modification .new-detail-cnt table .score-0 i, .new-rubric-modification .new-detail-cnt table .score-1 i, 
+.new-rubric-modification .new-detail-cnt table .score-2 i, .new-rubric-modification .new-detail-cnt table .score-3 i{font-size: 25px; color: #fff;}
+.new-rubric-modification .new-detail-cnt table .score-0 .modal-body span, .new-rubric-modification .new-detail-cnt table .score-1 .modal-body span, 
+.new-rubric-modification .new-detail-cnt table .score-2 .modal-body span, .new-rubric-modification .new-detail-cnt table .score-3 .modal-body span{ color: #63468e; }

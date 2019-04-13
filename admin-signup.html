@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE - SIGN UP/SIGN IN</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+</head>
+<body class="admin-body">
+	<!-- Sign Up div -->
+	<section class="signup-mainbody">
+		<div class="admin-heading">
+			<h1>Admin Panel</h1>
+		</div>
+		<div class="signup container">
+			<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+			<form action="">
+				<div class="form-group">
+     			 	<input id="email-id" type="text" class="form-control" placeholder="Email ID">
+				</div>
+				<div class="form-group">
+					<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+				</div>
+				<a href="javascript:void(0)" class="btn-forget">Forget Password?</a>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('.signin-acc').click(function () {
+			$('.signin').show();
+			$('.signup').hide();
+		});
+
+		$('.haveanacc').click(function () {
+			$('.signup').show();
+			$('.signin').hide();
+		});
+
+		$('.btn-forget').click(function () {
+			$('.signup').hide();
+			$('.forget-paas').show();
+		});
+
+		$('.go-back').click(function () {
+			$('.forget-paas').hide();
+			$('.signup').show();
+		});
+
+		$('[data-toggle="tooltip"]').tooltip(); 
+
+		$(".role-ul label").click(function(){
+  			$(".role-ul label.selected").removeClass("selected");
+  			$(this).addClass("selected"); 
+		});
+	});
+</script>
+</html>

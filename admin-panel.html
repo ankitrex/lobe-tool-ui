@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- ADMIN PANEL</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Side Panel -->
+				<div class="col-sm-3 dashboard-panel">
+					<div class="row">
+						<div class="col-sm-12">
+							<img src="imgs/Ellipse.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>ADMIN PANEL</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="javascript:void(0)" class="disabled-btn">Dashboard</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Main Content body -->
+				<div class="col-sm-9 admin-panel">
+					<div class="row new-admin">
+						<div class="col-sm-4 admin-cnt">
+							<div class="panel-box">
+								<a href="user-details.html">
+									<h6>User Details</h6>
+									<span>User contact details and sending mails.</span>
+								</a>
+							</div>
+						</div>
+						<div class="col-sm-4 admin-cnt">
+							<div class="panel-box">
+								<a href="tool-usage.html">
+									<h6>Tool Usage</h6>
+									<span>Rubric creation, generation and date of generation.</span>
+								</a>
+							</div>
+						</div>
+						<div class="col-sm-4 admin-cnt">
+							<div class="panel-box">
+								<a href="analytics-admin.html">
+									<h6>Analytics Panel</h6>
+									<span>Analytics review and which user has used most option.</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="row new-admin">
+						<div class="col-sm-4 admin-cnt">
+							<div class="panel-box">
+								<a href="rubric-modification.html">
+									<h6>Rubric Modification</h6>
+									<span>Updating or deleting the rubric question</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+</html>

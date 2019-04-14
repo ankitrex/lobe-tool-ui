@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>LOBE- Evaluator Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+</head>
+<body>
+	<section class="dashboard-body">
+		<div class="container-fluid">
+			<div class="row heading">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-9">
+					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Main Content body -->
+				<div class="col-sm-12 lite_cont">
+					<div class="row">
+						<div class="col-sm-2">
+							<img class="landing_logo" src="imgs/lobe_lite.jpg">
+						</div>
+						<div class="col-sm-9">
+							<h3 class="landing_header">Learning object evaluation instrument (LOBE)</h3>
+						</div>
+					</div>
+					<h5>What is LOBE instrument ?</h5>
+					<ul>
+						<li>LOBE is a 4-scale rubric to evaluate the teaching-learning effectiveness of existing e-learning content i.e. learning objects.</li>
+						<li>LOBE measures the quality of the learning objects along four dimensions - Content quality, Pedagogical alignment, Design efficacy and Technology integration.</li>
+						<li>A learning object is a multimedia teaching-learning resource that contains dynamic visualizations with voice-over (i.e. animations/simulations/videos) as its core component and either all or a subset of the following components :
+							<ul>
+								<br/>
+								<li>dynamic visualizations with voice-over (i.e. animations/simulations/videos).</li>
+								<li>activities.</li>
+								<li>set of assessment questions.</li>
+								<li>solved example.</li>
+								<li>stepwise lesson plans for teachers.</li>
+							</ul>
+						</li>
+						<li>The output from the LOBE Tool are evaluation analytics on the  scores generated through the rubric like Detailed Report or Strength-Weakness analysis over a set of learning objects. </li>
+					</ul>
+
+					<h5>Who can use LOBE for what ?</h5>
+					<span>If you are an e-learning company, you can use LOBE when you want to :</span>
+					<ul>
+						<li>Find the quality assessment scores for your learning objects in terms of Content quality, Pedagogical alignment, Design efficacy and Technology integration</li>
+						<li>Do strength-weakness analysis for a set of learning objects i.e.</li>
+					</ul>
+					<span>If you are an educator (HOD/Principal of a school), you can use LOBE when you want to :</span>
+					<ul>
+						<li>Compare between multiple learning objects from different repositories.</li>
+						<li>Evaluate the quality of learning objects from a single repository.</li>
+					</ul>
+
+					<h5>What is the scope of LOBE ?</h5>
+					<span>LOBE is scoped to learning objects which have dynamic visualizations (simulations/animations/videos) as their core component. Also,</span>
+					<ul>
+						<li>LOBE evaluates learning objects after they have been created.</li>
+						<li>The granularity level of a learning object is taken as a single topic from a textbook chapter, that typically contains 4 to 6 topics</li>
+						<li>LOBE is currently designed for topics in STEM domains</li>
+						<li>It has currently been tested for various topics at primary, secondary and high school levels. It may be applicable for college-level STEM topics but has not been tested yet.</li>
+						<li>LOBE does not evaluate criterion like 'metadata retrieval'.</li>
+					</ul>
+					<a href="signup.html">START</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script><!--JQuery file-->
+<script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
+<script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$(".evaluator-panel .new-evaluator h4").click(function () {
+			$(".new-evaluator-cnt").slideToggle();
+			$(".evaluator-panel .new-evaluator h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .incomp-rubric h4").click(function () {
+			$(".incomp-rubric-cnt").slideToggle();
+			$(".evaluator-panel .incomp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .comp-rubric h4").click(function () {
+			$(".comp-rubric-cnt").slideToggle();
+			$(".evaluator-panel .comp-rubric h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .assign h4").click(function () {
+			$(".assign-cnt").slideToggle();
+			$(".evaluator-panel .assign h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .role h4").click(function () {
+			$(".role-cnt").slideToggle();
+			$(".evaluator-panel .role h4 i").toggleClass("fa-rotate-90");
+		});
+
+		$(".evaluator-panel .track h4").click(function () {
+			$(".track-cnt").slideToggle();
+			$(".evaluator-panel .track h4 i").toggleClass("fa-rotate-90");
+		});
+	});
+</script>
+</html>

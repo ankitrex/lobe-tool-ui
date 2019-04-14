@@ -23,10 +23,10 @@
 				</div>
 				<div class="col-sm-1"></div>
 				<div class="col-sm-1">
-					<!-- <a href="javascript:void(0)">SAVE</a> -->
+					<a href="javascript:void(0)" id="submit">SUBMIT</a>
 				</div>
 				<div class="col-sm-1">
-					<a href="javascript:void(0)">LOGOUT</a>
+					<a href="javascript:void(0)" id="logout">LOGOUT</a>
 				</div>
 			</div>
 			<div class="row">
@@ -35,528 +35,108 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="row">
-								<form action="">
-									<div class="col-sm-12 table-panel">
-										<ul class="nav nav-tabs">
-											<li class="active cont-li">Content Quality</li>
-											<li class="peda-li">Pedagogical Alignment</li>
-											<li class="des-li">Design Efficacy</li>
-											<li class="tech-li">Technological Integration</li>
-										</ul>
-										<div class="tab-content">
-											<div id="content" class="tab-pane active">
-												<table class="table">
-													<thead>
-														<thead>
-															<tr>
-																<th class="question-tb">
-																	<div class="score">
-																		<span>SCORE</span>
-																	</div>
-																	<div class="question">
-																		<span>QUESTION</span>
-																	</div>
-																</th>
-																<th class="score-0">
-																	<span>0</span>
-																	<span>(Missing)</span>
-																</th>
-																<th class="score-1">
-																	<span>1</span>
-																	<span>(Inadequate)</span>
-																</th>
-																<th class="score-2">
-																	<span>2</span>
-																	<span>(Almost)</span>
-																</th>
-																<th class="score-3">
-																	<span>3</span>
-																	<span>(Target)</span>
-																</th>
-																<th class="comments-tb-head"></th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<th>
-																	<p>C1. Is the content accurate?*</p>
-																	<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-1">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		Content is not accurate at all since it contains many incorrect facts, explanations or examples.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
-																	</p>
-																</th>
-																<th class="comments-tb">
-																	<i class="fas fa-comment-alt" data-toggle="tooltip" title="Comment Box (for Evaluator Only) to enter Remarks"></i>
-																</th>
-															</tr>
-															<tr>
-																<th>
-																	<p>C2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
-																	<a class="evaluate-1">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-2">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		Content is not sufficient to explain the topic completely.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is sufficient to explain the topic but does not include any mention of grade-appropriate relevant advances in the topic. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is sufficient to explain the topic and contains some description of grade-appropriate relevant advances in the topic, but the description may be incomplete or contain minor errors.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
-																	</p>
-																</th>
-																<th class="comments-tb">
-																	<i class="fas fa-comment-alt" data-toggle="tooltip" title="Comment Box (for Evaluator Only) to enter Remarks"></i>
-																</th>
-															</tr>
-														</tbody>
-													</thead>
-												</table>
-												<div class="nextbtn">
-													<a href="javascript:void(0)">NEXT</a>
+								<div class="col-sm-12 table-panel">
+									<ul class="nav nav-tabs">
+										<li class="active cont-li">Content Quality</li>
+										<li class="peda-li">Pedagogical Alignment</li>
+										<li class="des-li">Design Efficacy</li>
+										<li class="tech-li">Technological Integration</li>
+									</ul>
+									<div class="tab-content">
+										
+									</div>
+									<!-- Instruction -->
+									<div class="modal fade" id="instructions" role="dialog">
+										<div class="modal-dialog modal-lg">
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
 												</div>
-											</div>
-											<div id="pedagogical" class="tab-pane fade">
-												<table class="table">
-													<thead>
-														<thead>
-															<tr>
-																<th class="question-tb">
-																	<div class="score">
-																		<span>SCORE</span>
-																	</div>
-																	<div class="question">
-																		<span>QUESTION</span>
-																	</div>
-																</th>
-																<th class="score-0">
-																	<span>0</span>
-																	<span>(Missing)</span>
-																</th>
-																<th class="score-1">
-																	<span>1</span>
-																	<span>(Inadequate)</span>
-																</th>
-																<th class="score-2">
-																	<span>2</span>
-																	<span>(Almost)</span>
-																</th>
-																<th class="score-3">
-																	<span>3</span>
-																	<span>(Target)</span>
-																</th>
-																<th class="comments-tb-head"></th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<th>
-																	<p>P1. Is the content accurate?*</p>
-																	<a class="evaluate-3">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-3">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		Content is not accurate at all since it contains many incorrect facts, explanations or examples.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
-																	</p>
-																</th>
-																<th class="comments-tb">
-																	<i class="fas fa-comment-alt" data-toggle="tooltip" title="Comment Box (for Evaluator Only) to enter Remarks"></i>
-																</th>
-															</tr>
-															<tr>
-																<th>
-																	<p>P2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
-																	<a class="evaluate-4">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-4">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		Content is not sufficient to explain the topic completely.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is sufficient to explain the topic but does not include any mention of grade-appropriate relevant advances in the topic. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is sufficient to explain the topic and contains some description of grade-appropriate relevant advances in the topic, but the description may be incomplete or contain minor errors.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
-																	</p>
-																</th>
-																<th class="comments-tb">
-																	<i class="fas fa-comment-alt" data-toggle="tooltip" title="Comment Box (for Evaluator Only) to enter Remarks"></i>
-																</th>
-															</tr>
-														</tbody>
-													</thead>
-												</table>
-												<div class="nextbtn">
-													<a href="javascript:void(0)">NEXT</a>
+												<div class="modal-body">
+													<span>STEP 1 : TICK the questions you want to keep</span>
+
+													<span>STEP 2 : CLICK ON THE NEXT BUTTON TO PROCEED THE QUESTIONS OF THE QUALTY DIMENSIONS</span>
+
+													<span>STEP 3 : CLICK ON THE SUBMIT BUTTON TO CONFIRM THE 
+													COMPLETION RUBRIC</span>
 												</div>
-											</div>
-											<div id="design" class="tab-pane fade">
-												<table class="table">
-													<thead>
-														<thead>
-															<tr>
-																<th class="question-tb">
-																	<div class="score">
-																		<span>SCORE</span>
-																	</div>
-																	<div class="question">
-																		<span>QUESTION</span>
-																	</div>
-																</th>
-																<th class="score-0">
-																	<span>0</span>
-																	<span>(Missing)</span>
-																</th>
-																<th class="score-1">
-																	<span>1</span>
-																	<span>(Inadequate)</span>
-																</th>
-																<th class="score-2">
-																	<span>2</span>
-																	<span>(Almost)</span>
-																</th>
-																<th class="score-3">
-																	<span>3</span>
-																	<span>(Target)</span>
-																</th>
-																<th class="comments-tb-head"></th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<th>
-																	<p>D1. Is the content accurate?*</p>
-																	<a class="evaluate-5">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-5">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		Content is not accurate at all since it contains many incorrect facts, explanations or examples.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
-																	</p>
-																	<!-- Images Slideshow questions -->
-																	<a href="imgs/img1.jpg" id="sliderimgs" class="evaluate-3 html5lightbox" data-group="mygroup" data-thumbnail="imgs/img1.jpg" data-description="Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>
-																</th>
-																<th>
-																	<p>
-																		Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
-																	</p>
-																</th>
-																<th class="comments-tb">
-																	<i class="fas fa-comment-alt" data-toggle="tooltip" title="Comment Box (for Evaluator Only) to enter Remarks"></i>
-																</th>
-															</tr>
-															<tr>
-																<th>
-																	<p>D2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
-																	<a class="evaluate-6">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-6">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		Content is not sufficient to explain the topic completely.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is sufficient to explain the topic but does not include any mention of grade-appropriate relevant advances in the topic. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is sufficient to explain the topic and contains some description of grade-appropriate relevant advances in the topic, but the description may be incomplete or contain minor errors.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
-																	</p>
-																	<!-- Images Slideshow questions -->
-																	<a href="imgs/img1.jpg" id="sliderimgs" class="evaluate-3 html5lightbox" data-group="mygroup" data-thumbnail="imgs/img1.jpg" data-description="Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>
-
-																	<a href="imgs/img2.jpg" id="sliderimgs" class="html5lightbox slide-thumbsimgs" data-group="mygroup" data-thumbnail="imgs/img2.jpg"></a>
-																</th>
-																<th class="comments-tb">
-																	<i class="fas fa-comment-alt" data-toggle="tooltip" title="Comment Box (for Evaluator Only) to enter Remarks"></i>
-																</th>
-															</tr>
-														</tbody>
-													</thead>
-												</table>
-												<div class="nextbtn">
-													<a href="javascript:void(0)">NEXT</a>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">OKAY</button>
 												</div>
-											</div>
-											<div id="technological" class="tab-pane fade">
-												<table class="table">
-													<thead>
-														<thead>
-															<tr>
-																<th class="question-tb">
-																	<div class="score">
-																		<span>SCORE</span>
-																	</div>
-																	<div class="question">
-																		<span>QUESTION</span>
-																	</div>
-																</th>
-																<th class="score-0">
-																	<span>0</span>
-																	<span>(Missing)</span>
-																</th>
-																<th class="score-1">
-																	<span>1</span>
-																	<span>(Inadequate)</span>
-																</th>
-																<th class="score-2">
-																	<span>2</span>
-																	<span>(Almost)</span>
-																</th>
-																<th class="score-3">
-																	<span>3</span>
-																	<span>(Target)</span>
-																</th>
-																<th class="comments-tb-head"></th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<th>
-																	<p>T1. Is the content accurate?*</p>
-																	<a class="evaluate-7">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-7">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-
-																	<a class="evaluate-8">What does visualization means &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-8">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-
-																	<a class="evaluate-9">Why is this question important &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-9">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		Content is not accurate at all since it contains many incorrect facts, explanations or examples.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Most of the content is accurate and contains correct facts, explanations and examples, and presents accurate activity solutions. However, there may be a few minor errors; or the way the content is presented may lead to minor ambiguity. 
-																	</p>
-																	<a class="evaluate-11">Why is this question important &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-11">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		All the content is accurate, and contains correct facts, explanations, examples, and activity solutions. 
-																	</p>
-																</th>
-																<th class="comments-tb">
-																	<i class="fas fa-comment-alt" data-toggle="tooltip" title="Comment Box (for Evaluator Only) to enter Remarks"></i>
-																</th>
-															</tr>
-															<tr>
-																<th>
-																	<p>T2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
-																	<a class="evaluate-10">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-																	<span class="hidden" id="example-10">
-																		Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-																	</span>
-																</th>
-																<th>
-																	<p>
-																		Content is not sufficient to explain the topic completely.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is sufficient to explain the topic but does not include any mention of grade-appropriate relevant advances in the topic. 
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is sufficient to explain the topic and contains some description of grade-appropriate relevant advances in the topic, but the description may be incomplete or contain minor errors.
-																	</p>
-																</th>
-																<th>
-																	<p>
-																		Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
-																	</p>
-																</th>
-																<th class="comments-tb">
-																	<i class="fas fa-comment-alt" data-toggle="tooltip" title="Comment Box (for Evaluator Only) to enter Remarks"></i>
-																</th>
-															</tr>
-														</tbody>
-													</thead>
-												</table>
-												<div class="nextbtn">
-													<button type="button">SUBMIT</button>
-												</div>
-											</div>
-										</div>
-										<!-- Instruction -->
-										<div class="modal fade" id="instructions" role="dialog">
-											<div class="modal-dialog modal-lg">
-												<!-- Modal content-->
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal">&times;</button>
-													</div>
-													<div class="modal-body">
-														<span>STEP 1 : TICK the questions you want to keep</span>
-
-														<span>STEP 2 : CLICK ON THE NEXT BUTTON TO PROCEED THE QUESTIONS OF THE QUALTY DIMENSIONS</span>
-
-														<span>STEP 3 : CLICK ON THE SUBMIT BUTTON TO CONFIRM THE 
-														COMPLETION RUBRIC</span>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">OKAY</button>
-													</div>
-												</div>  
-											</div>
-										</div>
-										<!-- SAVE -->
-										<div class="modal fade" id="save" role="dialog">
-											<div class="modal-dialog modal-lg">
-												<!-- Modal content-->
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal">&times;</button>
-													</div>
-													<div class="modal-body">
-														<span>Your work has been saved successfully</span>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">OKAY</button>
-													</div>
-												</div>  
-											</div>
-										</div>
-										<!-- Completed -->
-										<div class="modal fade" id="complete" role="dialog">
-											<div class="modal-dialog modal-lg">
-												<!-- Modal content-->
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal">&times;</button>
-													</div>
-													<div class="modal-body">
-														<span>YOUR WORK HAS BEEN COMPLETED SUCCESSFULLY AND IT HAS BEEN SAVED</span>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">OKAY</button>
-													</div>
-												</div>  
-											</div>
-										</div>
-										<!-- Log Out -->
-										<div class="modal fade" id="logout" role="dialog">
-											<div class="modal-dialog modal-lg">
-												<!-- Modal content-->
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal">&times;</button>
-													</div>
-													<div class="modal-body">
-														<span>Please save your work, then logout</span>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default">SAVE</button>
-														<button type="button" class="btn btn-default">LOGOUT</button>
-													</div>
-												</div>  
-											</div>
+											</div>  
 										</div>
 									</div>
-								</form>
+									<!-- SAVE -->
+									<div class="modal fade" id="save" role="dialog">
+										<div class="modal-dialog modal-lg">
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<div class="modal-body">
+													<span>Your work has been saved successfully</span>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">OKAY</button>
+												</div>
+											</div>  
+										</div>
+									</div>
+									<!-- prmpt -->
+									<div class="modal fade" id="prompt" role="dialog">
+										<div class="modal-dialog modal-lg">
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<div class="modal-body">
+													<span>Do you want to evaluate group activity ?</span>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn nextbtn-modal" data-dismiss="modal" id="optYes">YES</button>
+													<button type="button" class="btn nextbtn-modal" data-dismiss="modal" id="optNo">NO</button>
+												</div>
+											</div>  
+										</div>
+									</div>
+									<!-- Completed -->
+									<div class="modal fade" id="complete" role="dialog">
+										<div class="modal-dialog modal-lg">
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<div class="modal-body">
+													<span>YOUR WORK HAS BEEN COMPLETED SUCCESSFULLY AND IT HAS BEEN SAVED</span>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='generator-dashboard.html';">OKAY</button>
+												</div>
+											</div>  
+										</div>
+									</div>
+									<!-- Log Out -->
+									<div class="modal fade" id="logout" role="dialog">
+										<div class="modal-dialog modal-lg">
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+												<div class="modal-body">
+													<span>Please save your work, then logout</span>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default">LOGOUT</button>
+												</div>
+											</div>  
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -571,8 +151,45 @@
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
 <script type="text/javascript" src="js/html5lightbox.js"></script><!--HTML5 slidehow-->
+<script type="text/javascript" src="js/auth.js"></script>
 <script type="text/javascript">
+
 	$(document).ready(function () {
+
+
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
+
+		if(user.status!='ACTIVE' || !user.roles.includes('generator')){
+			window.location.replace("signup.html");
+		}
+
+		var url = new URL(window.location.href);
+		var rubrikType = url.searchParams.get("rubrikType");
+		if(rubrikType=='Lobe Lite'){
+			$('#prompt').modal('show');
+		}
+		var rubrikId = url.searchParams.get("rubrikId");
+
+		loadRubrik(rubrikId, accessToken);
+
+		var optQuesId = '15';
+
+		$("#optYes").click(function(){
+
+			updateRubrik(rubrikId, accessToken, optQuesId, '', false);
+		});
+
+		$("#optNo").click(function(){
+
+			updateRubrik(rubrikId, accessToken, '', optQuesId, false);
+		})
+
+		$("#submit").click(function(){
+
+			updateRubrik(rubrikId, accessToken, '', '', true);
+		})
+
 		$('[data-toggle="tooltip"]').tooltip();
 
 		$(".evaluate").click(function () {
@@ -619,25 +236,142 @@
 			$("span#example-11").slideToggle();
 		});
 
-		$("#content .nextbtn a").click(function () {
-			$(".nav-tabs li.cont-li").removeClass("active");
-			$(".nav-tabs li.peda-li").addClass("active");
-			$("#content").fadeOut().removeClass("active");
-			$("#pedagogical").addClass("active").removeClass("fade");
+		$('.cont-li').click(function(){
+			$('#content').removeClass('fade');
+			
+			$('#content').addClass('active');
+			$('#pedagogical').removeClass('active');
+			$('#design').removeClass('active');
+			$('#technological').removeClass('active');
+
+			$('.cont-li').addClass('active');
+			$('.peda-li').removeClass('active');
+			$('.des-li').removeClass('active');
+			$('.tech-li').removeClass('active');
 		});
 
-		$("#pedagogical .nextbtn a").click(function () {
-			$(".nav-tabs li.peda-li").removeClass("active");
-			$(".nav-tabs li.des-li").addClass("active");
-			$("#pedagogical").fadeOut().removeClass("active");
-			$("#design").addClass("active").removeClass("fade");
+		$('.peda-li').click(function(){
+			$('#pedagogical').removeClass('fade');
+			
+			$('#pedagogical').addClass('active');
+			$('#content').removeClass('active');
+			$('#design').removeClass('active');
+			$('#technological').removeClass('active');
+
+			$('.cont-li').removeClass('active');
+			$('.peda-li').addClass('active');
+			$('.des-li').removeClass('active');
+			$('.tech-li').removeClass('active');
 		});
-		$("#design .nextbtn a").click(function () {
-			$(".nav-tabs li.des-li").removeClass("active");
-			$(".nav-tabs li.tech-li").addClass("active");
-			$("#design").fadeOut().removeClass("active");
-			$("#technological").addClass("active").removeClass("fade");
+
+		$('.des-li').click(function(){
+			$('#design').removeClass('fade');
+			
+			$('#design').addClass('active');
+			$('#content').removeClass('active');
+			$('#pedagogical').removeClass('active');
+			$('#technological').removeClass('active');
+
+			$('.cont-li').removeClass('active');
+			$('.peda-li').removeClass('active');
+			$('.des-li').addClass('active');
+			$('.tech-li').removeClass('active');
+		});
+
+		$('.tech-li').click(function(){
+			$('#technological').removeClass('fade');
+			
+			$('#technological').addClass('active');
+			$('#content').removeClass('active');
+			$('#pedagogical').removeClass('active');
+			$('#design').removeClass('active');
+
+			$('.cont-li').removeClass('active');
+			$('.peda-li').removeClass('active');
+			$('.des-li').removeClass('active');
+			$('.tech-li').addClass('active');
 		});
 	});
+
+	function updateRubrik(rubrikId, accessToken, addQ, removeQ, submit) {
+
+		$.ajax({
+			type: 'POST',
+			url: 'http://localhost:8080/api/rubrik/'+rubrikId+'/update',
+			data: {'remove': removeQ, 'submit': submit, 'add': addQ},
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				console.log(response);
+				if(submit){
+					$('#complete').modal('show');
+				}
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+
+		loadRubrik(rubrikId, accessToken);
+	}
+
+	function loadRubrik(rubrikId, accessToken) {
+		$.ajax({
+			type: 'GET',
+			url: 'http://localhost:8080/api/rubrik/'+rubrikId,
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				$('.tab-content').html('');
+				response.data.dimensions.forEach(function(dimension){
+					var divId = '';
+					var active = 'fade';
+					if(dimension.dimensionName=='Content Quality'){
+						divId = 'content';
+						active = 'active';
+					}
+					else if(dimension.dimensionName=='Pedagogical Alignment'){
+						divId = 'pedagogical';
+					}
+					else if(dimension.dimensionName=='Design Efficacy'){
+						divId = 'design';
+					}
+					else if(dimension.dimensionName=='Technological Integration'){
+						divId = 'technological';
+					}
+					html='<div id="'+divId+'" class="tab-pane '+active+'">'
+					html+='<table class="table">';
+					html+='<thead>'
+					html+='<thead><tr><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
+					html+='<tbody>';
+					var i=0;
+					dimension.questions.forEach(function(question){
+						i++;
+						html+='<tr>';
+						html+='<th><p>'+i+'. '+question.question+'</p>'+question.questionMeta+'</th>';
+						html+='<th><p>'+question.score0+'</p></th>';
+						html+='<th><p>'+question.score1+'</p></th>';
+						html+='<th><p>'+question.score2+'</p></th>';
+						html+='<th><p>'+question.score3+'</p></th>';
+						html+='</tr>';
+					});
+					html+='</tbody>';
+					html+='</thead>';
+					html+='</table>';
+					html+='</div>';
+					$('.tab-content').append(html);
+				});
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}
 </script>
 </html>

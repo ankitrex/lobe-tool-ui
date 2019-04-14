@@ -30,6 +30,17 @@ select.form-control:focus{
 	background-color: #d7d7d7 !important;
 	color: #6b6b6b !important;
 }
+.nextbtn-modal{
+	display: inline-block;
+    padding: 8px 28px;
+    color: #fff;
+    background-color: #63468e;
+    border: none;
+    cursor: pointer;
+}
+.nextbtn-modal:hover{
+	color: #fff;
+}
 .disabled-btn:hover{
 	border: none !important;
 	background-color: #d7d7d7 !important;
@@ -1620,7 +1631,6 @@ select.form-control:focus{
 .dashboard-body .lite_cont{
 	background-color: #efefef;
 	padding: 15px 45px;
-	height: 100vh;
 	text-align: center;
 }
 .dashboard-body .prem_cont{
@@ -1667,6 +1677,13 @@ select.form-control:focus{
     cursor: pointer;
     transition: .3s ease;
     display: inline-block;
+}
+.lite_cont .landing_header{text-align: left;}
+.landing_logo{
+	width: 40%;
+	margin: 0 auto;
+	display: block;
+	float: left;
 }
 /*-------------------------------------------Admin Panel-----------------------------------------------------------------*/
 .dashboard-body .admin-panel{

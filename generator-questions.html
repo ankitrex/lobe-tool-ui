@@ -26,7 +26,7 @@
 					<a href="javascript:void(0)">SAVE</a>
 				</div>
 				<div class="col-sm-1">
-					<a href="javascript:void(0)">LOGOUT</a>
+					<a href="javascript:void(0)" id="logout">LOGOUT</a>
 				</div>
 			</div>
 			<div class="row">
@@ -598,8 +598,17 @@
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
 <script type="text/javascript" src="js/html5lightbox.js"></script><!--HTML5 slidehow-->
+<script type="text/javascript" src="js/auth.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
+
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
+
+		if(user.status!='ACTIVE' || !user.roles.includes('generator')){
+			window.location.replace("signup.html");
+		}
+
 		$('[data-toggle="tooltip"]').tooltip();
 
 		$(".evaluate").click(function () {

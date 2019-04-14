@@ -1,3 +1,9 @@
+$('#logout').click(function(){
+	localStorage.clear();
+	window.location.replace("signup.html");
+});
+
+
 function runValidations(){
 
 	if(localStorage.getItem("accessToken")===null || localStorage.getItem("refreshToken")===null){

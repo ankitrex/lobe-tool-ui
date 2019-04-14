@@ -186,11 +186,6 @@
 			window.location.replace("signup.html");
 		}
 
-		$('#logout').click(function(){
-			localStorage.clear();
-			window.location.replace("signup.html");
-		});
-
 		var rubrikTypes, dimensions;
 		$.ajax({
 			type: 'GET',
@@ -232,6 +227,8 @@
 				var i=1;
 				var j=1;
 				response.data.forEach(function(r){
+					console.log(r);
+					var ref = r.rubrikType=='Lobe Lite' || r.rubrikType=='Lobe Premium' ? 'generator-questions-fixed.html' : 'generator-questions.html';
 
 					var rubrikStatus = r.status;
 					var html='';
@@ -245,10 +242,10 @@
 						html+='<span class="title">'+r.name+'</span>';
 						html+='</div>';
 						html+='<div class="col-sm-4">';
-						html+='<span class="date">'+r.updatedTs+'</span>';
+						html+='<span class="date">'+r.updatedTs.substring(0,r.updatedTs.indexOf('T'))+'</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
-						html+='<a href="generator-questions.html?rubrikId='+r.id+'">RESUME</a>';
+						html+='<a href="'+ref+'?rubrikId='+r.id+'&rubrikType='+r.rubrikType+'">RESUME</a>';
 						html+='</div>';
 						html+='</div>';
 						html+='</div>';
@@ -266,10 +263,10 @@
 						html+='<span class="title">'+r.name+'</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
-						html+='<span class="date">'+r.updatedTs+'</span>';
+						html+='<span class="date">'+r.updatedTs.substring(0,r.updatedTs.indexOf('T'))+'</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
-                        html+='<a href="generator-questions.html?rubrikId='+r.id+'&status=complete">VIEW</a>';
+                        html+='<a href="generator-questions-fixed.html?rubrikId='+r.id+'&status=complete">VIEW</a>';
                         html+='</div>';
 						html+='</div>';
 						$('.comp-rubric-cnt').append(html);
@@ -400,7 +397,12 @@
 				success: function(response){
 					alert("rubrik created");
 					console.log(response);
-					window.location.replace("generator-questions.html?rubrikId="+response.data.id);
+					if(lobe=='Lobe Custom'){
+						window.location.replace("generator-questions.html?rubrikId="+response.data.id);
+					}
+					else{
+						window.location.replace("generator-questions-fixed.html?rubrikId="+response.data.id+'&rubrikType='+lobe);
+					}
 				},
 				error: function(error){
 					console.log(error);

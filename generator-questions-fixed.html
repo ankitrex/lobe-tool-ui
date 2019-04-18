@@ -192,48 +192,8 @@
 
 		$('[data-toggle="tooltip"]').tooltip();
 
-		$(".evaluate").click(function () {
-			$("span#example-1").slideToggle();
-		});
-
-		$(".evaluate-1").click(function () {
-			$("span#example-2").slideToggle();
-		});
-
-		$(".evaluate-3").click(function () {
-			$("span#example-3").slideToggle();
-		});
-
-		$(".evaluate-4").click(function () {
-			$("span#example-4").slideToggle();
-		});
-
-		$(".evaluate-5").click(function () {
-			$("span#example-5").slideToggle();
-		});
-
-		$(".evaluate-6").click(function () {
-			$("span#example-6").slideToggle();
-		});
-
-		$(".evaluate-7").click(function () {
-			$("span#example-7").slideToggle();
-		});
-
-		$(".evaluate-8").click(function () {
-			$("span#example-8").slideToggle();
-		});
-
-		$(".evaluate-9").click(function () {
-			$("span#example-9").slideToggle();
-		});
-
-		$(".evaluate-10").click(function () {
-			$("span#example-10").slideToggle();
-		});
-
-		$(".evaluate-11").click(function () {
-			$("span#example-11").slideToggle();
+		$(".evaluate").click(function(){
+			$(this).next().slideToggle();
 		});
 
 		$('.cont-li').click(function(){
@@ -354,11 +314,54 @@
 					dimension.questions.forEach(function(question){
 						i++;
 						html+='<tr>';
-						html+='<th><p>'+i+'. '+question.question+'</p>'+question.questionMeta+'</th>';
-						html+='<th><p>'+question.score0+'</p></th>';
-						html+='<th><p>'+question.score1+'</p></th>';
-						html+='<th><p>'+question.score2+'</p></th>';
-						html+='<th><p>'+question.score3+'</p></th>';
+
+						html+='<th>'
+						html+='<p>'+i+'. '+question.question+'</p>';
+						if(question.questionMeta!=''){
+							html+='<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>';
+							html+='<span class="hidden">';
+							html+=question.questionMeta;
+							html+='<span>';
+						}
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score0+'</p>';
+						question.score0Images.forEach(function(img){
+							html+='<a href="'+img+'" id="sliderimgs" class="html5lightbox evaluate-img" data-group="mygroup" data-thumbnail="'+img+'">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
+						});
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score1+'</p>';
+						if(question.score1Images.length>0){
+
+							var id = uniqueId();
+							html+='<a href="#'+id+'" class="html5lightbox" data-width=800 data-height=400 title="Example images">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
+
+							html+='<div id="'+id+'" style="display:none;">';
+							html+='<div class="lightboxcontainer">';
+							question.score1Images.forEach(function(img){
+								html+='<a href="'+img+'" class="html5lightbox" data-group="'+id+'" data-thumbnail="'+img+'" data-width="480" data-height="320"></a>';
+							});
+							html+='</div></div>';
+						}
+						
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score2+'</p>';
+						question.score2Images.forEach(function(img){
+							html+='<a href="'+img+'" id="sliderimgs" class="html5lightbox evaluate-3" data-group="mygroup" data-thumbnail="'+img+'">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
+						});
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score3+'</p>';
+						question.score3Images.forEach(function(img){
+							html+='<a href="'+img+'" id="sliderimgs" class="html5lightbox evaluate-3" data-group="mygroup" data-thumbnail="'+img+'">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
+						});
+						html+='</th>';
 						html+='</tr>';
 					});
 					html+='</tbody>';
@@ -373,5 +376,10 @@
 			}
 		});
 	}
+
+	function uniqueId() {
+  		return 'id-' + Math.random().toString(36).substr(2, 16);
+  	}
+
 </script>
 </html>

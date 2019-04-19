@@ -289,6 +289,7 @@
 			},
 			success: function(response){
 				$('.tab-content').html('');
+				var ids=[];
 				response.data.dimensions.forEach(function(dimension){
 					var divId = '';
 					var active = 'fade';
@@ -327,41 +328,40 @@
 
 						html+='<th>';
 						html+='<p>'+question.score0+'</p>';
-						question.score0Images.forEach(function(img){
-							html+='<a href="'+img+'" id="sliderimgs" class="html5lightbox evaluate-img" data-group="mygroup" data-thumbnail="'+img+'">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
-						});
+						if(question.score0Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score0Images, id);
+							ids.push(id);
+						}
 						html+='</th>';
 
 						html+='<th>';
 						html+='<p>'+question.score1+'</p>';
 						if(question.score1Images.length>0){
-
 							var id = uniqueId();
-							html+='<a href="#'+id+'" class="html5lightbox" data-width=800 data-height=400 title="Example images">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
-
-							html+='<div id="'+id+'" style="display:none;">';
-							html+='<div class="lightboxcontainer">';
-							question.score1Images.forEach(function(img){
-								html+='<a href="'+img+'" class="html5lightbox" data-group="'+id+'" data-thumbnail="'+img+'" data-width="480" data-height="320"></a>';
-							});
-							html+='</div></div>';
+							html+=getImagesHtml(question.score1Images, id);
+							ids.push(id);
 						}
-						
 						html+='</th>';
 
 						html+='<th>';
 						html+='<p>'+question.score2+'</p>';
-						question.score2Images.forEach(function(img){
-							html+='<a href="'+img+'" id="sliderimgs" class="html5lightbox evaluate-3" data-group="mygroup" data-thumbnail="'+img+'">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
-						});
+						if(question.score2Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score2Images, id);
+							ids.push(id);
+						}
 						html+='</th>';
 
 						html+='<th>';
 						html+='<p>'+question.score3+'</p>';
-						question.score3Images.forEach(function(img){
-							html+='<a href="'+img+'" id="sliderimgs" class="html5lightbox evaluate-3" data-group="mygroup" data-thumbnail="'+img+'">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
-						});
+						if(question.score3Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score3Images, id);
+							ids.push(id);
+						}
 						html+='</th>';
+
 						html+='</tr>';
 					});
 					html+='</tbody>';
@@ -370,11 +370,33 @@
 					html+='</div>';
 					$('.tab-content').append(html);
 				});
+				
+				ids.forEach(function(id){
+					$(".html5lightbox-"+id).html5lightbox();
+				});
 			},
 			error: function(error){
 				console.log(error);
 			}
 		});
+	}
+
+	function getImagesHtml(images, id) {
+
+		html='';
+
+		var iCnt=0;
+		images.forEach(function(img){
+			if(iCnt==0){
+				html+='<a href="'+img+'" class="html5lightbox-'+id+'" data-group="mygroup" data-thumbnail="'+img+'">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
+			}
+			else{
+				html+='<a href="'+img+'" class="html5lightbox-'+id+'" data-group="mygroup" data-thumbnail="'+img+'" style="display:none"></a>';
+			}
+			iCnt++;
+		});
+
+		return html;
 	}
 
 	function uniqueId() {

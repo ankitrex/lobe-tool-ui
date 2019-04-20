@@ -25,7 +25,7 @@
 					<a href="javascript:void(0)" id="save-rubrik">SAVE</a>
 				</div>
 				<div class="col-sm-1">
-					<a href="javascript:void(0)" id="logout">LOGOUT</a>
+					<a href="javascript:void(0)" id="logout-top">LOGOUT</a>
 				</div>
 			</div>
 			<div class="row">
@@ -98,7 +98,7 @@
 											</div>
 										</div>
 										<!-- Log Out -->
-										<div class="modal fade" id="logout" role="dialog">
+										<div class="modal fade" id="logout-popup" role="dialog">
 											<div class="modal-dialog modal-lg">
 												<!-- Modal content-->
 												<div class="modal-content">
@@ -109,8 +109,8 @@
 														<span>Please save your work, then logout</span>
 													</div>
 													<div class="modal-footer">
-														<button type="button" class="btn btn-default">SAVE</button>
-														<button type="button" class="btn btn-default">LOGOUT</button>
+														<button type="button" class="btn btn-default" id="logout-save">SAVE</button>
+														<button type="button" class="btn btn-default" id="logout">LOGOUT</button>
 													</div>
 												</div>  
 											</div>
@@ -209,7 +209,8 @@
 		});	
 
 		$('#save-rubrik').click(function(){
-			saveRubrikState(accessToken, rubrikDetails, false, false);
+			rubrikDetails = saveRubrikState(accessToken, rubrikDetails, false, false);
+			console.log(rubrikDetails);
 			$('#save').modal('show');
 		});
 
@@ -218,10 +219,18 @@
 			$('#complete').modal('show');
 		});
 
-		$('#logout').click(function(){
+		$('#logout-top').click(function(){
 			saveRubrikState(accessToken, rubrikDetails, false, true);
-		})
+		});
+
+		$('#logout-save').click(function(){
+			saveRubrikState(accessToken, rubrikDetails, false, false);
+			localStorage.clear();
+			window.location.replace("signup.html");
+		});
+
 	});
+
 
 	function saveRubrikState(accessToken, rubrikDetails, submit, fromLogout) {
 		
@@ -242,9 +251,6 @@
 		var addQ=[];
 		var removeQ=[];
 
-		console.log(allSelectedQues);
-		console.log(rubrikStateQues);
-
 		allSelectedQues.forEach(function(q){
 			if(!rubrikStateQues.includes(q)){
 				addQ.push(q);
@@ -257,7 +263,16 @@
 		});
 
 		if(addQ.length > 0 || removeQ.length > 0 || submit){
-			updateRubrik(rubrikDetails.id,accessToken, addQ, removeQ, submit);
+			if(fromLogout){
+				$('#logout-popup').modal('show');
+			}
+			else{
+				return updateRubrik(rubrikDetails.id,accessToken, addQ, removeQ, submit);
+			}
+		}
+		else if(fromLogout){
+			localStorage.clear();
+			window.location.replace("signup.html");
 		}
 	}
 
@@ -279,6 +294,8 @@
 				console.log(error);
 			}
 		});
+
+		return loadRubrik(rubrikId, accessToken);
 	}
 		
 

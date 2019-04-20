@@ -37,10 +37,7 @@
 							<div class="row">
 								<div class="col-sm-12 table-panel">
 									<ul class="nav nav-tabs">
-										<li class="active cont-li">Content Quality</li>
-										<li class="peda-li">Pedagogical Alignment</li>
-										<li class="des-li">Design Efficacy</li>
-										<li class="tech-li">Technological Integration</li>
+										s
 									</ul>
 									<div class="tab-content">
 										
@@ -166,7 +163,14 @@
 
 		var url = new URL(window.location.href);
 		var rubrikType = url.searchParams.get("rubrikType");
-		if(rubrikType=='Lobe Lite'){
+
+
+		var status = url.searchParams.get("status");
+		if(status=="complete"){
+			$('#submit').hide();
+
+		}
+		else if(rubrikType=='Lobe Lite'){
 			$('#prompt').modal('show');
 		}
 		var rubrikId = url.searchParams.get("rubrikId");
@@ -289,23 +293,37 @@
 			},
 			success: function(response){
 				$('.tab-content').html('');
+				$('.nav-tabs').html('');
 				var ids=[];
+				var x=0;
 				response.data.dimensions.forEach(function(dimension){
+
+					var active = x==0 ? 'active ' : '';
 					var divId = '';
-					var active = 'fade';
+					html='';
+
 					if(dimension.dimensionName=='Content Quality'){
-						divId = 'content';
-						active = 'active';
+						html+='<li class="'+active+'cont-li">Content Quality</li>';
+						divId='content';
 					}
 					else if(dimension.dimensionName=='Pedagogical Alignment'){
-						divId = 'pedagogical';
+						html+='<li class="'+active+'peda-li">Pedagogical Alignment</li>';
+						divId='pedagogical';
 					}
 					else if(dimension.dimensionName=='Design Efficacy'){
-						divId = 'design';
+						html+='<li class="'+active+'des-li">Design Efficacy</li>';
+						divId='design';
 					}
 					else if(dimension.dimensionName=='Technological Integration'){
-						divId = 'technological';
+						html+='<li class="'+active+'tech-li">Technological Integration</li>';
+						divId='technological';
 					}
+					$('.nav-tabs').append(html);
+					x++;
+					
+					html='';
+					active = active=='' ? 'fade ' : active;
+					
 					html='<div id="'+divId+'" class="tab-pane '+active+'">'
 					html+='<table class="table">';
 					html+='<thead>'

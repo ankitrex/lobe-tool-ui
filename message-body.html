@@ -43,19 +43,10 @@
 												<div class="row">
 													<div class="col-sm-12">
 												      <select class="form-control" id="rub-detailed">
-												        <option>Select the LOBE</option>
-												        <option>2</option>
-												        <option>3</option>
-												        <option>4</option>
+												      	<option value="" disabled selected>Select the rubrik</option>
 												      </select>
 												    </div>
 												</div>
-											</div>
-											<div class="col-sm-4">
-												<input type="text" name="" placeholder="Code will be generate here">
-											</div>
-											<div class="col-sm-2">
-												<a href="javascript:void(0)">GENERATE</a>
 											</div>
 										</div>
 									</div>
@@ -65,12 +56,12 @@
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="col-sm-9">
-												<input type="text" name="" placeholder="Write the title here">
+												<input type="text" id="subject" name="" placeholder="Write the title here">
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-sm-9">
-												<textarea placeholder="Write your message"></textarea>
+												<textarea id="msgBody" placeholder="Write your message"></textarea>
 											</div>
 										</div>
 									</div>
@@ -80,18 +71,7 @@
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="col-sm-4 select-lo">
-												<input type="text" name="email" id="email-invite" placeholder="*Enter the Learning Object name">
-											</div>
-											<div class="col-sm-4">
-												<a href="javascript:void(0)" class="add-a">ADD MORE &nbsp;<i class="fas fa-plus"></i></a>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 select-lo">
-												<input type="text" name="email" id="email-invite" placeholder="Enter the Learning Object URL">
-											</div>
-											<div class="col-sm-4">
-												<a href="javascript:void(0)" class="add-a">ADD MORE &nbsp;<i class="fas fa-plus"></i></a>
+												<input type="text" name="email" id="lobe-name" placeholder="*Enter the Learning Object name">
 											</div>
 										</div>
 									</div>
@@ -101,15 +81,13 @@
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="col-sm-3 email-msg">
-												<input type="text" name="email" id="email-invite" placeholder="Enter the Email ID">
-											</div>
-											<div class="col-sm-3">
-												<a href="javascript:void(0)" class="add-a">ADD MORE &nbsp;<i class="fas fa-plus"></i></a>
+												<input type="text" name="email" id="eval-email" placeholder="Enter the Email ID">
 											</div>
 										</div>
 									</div>
+									<p id="search-error" class="text-danger"></p>
 								</div>
-								<button type="submit">SUBMIT</button>
+								<button type="button" id="submit">SUBMIT</button>
 								<a href="generator-dashboard.html">Go Back</a>
 							</form>
 						</div>
@@ -123,63 +101,72 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
 <script type="text/javascript">
+
 	$(document).ready(function () {
-		$('[data-toggle="tooltip"]').tooltip();
+		
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
 
-		$(".generator-panel .new-rubric h4").click(function () {
-			$(".new-rubric-cnt").slideToggle();
-			$(".generator-panel .new-rubric h4 i").toggleClass("fa-rotate-90");
+		if(user.status!='ACTIVE' || !user.roles.includes('generator')){
+			window.location.replace("signup.html");
+		}
+
+		$.ajax({
+			type: 'GET',
+			url: 'http://localhost:8080/api/rubrik/all',
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				html='';
+				response.data.forEach(function(rubrik){
+					if(rubrik.status=='complete'){
+						html+='<option value="'+rubrik.id+'">'+rubrik.name+'</option>';
+					}
+				})
+				$('#rub-detailed').append(html);
+			},
+			error: function(error){
+				console.log(error);
+			}
 		});
 
-		$(".first-group li label").click(function () {
-			$(".first-group label.selected").removeClass("selected");
-			$(this).addClass("selected");
+		$('#submit').click(function(){
+
+			$('.text-danger').html('');
+
+			var rubrikId = $('#rub-detailed').val();
+			var subject = $('#subject').val();
+			var msgBody = $('#msgBody').val();
+			var lobeName = $('#lobe-name').val();
+			var evalEmail = $('#eval-email').val();
+
+			var rubrikCode = lobeName.replace(/\s+/g, '-').toLowerCase();
+
+			$.ajax({
+			type: 'POST',
+			url: 'http://localhost:8080/api/lobe/assign',
+			dataType: 'json',
+			data: {'rubrikId': rubrikId, 'rubrikCode': rubrikCode, 'msgSubject': subject, 'msgBody': msgBody, 'learningObjectName': lobeName, 'evaluatorEmail': evalEmail},	
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				console.log(response);
+				window.location.replace('generator-dashboard.html');
+			},
+			error: function(error){
+				console.log(error);
+				$('#search-error').html(error.responseJSON.message);
+			}
+		});
 		});
 
-		$(".second-grp li label").click(function () {
-			$(this).addClass("selected");
-		});
-
-		$(".new-rubric-cnt #lobe-1").on("click", function () {
-			$(".new-rubric-cnt button").show();
-			$(".new-rubric-cnt .second-grp").hide();
-		});
-
-		$(".new-rubric-cnt #lobe-2").on("click", function () {
-			$(".new-rubric-cnt button").show();
-			$(".new-rubric-cnt .second-grp").hide();
-		});
-
-		$(".new-rubric-cnt #lobe-3").on("click", function () {
-			$(".new-rubric-cnt .second-grp").show();
-			$(".new-rubric-cnt button").show();
-		});
-
-		$(".generator-panel .incomp-rubric h4").click(function () {
-			$(".incomp-rubric-cnt").slideToggle();
-			$(".generator-panel .incomp-rubric h4 i").toggleClass("fa-rotate-90");
-		});
-
-		$(".generator-panel .comp-rubric h4").click(function () {
-			$(".comp-rubric-cnt").slideToggle();
-			$(".generator-panel .comp-rubric h4 i").toggleClass("fa-rotate-90");
-		});
-
-		$(".generator-panel .assign h4").click(function () {
-			$(".assign-cnt").slideToggle();
-			$(".generator-panel .assign h4 i").toggleClass("fa-rotate-90");
-		});
-
-		$(".generator-panel .role h4").click(function () {
-			$(".role-cnt").slideToggle();
-			$(".generator-panel .role h4 i").toggleClass("fa-rotate-90");
-		});
-
-		$(".generator-panel .track h4").click(function () {
-			$(".track-cnt").slideToggle();
-			$(".generator-panel .track h4 i").toggleClass("fa-rotate-90");
-		});
 	});
 </script>
 </html>

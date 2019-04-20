@@ -144,7 +144,9 @@
 		var url = new URL(window.location.href);
 		var rubrikId = url.searchParams.get("rubrikId");
 
-		var rubrikDetails = loadRubrik(rubrikId, accessToken);
+		var rubrikDetails = getRubrikDetails(rubrikId, accessToken);
+
+		loadRubrik(rubrikDetails, accessToken);
 
 		$('[data-toggle="tooltip"]').tooltip();
 
@@ -295,11 +297,10 @@
 			}
 		});
 
-		return loadRubrik(rubrikId, accessToken);
+		return getRubrikDetails(rubrikId, accessToken);
 	}
-		
 
-	function loadRubrik(rubrikId, accessToken) {
+	function getRubrikDetails(rubrikId, accessToken){
 
 		var rubrikDetails;
 		$.ajax({
@@ -311,146 +312,150 @@
 				'Authorization': 'Bearer '+accessToken,
 			},
 			success: function(response){
-				console.log(response);
-				rubrikDetails=response.data;
-				var i=0;
-				var ids=[]
-				response.data.dimensions.forEach(function(dimension){
-
-					var active = i==0 ? 'active ' : '';
-					var divId='';
-					html='';
-
-					if(dimension.dimensionName=='Content Quality'){
-						html+='<li class="'+active+'cont-li">Content Quality</li>';
-						divId='content';
-					}
-					else if(dimension.dimensionName=='Pedagogical Alignment'){
-						html+='<li class="'+active+'peda-li">Pedagogical Alignment</li>';
-						divId='pedagogical';
-					}
-					else if(dimension.dimensionName=='Design Efficacy'){
-						html+='<li class="'+active+'des-li">Design Efficacy</li>';
-						divId='design';
-					}
-					else if(dimension.dimensionName=='Technological Integration'){
-						html+='<li class="'+active+'tech-li">Technological Integration</li>';
-						divId='technological';
-					}
-					$('.nav-tabs').append(html);
-					i++;
-
-					$.ajax({
-						type: 'GET',
-						url: 'http://localhost:8080/api/rubrik/questions',
-						data: {'dimensionId' : dimension.id, 'rubrikTypeId': response.data.rubrikTypeId},
-						dataType: 'json',
-						async: false,
-						headers : {
-							'Authorization': 'Bearer '+accessToken,
-						},
-						success: function(response){
-							var allQuestions = response.data.questions;
-							var selectedQuestions = dimension.questions;
-
-							html='';
-							active = active=='' ? 'fade ' : active;
-
-							var allSelectedQuesIds = [];
-							selectedQuestions.forEach(function(q){
-								allSelectedQuesIds.push(q.id);
-							});
-							console.log(allSelectedQuesIds);
-							
-							html='<div id="'+divId+'" class="'+active+'tab-pane">';
-							html+='<table class="table">';
-							html+='<thead>'
-							html+='<thead><tr><th class="checkbox-tb-head"></th><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
-							html+='<tbody>';
-
-							var i=0;
-							allQuestions.forEach(function(question){
-
-								i++;
-								console.lo
-								var checked = allSelectedQuesIds.includes(question.id) ? ' checked' : '';
-								html+='<tr>';
-
-								html+='<th class="checkbox-tb"><input type="checkbox" name="generator-chkbx" id="gen-chkbox-'+question.id+'" value="'+question.id+'"'+checked+'></th>';
-
-								html+='<th>'
-								html+='<p>'+i+'. '+question.question+'</p>';
-								if(question.questionMeta!=''){
-									html+='<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>';
-									html+='<span class="hidden">';
-									html+=question.questionMeta;
-									html+='<span>';
-								}
-								html+='</th>';
-
-								html+='<th>';
-								html+='<p>'+question.score0+'</p>';
-								if(question.score0Images.length>0){
-									var id = uniqueId();
-									html+=getImagesHtml(question.score0Images, id);
-									ids.push(id);
-								}
-								html+='</th>';
-
-								html+='<th>';
-								html+='<p>'+question.score1+'</p>';
-								if(question.score1Images.length>0){
-									var id = uniqueId();
-									html+=getImagesHtml(question.score1Images, id);
-									ids.push(id);
-								}
-								html+='</th>';
-
-								html+='<th>';
-								html+='<p>'+question.score2+'</p>';
-								if(question.score2Images.length>0){
-									var id = uniqueId();
-									html+=getImagesHtml(question.score2Images, id);
-									ids.push(id);
-								}
-								html+='</th>';
-
-								html+='<th>';
-								html+='<p>'+question.score3+'</p>';
-								if(question.score3Images.length>0){
-									var id = uniqueId();
-									html+=getImagesHtml(question.score3Images, id);
-									ids.push(id);
-								}
-								html+='</th>';
-
-								html+='<tr>';
-							});
-
-							html+='</tbody>';
-							html+='</thead>';
-							html+='</table>';
-							html+='</div>';
-
-							$('.tab-content').append(html);
-
-							return response;
-						},
-						error: function(error){
-							console.log(error);
-						}
-					});
-				});
-				ids.forEach(function(id){
-					$(".html5lightbox-"+id).html5lightbox();
-				});
+				rubrikDetails = response.data;
 			},
 			error: function(error){
 				console.log(error);
 			}
 		});
+		return rubrikDetails;
+	}
+		
 
-		return rubrikDetails;	
+	function loadRubrik(rubrikDetails, accessToken) {
+
+		var i=0;
+		var ids=[];
+
+		rubrikDetails.dimensions.forEach(function(dimension){
+
+			var active = i==0 ? 'active ' : '';
+			var divId='';
+			html='';
+
+			if(dimension.dimensionName=='Content Quality'){
+				html+='<li class="'+active+'cont-li">Content Quality</li>';
+				divId='content';
+			}
+			else if(dimension.dimensionName=='Pedagogical Alignment'){
+				html+='<li class="'+active+'peda-li">Pedagogical Alignment</li>';
+				divId='pedagogical';
+			}
+			else if(dimension.dimensionName=='Design Efficacy'){
+				html+='<li class="'+active+'des-li">Design Efficacy</li>';
+				divId='design';
+			}
+			else if(dimension.dimensionName=='Technological Integration'){
+				html+='<li class="'+active+'tech-li">Technological Integration</li>';
+				divId='technological';
+			}
+			$('.nav-tabs').append(html);
+			i++;
+
+			$.ajax({
+				type: 'GET',
+				url: 'http://localhost:8080/api/rubrik/questions',
+				data: {'dimensionId' : dimension.id, 'rubrikTypeId': rubrikDetails.rubrikTypeId},
+				dataType: 'json',
+				async: false,
+				headers : {
+					'Authorization': 'Bearer '+accessToken,
+				},
+				success: function(response){
+					var allQuestions = response.data.questions;
+					var selectedQuestions = dimension.questions;
+
+					html='';
+					active = active=='' ? 'fade ' : active;
+
+					var allSelectedQuesIds = [];
+					selectedQuestions.forEach(function(q){
+						allSelectedQuesIds.push(q.id);
+					});
+					console.log(allSelectedQuesIds);
+					
+					html='<div id="'+divId+'" class="'+active+'tab-pane">';
+					html+='<table class="table">';
+					html+='<thead>'
+					html+='<thead><tr><th class="checkbox-tb-head"></th><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
+					html+='<tbody>';
+
+					var i=0;
+					allQuestions.forEach(function(question){
+
+						i++;
+						console.lo
+						var checked = allSelectedQuesIds.includes(question.id) ? ' checked' : '';
+						html+='<tr>';
+
+						html+='<th class="checkbox-tb"><input type="checkbox" name="generator-chkbx" id="gen-chkbox-'+question.id+'" value="'+question.id+'"'+checked+'></th>';
+
+						html+='<th>'
+						html+='<p>'+i+'. '+question.question+'</p>';
+						if(question.questionMeta!=''){
+							html+='<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>';
+							html+='<span class="hidden">';
+							html+=question.questionMeta;
+							html+='<span>';
+						}
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score0+'</p>';
+						if(question.score0Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score0Images, id);
+							ids.push(id);
+						}
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score1+'</p>';
+						if(question.score1Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score1Images, id);
+							ids.push(id);
+						}
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score2+'</p>';
+						if(question.score2Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score2Images, id);
+							ids.push(id);
+						}
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score3+'</p>';
+						if(question.score3Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score3Images, id);
+							ids.push(id);
+						}
+						html+='</th>';
+
+						html+='<tr>';
+					});
+
+					html+='</tbody>';
+					html+='</thead>';
+					html+='</table>';
+					html+='</div>';
+
+					$('.tab-content').append(html);
+
+					return response;
+				},
+				error: function(error){
+					console.log(error);
+				}
+			});
+		});
+		ids.forEach(function(id){
+			$(".html5lightbox-"+id).html5lightbox();
+		});
 	}
 
 	function getImagesHtml(images, id) {

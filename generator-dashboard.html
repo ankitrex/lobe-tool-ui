@@ -227,7 +227,6 @@
 				var i=1;
 				var j=1;
 				response.data.forEach(function(r){
-					console.log(r);
 					var ref = r.rubrikType=='Lobe Lite' || r.rubrikType=='Lobe Premium' ? 'generator-questions-fixed.html' : 'generator-questions.html';
 
 					var rubrikStatus = r.status;
@@ -395,7 +394,6 @@
 					'Authorization': 'Bearer '+accessToken,
 				},
 				success: function(response){
-					alert("rubrik created");
 					console.log(response);
 					if(lobe=='Lobe Custom'){
 						window.location.replace("generator-questions.html?rubrikId="+response.data.id);

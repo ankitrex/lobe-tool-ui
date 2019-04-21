@@ -175,23 +175,23 @@
 		}
 		var rubrikId = url.searchParams.get("rubrikId");
 
-		loadRubrik(rubrikId, accessToken);
+		loadRubrik(rubrikId, accessToken, false);
 
 		var optQuesId = '15';
 
 		$("#optYes").click(function(){
 
-			updateRubrik(rubrikId, accessToken, optQuesId, '', false);
+			updateRubrik(rubrikId, accessToken, optQuesId, '', false, true);
 		});
 
 		$("#optNo").click(function(){
 
-			updateRubrik(rubrikId, accessToken, '', optQuesId, false);
+			updateRubrik(rubrikId, accessToken, '', optQuesId, false, true);
 		})
 
 		$("#submit").click(function(){
 
-			updateRubrik(rubrikId, accessToken, '', '', true);
+			updateRubrik(rubrikId, accessToken, '', '', true, false);
 		})
 
 		$('[data-toggle="tooltip"]').tooltip();
@@ -257,7 +257,7 @@
 		});
 	});
 
-	function updateRubrik(rubrikId, accessToken, addQ, removeQ, submit) {
+	function updateRubrik(rubrikId, accessToken, addQ, removeQ, submit, fromLite) {
 
 		$.ajax({
 			type: 'POST',
@@ -279,10 +279,10 @@
 			}
 		});
 
-		loadRubrik(rubrikId, accessToken);
+		loadRubrik(rubrikId, accessToken, fromLite);
 	}
 
-	function loadRubrik(rubrikId, accessToken) {
+	function loadRubrik(rubrikId, accessToken, fromLite) {
 		$.ajax({
 			type: 'GET',
 			url: basePath+'/api/rubrik/'+rubrikId,
@@ -293,7 +293,9 @@
 			},
 			success: function(response){
 				$('.tab-content').html('');
-				$('.nav-tabs').html('');
+				if(!fromLite){
+					$('.nav-tabs').html('');
+				}
 				var ids=[];
 				var x=0;
 				response.data.dimensions.forEach(function(dimension){
@@ -318,7 +320,9 @@
 						html+='<li class="'+active+'tech-li">Technological Integration</li>';
 						divId='technological';
 					}
-					$('.nav-tabs').append(html);
+					if(!fromLite){
+						$('.nav-tabs').append(html);
+					}
 					x++;
 					
 					html='';

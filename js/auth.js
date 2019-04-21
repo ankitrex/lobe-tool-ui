@@ -31,7 +31,7 @@ function validateUser() {
 	$.ajax({
 		type: 'GET',
 		async: false,
-		url: 'http://localhost:8080/api/user/profile',
+		url: basePath+'/api/user/profile',
 		dataType: 'json',
 		headers : {
 			'Authorization': 'Bearer '+accessToken,
@@ -51,7 +51,7 @@ function tokenRefresh() {
 	$.ajax({
 		type: 'GET',
 		async: false,
-		url: 'http://localhost:8080/api/user/token-refresh',
+		url: basePath+'/api/user/token-refresh',
 		dataType: 'json',
 		headers : {
 			'Authorization': 'Bearer '+refreshToken,

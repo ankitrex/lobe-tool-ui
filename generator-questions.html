@@ -282,7 +282,7 @@
 
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:8080/api/rubrik/'+rubrikId+'/update',
+			url: basePath+'/api/rubrik/'+rubrikId+'/update',
 			data: {'remove': removeQ.join(), 'submit': submit, 'add': addQ.join()},
 			dataType: 'json',
 			async: false,
@@ -305,7 +305,7 @@
 		var rubrikDetails;
 		$.ajax({
 			type: 'GET',
-			url: 'http://localhost:8080/api/rubrik/'+rubrikId,
+			url: basePath+'/api/rubrik/'+rubrikId,
 			dataType: 'json',
 			async: false,
 			headers : {
@@ -354,7 +354,7 @@
 
 			$.ajax({
 				type: 'GET',
-				url: 'http://localhost:8080/api/rubrik/questions',
+				url: basePath+'/api/rubrik/questions',
 				data: {'dimensionId' : dimension.id, 'rubrikTypeId': rubrikDetails.rubrikTypeId},
 				dataType: 'json',
 				async: false,

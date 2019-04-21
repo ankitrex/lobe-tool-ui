@@ -189,7 +189,7 @@
 		var rubrikTypes, dimensions;
 		$.ajax({
 			type: 'GET',
-			url: 'http://localhost:8080/api/lobe/get-rubrik-types',
+			url: basePath+'/api/lobe/get-rubrik-types',
 			dataType: 'json',
 			headers : {
 					'Authorization': 'Bearer '+accessToken,
@@ -203,7 +203,7 @@
 		});
 		$.ajax({
 			type: 'GET',
-			url: 'http://localhost:8080/api/lobe/get-dimensions',
+			url: basePath+'/api/lobe/get-dimensions',
 			dataType: 'json',
 			headers : {
 					'Authorization': 'Bearer '+accessToken,
@@ -218,7 +218,7 @@
 
 		$.ajax({
 			type: 'GET',
-			url: 'http://localhost:8080/api/rubrik/all',
+			url: basePath+'/api/rubrik/all',
 			dataType: 'json',
 			headers : {
 				'Authorization': 'Bearer '+accessToken,
@@ -280,7 +280,7 @@
 
 		$.ajax({
 			type: 'GET',
-			url: 'http://localhost:8080/api/lobe/evaluations/all?type=generator',
+			url: basePath+'/api/lobe/evaluations/all?type=generator',
 			dataType: 'json',
 			headers : {
 				'Authorization': 'Bearer '+accessToken,
@@ -387,7 +387,7 @@
 			accessToken = localStorage.getItem("accessToken");
 			$.ajax({
 				type: 'POST',
-				url: 'http://localhost:8080/api/rubrik/create-rubrik',
+				url: basePath+'/api/rubrik/create-rubrik',
 				data: { 'rubrikTypeId': lobeId, 'dimensionIds': selectedDim },
 				dataType: 'json',
 				headers : {

@@ -115,7 +115,7 @@
 
 		$.ajax({
 			type: 'GET',
-			url: 'http://localhost:8080/api/rubrik/all',
+			url: basePath+'/api/rubrik/all',
 			dataType: 'json',
 			async: false,
 			headers : {
@@ -149,7 +149,7 @@
 
 			$.ajax({
 			type: 'POST',
-			url: 'http://localhost:8080/api/lobe/assign',
+			url: basePath+'/api/lobe/assign',
 			dataType: 'json',
 			data: {'rubrikId': rubrikId, 'rubrikCode': rubrikCode, 'msgSubject': subject, 'msgBody': msgBody, 'learningObjectName': lobeName, 'evaluatorEmail': evalEmail},	
 			async: false,

@@ -97,6 +97,7 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('.signin-acc').click(function () {
@@ -130,7 +131,7 @@
 
 		$.ajax({
 			type: 'GET',
-			url: 'http://localhost:8080/open/get-roles',
+			url: basePath+'/open/get-roles',
 			dataType: 'json',
 			success: function(response){
 				response.data.forEach(function(role){
@@ -165,7 +166,7 @@
 				}
 				$.ajax({
 					type: 'POST',
-					url: 'http://localhost:8080/api/user/register',
+					url: basePath+'/api/user/register',
 					data: { 'email': userName, 'password': password, 'name': name, 'affiliation': affiliation, 'roleId': roleId },
 					dataType: 'json',
 					success: function(response){
@@ -187,7 +188,7 @@
 			var password = $('#password-login').val();
 			$.ajax({
 				type: 'GET',
-				url: 'http://localhost:8080/api/user/login',
+				url: basePath+'/api/user/login',
 				data: { 'email': userName, 'password': password },
 				dataType: 'json',
 				success: function(response){

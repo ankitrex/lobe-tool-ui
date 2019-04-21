@@ -3,6 +3,7 @@ $('#logout').click(function(){
 	window.location.replace("signup.html");
 });
 
+var basePath = 'http://localhost:8080';
 
 function runValidations(){
 

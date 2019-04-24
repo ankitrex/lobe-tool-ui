@@ -396,10 +396,10 @@
 				success: function(response){
 					console.log(response);
 					if(lobe=='Lobe Custom'){
-						window.location.replace("generator-questions.html?rubrikId="+response.data.id);
+						window.location = "generator-questions.html?rubrikId="+response.data.id;
 					}
 					else{
-						window.location.replace("generator-questions-fixed.html?rubrikId="+response.data.id+'&rubrikType='+lobe);
+						window.location = "generator-questions-fixed.html?rubrikId="+response.data.id+'&rubrikType='+lobe;
 					}
 				},
 				error: function(error){

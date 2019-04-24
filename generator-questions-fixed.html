@@ -23,7 +23,7 @@
 				</div>
 				<div class="col-sm-1"></div>
 				<div class="col-sm-1">
-					<a href="javascript:void(0)" id="submit">SUBMIT</a>
+					<a href="javascript:void(0)" id="submit">SAVE</a>
 				</div>
 				<div class="col-sm-1">
 					<a href="javascript:void(0)" id="logout">LOGOUT</a>
@@ -37,7 +37,7 @@
 							<div class="row">
 								<div class="col-sm-12 table-panel">
 									<ul class="nav nav-tabs">
-										s
+										
 									</ul>
 									<div class="tab-content">
 										
@@ -177,7 +177,7 @@
 
 		loadRubrik(rubrikId, accessToken, false);
 
-		var optQuesId = '15';
+		var optQuesId = '7';
 
 		$("#optYes").click(function(){
 
@@ -196,7 +196,7 @@
 
 		$('[data-toggle="tooltip"]').tooltip();
 
-		$(".evaluate").click(function(){
+		$(document).on('click', '.evaluate', function(){
 			$(this).next().slideToggle();
 		});
 
@@ -339,12 +339,9 @@
 						html+='<tr>';
 
 						html+='<th>'
-						html+='<p>'+i+'. '+question.question+'</p>';
+						html+='<p>'+question.question+'</p>';
 						if(question.questionMeta!=''){
-							html+='<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>';
-							html+='<span class="hidden">';
 							html+=question.questionMeta;
-							html+='<span>';
 						}
 						html+='</th>';
 

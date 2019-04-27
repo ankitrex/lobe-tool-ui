@@ -154,7 +154,7 @@
 			$(this).next().slideToggle();
 		});
 
-		$('.cont-li').click(function(){
+		$('.nav-tabs').on('click', '.cont-li', function(){
 			$('#content').removeClass('fade');
 			
 			$('#content').addClass('active');
@@ -168,7 +168,7 @@
 			$('.tech-li').removeClass('active');
 		});
 
-		$('.peda-li').click(function(){
+		$('.nav-tabs').on('click', '.peda-li', function(){
 			$('#pedagogical').removeClass('fade');
 			
 			$('#pedagogical').addClass('active');
@@ -182,7 +182,7 @@
 			$('.tech-li').removeClass('active');
 		});
 
-		$('.des-li').click(function(){
+		$('.nav-tabs').on('click', '.des-li', function(){
 			$('#design').removeClass('fade');
 			
 			$('#design').addClass('active');
@@ -196,7 +196,7 @@
 			$('.tech-li').removeClass('active');
 		});
 
-		$('.tech-li').click(function(){
+		$('.nav-tabs').on('click', '.tech-li', function(){
 			$('#technological').removeClass('fade');
 			
 			$('#technological').addClass('active');

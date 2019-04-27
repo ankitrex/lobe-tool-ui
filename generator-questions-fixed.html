@@ -153,6 +153,15 @@
 
 	$(document).ready(function () {
 
+		var optionalSel = false;
+		var optQuesId = 7;
+
+		var rubrikLiteId=1;
+		var rubrikPremiumId=2;
+
+		var rubrikTypeId;
+
+		var browse='browse/';
 
 		var user = runValidations();
 		var accessToken = localStorage.getItem("accessToken");
@@ -164,34 +173,31 @@
 		var url = new URL(window.location.href);
 		var rubrikType = url.searchParams.get("rubrikType");
 
-
 		var status = url.searchParams.get("status");
 		if(status=="complete"){
+			optionalSel=true;
 			$('#submit').hide();
-
+			browse='';
 		}
 		else if(rubrikType=='Lobe Lite'){
 			$('#prompt').modal('show');
+			rubrikTypeId=rubrikLiteId;
+		}
+		else{
+			rubrikTypeId=rubrikPremiumId;
 		}
 		var rubrikId = url.searchParams.get("rubrikId");
 
-		loadRubrik(rubrikId, accessToken, false);
-
-		var optQuesId = '7';
+		loadRubrik(browse, rubrikId, accessToken, optionalSel, optQuesId);
 
 		$("#optYes").click(function(){
-
-			updateRubrik(rubrikId, accessToken, optQuesId, '', false, true);
+			optionalSel = true;
+			loadRubrik(browse, rubrikId, accessToken, optionalSel, optQuesId);
 		});
-
-		$("#optNo").click(function(){
-
-			updateRubrik(rubrikId, accessToken, '', optQuesId, false, true);
-		})
 
 		$("#submit").click(function(){
 
-			updateRubrik(rubrikId, accessToken, '', '', true, false);
+			createRubrik(accessToken, rubrikTypeId, optionalSel, optQuesId);
 		})
 
 		$('[data-toggle="tooltip"]').tooltip();
@@ -200,7 +206,7 @@
 			$(this).next().slideToggle();
 		});
 
-		$('.cont-li').click(function(){
+		$('.nav-tabs').on('click', '.cont-li', function(){
 			$('#content').removeClass('fade');
 			
 			$('#content').addClass('active');
@@ -214,7 +220,7 @@
 			$('.tech-li').removeClass('active');
 		});
 
-		$('.peda-li').click(function(){
+		$('.nav-tabs').on('click', '.peda-li', function(){
 			$('#pedagogical').removeClass('fade');
 			
 			$('#pedagogical').addClass('active');
@@ -228,7 +234,7 @@
 			$('.tech-li').removeClass('active');
 		});
 
-		$('.des-li').click(function(){
+		$('.nav-tabs').on('click', '.des-li', function(){
 			$('#design').removeClass('fade');
 			
 			$('#design').addClass('active');
@@ -242,7 +248,7 @@
 			$('.tech-li').removeClass('active');
 		});
 
-		$('.tech-li').click(function(){
+		$('.nav-tabs').on('click', '.tech-li', function(){
 			$('#technological').removeClass('fade');
 			
 			$('#technological').addClass('active');
@@ -254,38 +260,13 @@
 			$('.peda-li').removeClass('active');
 			$('.des-li').removeClass('active');
 			$('.tech-li').addClass('active');
-		});
+		});	
 	});
 
-	function updateRubrik(rubrikId, accessToken, addQ, removeQ, submit, fromLite) {
-
-		$.ajax({
-			type: 'POST',
-			url: basePath+'/api/rubrik/'+rubrikId+'/update',
-			data: {'remove': removeQ, 'submit': submit, 'add': addQ},
-			dataType: 'json',
-			async: false,
-			headers : {
-				'Authorization': 'Bearer '+accessToken,
-			},
-			success: function(response){
-				console.log(response);
-				if(submit){
-					$('#complete').modal('show');
-				}
-			},
-			error: function(error){
-				console.log(error);
-			}
-		});
-
-		loadRubrik(rubrikId, accessToken, fromLite);
-	}
-
-	function loadRubrik(rubrikId, accessToken, fromLite) {
+	function loadRubrik(browse, rubrikId, accessToken, showOpt, optQuesId) {
 		$.ajax({
 			type: 'GET',
-			url: basePath+'/api/rubrik/'+rubrikId,
+			url: basePath+'/api/rubrik/'+browse+rubrikId,
 			dataType: 'json',
 			async: false,
 			headers : {
@@ -293,9 +274,7 @@
 			},
 			success: function(response){
 				$('.tab-content').html('');
-				if(!fromLite){
-					$('.nav-tabs').html('');
-				}
+				$('.nav-tabs').html('');
 				var ids=[];
 				var x=0;
 				response.data.dimensions.forEach(function(dimension){
@@ -320,9 +299,7 @@
 						html+='<li class="'+active+'tech-li">Technological Integration</li>';
 						divId='technological';
 					}
-					if(!fromLite){
-						$('.nav-tabs').append(html);
-					}
+					$('.nav-tabs').append(html);
 					x++;
 					
 					html='';
@@ -333,55 +310,55 @@
 					html+='<thead>'
 					html+='<thead><tr><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
 					html+='<tbody>';
-					var i=0;
 					dimension.questions.forEach(function(question){
-						i++;
-						html+='<tr>';
+						if(question.id!=optQuesId || showOpt){
+							html+='<tr>';
 
-						html+='<th>'
-						html+='<p>'+question.question+'</p>';
-						if(question.questionMeta!=''){
-							html+=question.questionMeta;
+							html+='<th>'
+							html+='<p>'+question.question+'</p>';
+							if(question.questionMeta!=''){
+								html+=question.questionMeta;
+							}
+							html+='</th>';
+
+							html+='<th>';
+							html+='<p>'+question.score0+'</p>';
+							if(question.score0Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score0Images, id);
+								ids.push(id);
+							}
+							html+='</th>';
+
+							html+='<th>';
+							html+='<p>'+question.score1+'</p>';
+							if(question.score1Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score1Images, id);
+								ids.push(id);
+							}
+							html+='</th>';
+
+							html+='<th>';
+							html+='<p>'+question.score2+'</p>';
+							if(question.score2Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score2Images, id);
+								ids.push(id);
+							}
+							html+='</th>';
+
+							html+='<th>';
+							html+='<p>'+question.score3+'</p>';
+							if(question.score3Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score3Images, id);
+								ids.push(id);
+							}
+							html+='</th>';
+
+							html+='</tr>';
 						}
-						html+='</th>';
-
-						html+='<th>';
-						html+='<p>'+question.score0+'</p>';
-						if(question.score0Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score0Images, id);
-							ids.push(id);
-						}
-						html+='</th>';
-
-						html+='<th>';
-						html+='<p>'+question.score1+'</p>';
-						if(question.score1Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score1Images, id);
-							ids.push(id);
-						}
-						html+='</th>';
-
-						html+='<th>';
-						html+='<p>'+question.score2+'</p>';
-						if(question.score2Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score2Images, id);
-							ids.push(id);
-						}
-						html+='</th>';
-
-						html+='<th>';
-						html+='<p>'+question.score3+'</p>';
-						if(question.score3Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score3Images, id);
-							ids.push(id);
-						}
-						html+='</th>';
-
-						html+='</tr>';
 					});
 					html+='</tbody>';
 					html+='</thead>';
@@ -393,6 +370,51 @@
 				ids.forEach(function(id){
 					$(".html5lightbox-"+id).html5lightbox();
 				});
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}
+
+	function createRubrik(accessToken, rubrikTypeId, optionalSel, optQuesId){
+		$.ajax({
+			type: 'POST',
+			url: basePath+'/api/rubrik/create-rubrik',
+			data: { 'rubrikTypeId': rubrikTypeId, 'dimensionIds': '' },
+			dataType: 'json',
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				console.log(response);
+				if(rubrikTypeId==1 && optionalSel){
+					updateRubrik(accessToken, response.data.id, optQuesId, '', true);
+				}
+				else{
+					updateRubrik(accessToken, response.data.id, '', '', true);
+				}
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}
+
+	function updateRubrik(accessToken, rubrikId, addQ, removeQ, submit) {
+
+		$.ajax({
+			type: 'POST',
+			url: basePath+'/api/rubrik/'+rubrikId+'/update',
+			data: {'remove': removeQ, 'submit': submit, 'add': addQ},
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				console.log(response);
+					$('#complete').modal('show');
 			},
 			error: function(error){
 				console.log(error);

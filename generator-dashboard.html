@@ -355,6 +355,9 @@
 
 		$('#create-rubrik').click(function(){
 
+			var liteRubrikId = 1;
+			var premiumRubrikId = 2;
+
 			var lobe = $('input[name=lobe]:checked').val();
 			var lobeId;
 			rubrikTypes.forEach(function(type){
@@ -377,35 +380,37 @@
 						}
 					});
 				});
+
+				console.log(lobeId);
+				console.log(selectedDim);
+
+				runValidations();
+
+				accessToken = localStorage.getItem("accessToken");
+				$.ajax({
+					type: 'POST',
+					url: basePath+'/api/rubrik/create-rubrik',
+					data: { 'rubrikTypeId': lobeId, 'dimensionIds': selectedDim },
+					dataType: 'json',
+					headers : {
+						'Authorization': 'Bearer '+accessToken,
+					},
+					success: function(response){
+						console.log(response);
+							window.location = "generator-questions.html?rubrikId="+response.data.id;
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
 			}
-
-			console.log(lobeId);
-			console.log(selectedDim);
-
-			runValidations();
-
-			accessToken = localStorage.getItem("accessToken");
-			$.ajax({
-				type: 'POST',
-				url: basePath+'/api/rubrik/create-rubrik',
-				data: { 'rubrikTypeId': lobeId, 'dimensionIds': selectedDim },
-				dataType: 'json',
-				headers : {
-					'Authorization': 'Bearer '+accessToken,
-				},
-				success: function(response){
-					console.log(response);
-					if(lobe=='Lobe Custom'){
-						window.location = "generator-questions.html?rubrikId="+response.data.id;
-					}
-					else{
-						window.location = "generator-questions-fixed.html?rubrikId="+response.data.id+'&rubrikType='+lobe;
-					}
-				},
-				error: function(error){
-					console.log(error);
+			else{
+				var sampleId = liteRubrikId;
+				if(lobe=='Lobe Premium'){
+					sampleId = premiumRubrikId;
 				}
-			});
+				window.location = "generator-questions-fixed.html?rubrikId="+sampleId+'&rubrikType='+lobe;
+			}
 		});
 
 

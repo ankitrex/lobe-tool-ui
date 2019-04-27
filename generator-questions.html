@@ -143,10 +143,17 @@
 
 		var url = new URL(window.location.href);
 		var rubrikId = url.searchParams.get("rubrikId");
+		var urlDimensions = url.searchParams.get("dimensions");
+
+		var newRubrik = false;
+
+		if(urlDimensions!=null){
+			newRubrik = true;
+		}
 
 		var rubrikDetails = getRubrikDetails(rubrikId, accessToken);
 
-		loadRubrik(rubrikDetails, accessToken);
+		loadRubrik(rubrikDetails, accessToken, newRubrik, urlDimensions);
 
 		$('[data-toggle="tooltip"]').tooltip();
 
@@ -211,30 +218,33 @@
 		});	
 
 		$('#save-rubrik').click(function(){
-			rubrikDetails = saveRubrikState(accessToken, rubrikDetails, false, false);
-			console.log(rubrikDetails);
+			rubrikDetails = saveRubrikState(accessToken, rubrikDetails, false, false, newRubrik, urlDimensions);
 			$('#save').modal('show');
 		});
 
 		$('#submit-rubrik').click(function(){
-			saveRubrikState(accessToken, rubrikDetails, true, false);
+			saveRubrikState(accessToken, rubrikDetails, true, false, newRubrik, urlDimensions);
 			$('#complete').modal('show');
 		});
 
 		$('#logout-top').click(function(){
-			saveRubrikState(accessToken, rubrikDetails, false, true);
+			saveRubrikState(accessToken, rubrikDetails, false, true, newRubrik, urlDimensions);
 		});
 
 		$('#logout-save').click(function(){
-			saveRubrikState(accessToken, rubrikDetails, false, false);
+			saveRubrikState(accessToken, rubrikDetails, false, false, newRubrik, urlDimensions);
 			localStorage.clear();
 			window.location.replace("signup.html");
 		});
 
+		$('#complete').click(function(){
+			window.location.replace('generator-dashboard.html');
+		})
+
 	});
 
 
-	function saveRubrikState(accessToken, rubrikDetails, submit, fromLogout) {
+	function saveRubrikState(accessToken, rubrikDetails, submit, fromLogout, newRubrik, urlDimensions) {
 		
 		console.log(rubrikDetails);
 
@@ -264,18 +274,66 @@
 			}
 		});
 
+		rubrikId = rubrikDetails.id;
+
+		if(newRubrik){
+
+			if(fromLogout){
+				if(allSelectedQues.length>0){
+					$('#logout-popup').modal('show');
+				}
+				else{
+					localStorage.clear();
+					window.location.replace("signup.html");
+				}
+			}
+			else{
+				var newRub = createRubrik(accessToken, 3, urlDimensions);
+				rubrikId = newRub.data.id;
+				addQ = allSelectedQues;
+				removeQ = [];
+			}
+		}
+
 		if(addQ.length > 0 || removeQ.length > 0 || submit){
 			if(fromLogout){
 				$('#logout-popup').modal('show');
 			}
 			else{
-				return updateRubrik(rubrikDetails.id,accessToken, addQ, removeQ, submit);
+				var details = updateRubrik(rubrikId, accessToken, addQ, removeQ, submit);
+				if(newRubrik && !submit){
+					window.location.replace('generator-questions.html?rubrikId='+details.id);
+				}
+				return details;
 			}
 		}
 		else if(fromLogout){
 			localStorage.clear();
 			window.location.replace("signup.html");
 		}
+	}
+
+	function createRubrik(accessToken, rubrikTypeId, dimensionIds){
+
+		var rubrikDetails;
+		$.ajax({
+			type: 'POST',
+			url: basePath+'/api/rubrik/create-rubrik',
+			data: { 'rubrikTypeId': rubrikTypeId, 'dimensionIds': dimensionIds },
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				rubrikDetails=response;
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+
+		return rubrikDetails;
 	}
 
 	function updateRubrik(rubrikId, accessToken, addQ, removeQ, submit) {
@@ -322,136 +380,136 @@
 	}
 		
 
-	function loadRubrik(rubrikDetails, accessToken) {
+	function loadRubrik(rubrikDetails, accessToken, newRubrik, urlDimensions) {
 
 		var i=0;
 		var ids=[];
 
 		rubrikDetails.dimensions.forEach(function(dimension){
 
-			var active = i==0 ? 'active ' : '';
-			var divId='';
-			html='';
+			if(urlDimensions==null || urlDimensions.includes(dimension.id)){
 
-			if(dimension.dimensionName=='Content Quality'){
-				html+='<li class="'+active+'cont-li">Content Quality</li>';
-				divId='content';
-			}
-			else if(dimension.dimensionName=='Pedagogical Alignment'){
-				html+='<li class="'+active+'peda-li">Pedagogical Alignment</li>';
-				divId='pedagogical';
-			}
-			else if(dimension.dimensionName=='Design Efficacy'){
-				html+='<li class="'+active+'des-li">Design Efficacy</li>';
-				divId='design';
-			}
-			else if(dimension.dimensionName=='Technological Integration'){
-				html+='<li class="'+active+'tech-li">Technological Integration</li>';
-				divId='technological';
-			}
-			$('.nav-tabs').append(html);
-			i++;
+				var active = i==0 ? 'active ' : '';
+				var divId='';
+				html='';
 
-			$.ajax({
-				type: 'GET',
-				url: basePath+'/api/rubrik/questions',
-				data: {'dimensionId' : dimension.id, 'rubrikTypeId': rubrikDetails.rubrikTypeId},
-				dataType: 'json',
-				async: false,
-				headers : {
-					'Authorization': 'Bearer '+accessToken,
-				},
-				success: function(response){
-					var allQuestions = response.data.questions;
-					var selectedQuestions = dimension.questions;
-
-					html='';
-					active = active=='' ? 'fade ' : active;
-
-					var allSelectedQuesIds = [];
-					selectedQuestions.forEach(function(q){
-						allSelectedQuesIds.push(q.id);
-					});
-					console.log(allSelectedQuesIds);
-					
-					html='<div id="'+divId+'" class="'+active+'tab-pane">';
-					html+='<table class="table">';
-					html+='<thead>'
-					html+='<thead><tr><th class="checkbox-tb-head"></th><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
-					html+='<tbody>';
-
-					var i=0;
-					allQuestions.forEach(function(question){
-
-						i++;
-						console.lo
-						var checked = allSelectedQuesIds.includes(question.id) ? ' checked' : '';
-						html+='<tr>';
-
-						html+='<th class="checkbox-tb"><input type="checkbox" name="generator-chkbx" id="gen-chkbox-'+question.id+'" value="'+question.id+'"'+checked+'></th>';
-
-						html+='<th>'
-						html+='<p>'+i+'. '+question.question+'</p>';
-						if(question.questionMeta!=''){
-							html+='<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>';
-							html+='<span class="hidden">';
-							html+=question.questionMeta;
-							html+='<span>';
-						}
-						html+='</th>';
-
-						html+='<th>';
-						html+='<p>'+question.score0+'</p>';
-						if(question.score0Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score0Images, id);
-							ids.push(id);
-						}
-						html+='</th>';
-
-						html+='<th>';
-						html+='<p>'+question.score1+'</p>';
-						if(question.score1Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score1Images, id);
-							ids.push(id);
-						}
-						html+='</th>';
-
-						html+='<th>';
-						html+='<p>'+question.score2+'</p>';
-						if(question.score2Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score2Images, id);
-							ids.push(id);
-						}
-						html+='</th>';
-
-						html+='<th>';
-						html+='<p>'+question.score3+'</p>';
-						if(question.score3Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score3Images, id);
-							ids.push(id);
-						}
-						html+='</th>';
-
-						html+='<tr>';
-					});
-
-					html+='</tbody>';
-					html+='</thead>';
-					html+='</table>';
-					html+='</div>';
-
-					$('.tab-content').append(html);
-
-					return response;
-				},
-				error: function(error){
-					console.log(error);
+				if(dimension.dimensionName=='Content Quality'){
+					html+='<li class="'+active+'cont-li">Content Quality</li>';
+					divId='content';
 				}
-			});
+				else if(dimension.dimensionName=='Pedagogical Alignment'){
+					html+='<li class="'+active+'peda-li">Pedagogical Alignment</li>';
+					divId='pedagogical';
+				}
+				else if(dimension.dimensionName=='Design Efficacy'){
+					html+='<li class="'+active+'des-li">Design Efficacy</li>';
+					divId='design';
+				}
+				else if(dimension.dimensionName=='Technological Integration'){
+					html+='<li class="'+active+'tech-li">Technological Integration</li>';
+					divId='technological';
+				}
+				$('.nav-tabs').append(html);
+				i++;
+
+				$.ajax({
+					type: 'GET',
+					url: basePath+'/api/rubrik/questions',
+					data: {'dimensionId' : dimension.id, 'rubrikTypeId': rubrikDetails.rubrikTypeId},
+					dataType: 'json',
+					async: false,
+					headers : {
+						'Authorization': 'Bearer '+accessToken,
+					},
+					success: function(response){
+						var allQuestions = response.data.questions;
+						var selectedQuestions = dimension.questions;
+
+						html='';
+						active = active=='' ? 'fade ' : active;
+
+						var allSelectedQuesIds = [];
+						selectedQuestions.forEach(function(q){
+							allSelectedQuesIds.push(q.id);
+						});
+						console.log(allSelectedQuesIds);
+						
+						html='<div id="'+divId+'" class="'+active+'tab-pane">';
+						html+='<table class="table">';
+						html+='<thead>'
+						html+='<thead><tr><th class="checkbox-tb-head"></th><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
+						html+='<tbody>';
+
+						allQuestions.forEach(function(question){
+
+							var checked = !newRubrik && allSelectedQuesIds.includes(question.id) ? ' checked' : '';
+							html+='<tr>';
+
+							html+='<th class="checkbox-tb"><input type="checkbox" name="generator-chkbx" id="gen-chkbox-'+question.id+'" value="'+question.id+'"'+checked+'></th>';
+
+							html+='<th>'
+							html+='<p>'+question.question+'</p>';
+							if(question.questionMeta!=''){
+								html+='<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>';
+								html+='<span class="hidden">';
+								html+=question.questionMeta;
+								html+='<span>';
+							}
+							html+='</th>';
+
+							html+='<th>';
+							html+='<p>'+question.score0+'</p>';
+							if(question.score0Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score0Images, id);
+								ids.push(id);
+							}
+							html+='</th>';
+
+							html+='<th>';
+							html+='<p>'+question.score1+'</p>';
+							if(question.score1Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score1Images, id);
+								ids.push(id);
+							}
+							html+='</th>';
+
+							html+='<th>';
+							html+='<p>'+question.score2+'</p>';
+							if(question.score2Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score2Images, id);
+								ids.push(id);
+							}
+							html+='</th>';
+
+							html+='<th>';
+							html+='<p>'+question.score3+'</p>';
+							if(question.score3Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score3Images, id);
+								ids.push(id);
+							}
+							html+='</th>';
+
+							html+='<tr>';
+						});
+
+						html+='</tbody>';
+						html+='</thead>';
+						html+='</table>';
+						html+='</div>';
+
+						$('.tab-content').append(html);
+
+						return response;
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
+			}
 		});
 		ids.forEach(function(id){
 			$(".html5lightbox-"+id).html5lightbox();

@@ -206,6 +206,10 @@
 			$(this).next().slideToggle();
 		});
 
+		$('#complete').click(function(){
+			window.location.replace('generator-dashboard.html');
+		})
+
 		$('.nav-tabs').on('click', '.cont-li', function(){
 			$('#content').removeClass('fade');
 			

@@ -151,7 +151,7 @@
 			newRubrik = true;
 		}
 
-		var rubrikDetails = getRubrikDetails(rubrikId, accessToken);
+		var rubrikDetails = getRubrikDetails(rubrikId, accessToken, newRubrik);
 
 		loadRubrik(rubrikDetails, accessToken, newRubrik, urlDimensions);
 
@@ -358,12 +358,13 @@
 		return getRubrikDetails(rubrikId, accessToken);
 	}
 
-	function getRubrikDetails(rubrikId, accessToken){
+	function getRubrikDetails(rubrikId, accessToken, newRubrik){
 
+		var browse = newRubrik ? 'browse/' : '';
 		var rubrikDetails;
 		$.ajax({
 			type: 'GET',
-			url: basePath+'/api/rubrik/'+rubrikId,
+			url: basePath+'/api/rubrik/'+browse+rubrikId,
 			dataType: 'json',
 			async: false,
 			headers : {

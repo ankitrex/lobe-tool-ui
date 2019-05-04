@@ -155,6 +155,7 @@
 
 		var optionalSel = false;
 		var optQuesId = 7;
+		var lobeLite=false;
 
 		var rubrikLiteId=1;
 		var rubrikPremiumId=2;
@@ -182,17 +183,18 @@
 		else if(rubrikType=='Lobe Lite'){
 			$('#prompt').modal('show');
 			rubrikTypeId=rubrikLiteId;
+			lobeLite=true;
 		}
 		else{
 			rubrikTypeId=rubrikPremiumId;
 		}
 		var rubrikId = url.searchParams.get("rubrikId");
 
-		loadRubrik(browse, rubrikId, accessToken, optionalSel, optQuesId);
+		loadRubrik(browse, rubrikId, accessToken, optionalSel, optQuesId, lobeLite);
 
 		$("#optYes").click(function(){
 			optionalSel = true;
-			loadRubrik(browse, rubrikId, accessToken, optionalSel, optQuesId);
+			loadRubrik(browse, rubrikId, accessToken, optionalSel, optQuesId, lobeLite);
 		});
 
 		$("#submit").click(function(){
@@ -267,7 +269,7 @@
 		});	
 	});
 
-	function loadRubrik(browse, rubrikId, accessToken, showOpt, optQuesId) {
+	function loadRubrik(browse, rubrikId, accessToken, showOpt, optQuesId, lobeLite) {
 		$.ajax({
 			type: 'GET',
 			url: basePath+'/api/rubrik/'+browse+rubrikId,
@@ -308,11 +310,13 @@
 					
 					html='';
 					active = active=='' ? 'fade ' : active;
+
+					var widthcss = lobeLite ? 'style = "width:40%"' : '';
 					
 					html='<div id="'+divId+'" class="tab-pane '+active+'">'
 					html+='<table class="table">';
 					html+='<thead>'
-					html+='<thead><tr><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
+					html+='<thead><tr><th class="question-tb"'+widthcss+'><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
 					html+='<tbody>';
 					dimension.questions.forEach(function(question){
 						if(question.id!=optQuesId || showOpt){

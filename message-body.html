@@ -148,23 +148,25 @@
 			var rubrikCode = lobeName.replace(/\s+/g, '-').toLowerCase();
 
 			$.ajax({
-			type: 'POST',
-			url: basePath+'/api/lobe/assign',
-			dataType: 'json',
-			data: {'rubrikId': rubrikId, 'rubrikCode': rubrikCode, 'msgSubject': subject, 'msgBody': msgBody, 'learningObjectName': lobeName, 'evaluatorEmail': evalEmail},	
-			async: false,
-			headers : {
-				'Authorization': 'Bearer '+accessToken,
-			},
-			success: function(response){
-				console.log(response);
-				window.location.replace('generator-dashboard.html');
-			},
-			error: function(error){
-				console.log(error);
-				$('#search-error').html(error.responseJSON.message);
-			}
-		});
+				type: 'POST',
+				url: basePath+'/api/lobe/assign',
+				dataType: 'json',
+				data: {'rubrikId': rubrikId, 'msgSubject': subject, 'msgBody': msgBody, 'learningObjectName': lobeName, 'evaluatorEmail': evalEmail},	
+				async: false,
+				headers : {
+					'Authorization': 'Bearer '+accessToken,
+				},
+				success: function(response){
+					console.log(response);
+					window.location.replace('generator-dashboard.html');
+				},
+				error: function(error){
+					console.log(error);
+					var errorMsg = error.responseJSON.message;
+					errorMsg = errorMsg.replace('assignRubrik.rubrikId:', '').replace('assignRubrik.msgBody:','').replace('assignRubrik.msgSubject:','').replace('assignRubrik.evaluatorEmail:','').replace('assignRubrik.learningObjects:','');
+					$('#search-error').html(errorMsg);	
+				}
+			});
 		});
 
 	});

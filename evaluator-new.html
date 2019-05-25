@@ -42,7 +42,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a href="">Logout</a>
+							<a href="" id="logout">Logout</a>
 						</div>
 					</div>
 				</div>
@@ -52,7 +52,7 @@
 						<!-- New Evaluation -->
 						<h4>New Evaluation <span><i class="fas fa-caret-right"></i></span></h4>
 						<div class="col-sm-12 new-evaluator-pg-cnt">
-							<form action="" class="form-horizontal">
+							<form action="javascript:void(0)" class="form-horizontal">
 								<div class="form-group">
 									<label class="col-sm-1 control-label" for="grade"><span>*</span>Grade -</label>
 										<input type="text" name="grade" id="grade" class="form-control col-sm-7">
@@ -73,7 +73,8 @@
 									<label class="col-sm-4 control-label" for="repo"><span>*</span>Learning object repository name <a href="javascript:void(0)" data-toggle="tooltip" title="Name of the company/creator">i</a> -</label>
 										<input type="text" name="repo" id="repo" class="form-control col-sm-6">
 								</div>
-								<button type="submit">START</button>
+								<p id="search-error" class="text-danger"></p>
+								<button id="start">START</button>
 							</form>
 						</div>
 					</div>
@@ -86,8 +87,51 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function () {
+
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
+
+		if(user.status!='ACTIVE' || !user.roles.includes('evaluator')){
+			window.location.replace("signup.html");
+		}
+
+		var url = new URL(window.location.href);
+		var code = url.searchParams.get("code");
+
+		$('#start').click(function(){
+
+			var grade = $('#grade').val();
+			var subject = $('#subject').val();
+			var chapter = $('#chapter').val();
+			var lobeName = $('#LO').val();
+			var repositoryName = $('#repo').val();
+
+			$.ajax({
+				type: 'POST',
+				url: basePath+'/api/lobe/new-review',
+				dataType: 'json',
+				data: {'code': code, 'grade': grade, 'subject': subject, 'chapter': chapter, 'lobeName': lobeName, 'repositoryName': repositoryName},	
+				async: false,
+				headers : {
+					'Authorization': 'Bearer '+accessToken,
+				},
+				success: function(response){
+					var lobeId = response.data.id;
+					window.location.replace("evaluator-questions.html?lobeId="+lobeId+"&status=incomplete");
+				},
+				error: function(error){
+					console.log(error);
+					var errorMsg = error.responseJSON.message;
+					errorMsg = errorMsg.replace('createNewReview.code:', '').replace('createNewReview.grade:','').replace('createNewReview.subject:','').replace('createNewReview.chapter:','').replace('createNewReview.lobeName:','').replace('createNewReview.repositoryName:','');
+					$('#search-error').html(errorMsg);	
+				}
+			});
+		});
+
 		$('[data-toggle="tooltip"]').tooltip();
 
 		$(".evaluator-panel .new-evaluator h4").click(function () {

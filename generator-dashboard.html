@@ -279,6 +279,8 @@
 			},
 			success: function(response){
 
+				console.log(response);
+
 				var data = response.data;
 				var allRubriks = [];
 				for(var i=0; i<data.length; i++){
@@ -296,6 +298,9 @@
 							if(lobe.rubrikName==rubrik){
 								name.push(lobe.name);
 								createdTs.push(lobe.createdTs);
+								if(lobe.percentage==undefined){
+									lobe.percentage=0;
+								}
 								percentage.push(lobe.percentage);
 							}
 						}

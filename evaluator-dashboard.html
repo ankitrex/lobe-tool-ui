@@ -151,8 +151,7 @@
 						html+='<span class="date">'+r.updatedTs.substring(0,r.updatedTs.indexOf('T'))+'</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
-						html+='<span class="percent">'+r.percentage+'%</span>';
-						html+='<div class="progress"><div class="progressbar-'+r.percentage+'"></div></div>';
+						html+='<span class="percent">'+Math.floor(r.percentage)+'%</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
 						html+='<a href="'+ref+'?lobeId='+r.id+'&status=incomplete">RESUME</a>';
@@ -176,8 +175,7 @@
 						html+='<span class="date">'+r.updatedTs.substring(0,r.updatedTs.indexOf('T'))+'</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
-						html+='<span class="percent">'+r.percentage+'%</span>';
-						html+='<div class="progress"><div class="progressbar-'+r.percentage+'"></div></div>';
+						html+='<span class="percent">'+Math.floor(r.percentage)+'%</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
                         html+='<a href="javascript:void(0)">VIEW</a>';

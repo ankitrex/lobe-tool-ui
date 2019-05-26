@@ -309,6 +309,8 @@
 		var i=0;
 		var ids=[];
 
+		var increaseWidth = rubrikDetails.rubrikName.includes('LITE');
+		
 		rubrikDetails.dimensionVos.forEach(function(dimension){
 
 			var active = i==0 ? 'active ' : '';
@@ -338,11 +340,13 @@
 
 			html='';
 			active = active=='' ? 'fade ' : active;
+
+			var widthcss = increaseWidth ? 'style = "width:40%"' : '';
 			
 			html='<div id="'+divId+'" class="'+active+'tab-pane">';
 			html+='<table class="table">';
 			html+='<thead>'
-			html+='<thead><tr><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th>                                                                <th class="comments-tb-head"></th></tr></thead>';
+			html+='<thead><tr><th class="question-tb"'+widthcss+'><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th>                                                                <th class="comments-tb-head"></th></tr></thead>';
 			html+='<tbody>';
 
 			allQuestions.forEach(function(question){

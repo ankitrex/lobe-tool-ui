@@ -83,6 +83,7 @@
 								<thead>
 									<tr>
 										<th><span>Rubric Code</span></th>
+										<th><span>Assigned By</span></th>
 										<th><span>Learning Object Name</span></th>
 										<th><span>Date</span></th>
 										<th><span>Status</span></th>
@@ -207,14 +208,22 @@
 						var name = [];
 						var createdTs = [];
 						var status = [];
+						var assignedBy = [];
 						for(var j=0; j<data.length; j++){
 							var lobe = data[j];
 							if(lobe.rubrikName==rubrik){
 								name.push(lobe.name);
 								createdTs.push(lobe.createdTs);
 								status.push(lobe.status);
+								assignedBy.push(lobe.assignedBy);
 							}
 						}
+
+						html+='<th class="learning-tb">';
+						for(var j=0; j<assignedBy.length; j++){
+							html+='<span>'+assignedBy[j]+'</span>';
+						}
+						html+='</th>';
 
 						html+='<th class="learning-tb">';
 						for(var j=0; j<name.length; j++){

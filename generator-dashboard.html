@@ -147,6 +147,7 @@
 								<thead>
 									<tr>
 										<th><span>Rubric Code</span></th>
+										<th><span>Assigned To</span></th>
 										<th><span>Learning Object Name</span></th>
 										<th><span>Date</span></th>
 										<th><span>Status</span></th>
@@ -293,6 +294,7 @@
 						var name = [];
 						var createdTs = [];
 						var percentage = [];
+						var assignedTo = [];
 						for(var j=0; j<data.length; j++){
 							var lobe = data[j];
 							if(lobe.rubrikName==rubrik){
@@ -302,8 +304,15 @@
 									lobe.percentage=0;
 								}
 								percentage.push(lobe.percentage);
+								assignedTo.push(lobe.assignedTo);
 							}
 						}
+
+						html+='<th class="learning-tb">';
+						for(var j=0; j<assignedTo.length; j++){
+							html+='<span>'+assignedTo[j]+'</span>';
+						}
+						html+='</th>';
 
 						html+='<th class="learning-tb">';
 						for(var j=0; j<name.length; j++){

@@ -335,12 +335,12 @@
 							}
 							else{
 								html+='<div class="progress">';
-								html+='<div class="progressbar-'+percentage[j]+'"></div>';
+								html+='<div class="progressbar-'+Math.floor(percentage[j])+'"></div>';
 								html+='</div>';
 							}
 							html+='</div>';
 							html+='<div class="col-sm-4">';
-							html+='<span>'+percentage[j]+'%</span>';
+							html+='<span>'+Math.floor(percentage[j])+'%</span>';
 							html+='</div>';
 							html+='</div>';
 						}

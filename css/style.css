@@ -77,15 +77,6 @@ select.form-control:focus{
 	text-align: left;
 	position: relative;
 }
-.signup h5:after{
-	position: absolute;
-	content: '';
-	width: 35%;
-	height: 1px;
-	border: 1px solid #63468e;
-	bottom: -6px;
-	left: 0px;
-}
 .signup form{
 	text-align: left;
 	padding: 6% 0;
@@ -95,7 +86,7 @@ select.form-control:focus{
 }
 .signup form input{
 	width: 55%;
-	font: 16px/20px 'Orator';
+	font: 16px/20px 'Monts-reg';
 	color: #63468e;
 	border: none;
 	border-bottom: 1px solid #63468e;
@@ -185,7 +176,7 @@ select.form-control:focus{
 	padding: 2% 0 1%;
 }
 .signin form input{
-	font: 16px/20px 'Orator';
+	font: 16px/20px 'Monts-reg';
 	color: #63468e;
 	border: none;
 	border-bottom: 1px solid #63468e;
@@ -311,7 +302,7 @@ select.form-control:focus{
 	padding: 2% 0 1%;
 }
 .forget-paas form input{
-	font: 16px/20px 'Orator';
+	font: 16px/20px 'Monts-reg';
 	color: #64368e;
 	border: none;
 	border-bottom: 1px solid #63468e;
@@ -377,6 +368,10 @@ select.form-control:focus{
     margin: 9px 0 0;
     color: #63468e;
     background-color: #fff;
+}
+.heading .col-sm-1{
+	padding-right: 5px;
+	padding-left: 5px;
 }
 .dashboard-body .dashboard-panel{
 	background-color: #49468e;
@@ -1132,7 +1127,7 @@ select.form-control:focus{
 	cursor: pointer;
 }
 .new-evaluator-pg-cnt input[type="text"]{
-	font: 16px/20px 'Orator';
+	font: 16px/20px 'Monts-reg';
     color: #63468e;
     border: none;
     border-bottom: 1px solid #63468e;
@@ -1680,7 +1675,7 @@ select.form-control:focus{
 }
 .lite_cont .landing_header{text-align: left;}
 .landing_logo{
-	width: 40%;
+	width: 80%;
 	margin: 0 auto;
 	display: block;
 	float: left;

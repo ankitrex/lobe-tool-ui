@@ -42,5 +42,6 @@
 	.message-body span {font: 16px/21px Monts-reg;}
 	.lite_cont h3, .prem_cont h3{font: 30px/34px 'Orator'; padding: 20px 0 10px;}
 	.lite_cont h5, .prem_cont h5{font: 22px/27px 'Orator';}
-	.lite_cont ul li, .prem_cont ul li{font: 14px/25px Monts-reg;}
+	.lite_cont ul li{font: 14px/25px Monts-reg;}
+	.prem_cont ul li{font: 14px/25px Monts-reg;}
 }

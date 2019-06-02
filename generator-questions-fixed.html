@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
 	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
 	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css"><!--Css file-->
 </head>
 <body>
 	<section class="dashboard-body">
@@ -21,7 +23,9 @@
 						<div class="progressbar-25"></div>
 					</div> -->
 				</div>
-				<div class="col-sm-1"></div>
+				<div class="col-sm-1">
+					<a href="generator-dashboard.html">GO BACK</a>
+				</div>
 				<div class="col-sm-1">
 					<a href="javascript:void(0)" id="submit">SAVE</a>
 				</div>
@@ -164,7 +168,7 @@
 
 		var browse='browse/';
 
-		var user = runValidations();
+		// var user = runValidations();
 		var accessToken = localStorage.getItem("accessToken");
 
 		if(user.status!='ACTIVE' || !user.roles.includes('generator')){

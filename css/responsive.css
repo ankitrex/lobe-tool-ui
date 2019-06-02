@@ -1,0 +1,46 @@
+@media only screen and (max-width: 1600px){
+	.dashboard-body .dashboard-panel img{width: 60%;}
+	.dashboard-body .heading h5, .dashboard-body .dashboard-panel h4{font: 21px/26px 'Orator';}
+	.dashboard-body .generator-panel h4, .dashboard-body .content-panel h3, .dashboard-body .evaluator-panel h4,
+	.dashboard-body .result-panel h4
+	{font: 23px/28px 'Orator'; padding: 10px 0;}
+	.new-admin .panel-box h6{font: 16px/21px Monts-bld;}
+	.new-admin .panel-box span{font: 14px/19px Monts-reg;}
+	.dashboard-body .user-panel h4, .dashboard-body .tool-panel h4,
+	.dashboard-body .analytics-admin-panel h4, .dashboard-body .rubric-modification-panel h4{font: 28px/33px 'Monts-reg';}
+	.new-user table thead th, .new-tool table thead th,
+	.new-analytics-admin table thead th, .table-panel table thead span{font: 17px/21px Monts-bld;}
+	.new-user table tbody td, .new-tool table tbody td,
+	.new-analytics-admin table tbody td{font: 14px/19px Monts-reg;}
+	.dashboard-body .heading a{font-size: 14px; margin-top: 12px;}
+	.dashboard-body .analytics-admin-heading a{font: 16px/21px Monts-reg;}
+	.new-detail-cnt label{font: 16px/21px Monts-reg;}
+	.new-detail-cnt select{font: 14px/19px Monts-reg;}
+	.dashboard-body .content-panel h6{font: 20px/25px 'Monts-bld';}
+	.dashboard-body .content-panel span, .dashboard-body .content-panel input:not([type=radio]),
+	.signup form input{font: 15px/20px 'Monts-reg';}
+	.dashboard-body .dashboard-panel a, .signup form button, .signup form a,
+	.new-comp-cnt form button, .new-comp-cnt form #select-rubric-a, .new-comp-cnt form .company-name a, 
+	.new-results-cnt a,
+	.new-detail-cnt form button, .new-detail-cnt form #select-rubric-a,
+	.new-summary-cnt form button, .new-summary-cnt form #select-rubric-a,
+	.new-sw-cnt form button, .new-sw-cnt form #select-rubric-a{font-size: 14px;}
+	.admin-heading h1{
+		font-size: 22px;
+   		margin: 0;
+	}
+	.new-evaluator-pg-cnt input[type="text"], .new-evaluator-pg-cnt label{ font: 14px/19px 'Monts-reg'; }
+	.signup h5{font: 20px/25px 'Orator';}
+	.new-comp-cnt label, .new-comp-cnt select, .new-detail-cnt label, .new-detail-cnt select,
+	.new-summary-cnt label, .new-summary-cnt select, .new-sw-cnt label, .new-sw-cnt select{font: 14px/19px Monts-reg;}
+	.new-comp-cnt span, .legend-span, .new-comp-cnt .zero a, .new-comp-cnt .moderate a, .new-comp-cnt .high a, .new-comp-cnt .danger a,
+	.message-body .form-group select, .message-body input[type="text"], .message-body a,
+	.lite_cont a, .prem_cont a
+	{font: 14px/19px Monts-reg;}
+	.new-results-cnt .side-cnt span, .new-detail-cnt span, .new-summary-cnt span, .new-sw-cnt span{font: 14px/19px Monts-reg;}
+	.new-results-cnt .side-cnt h6{font: 16px/21px Monts-bld;}
+	.message-body span {font: 16px/21px Monts-reg;}
+	.lite_cont h3, .prem_cont h3{font: 30px/34px 'Orator'; padding: 20px 0 10px;}
+	.lite_cont h5, .prem_cont h5{font: 22px/27px 'Orator';}
+	.lite_cont ul li, .prem_cont ul li{font: 14px/25px Monts-reg;}
+}

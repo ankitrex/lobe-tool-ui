@@ -7,14 +7,18 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--bootstrap file-->
 	<link rel="stylesheet" type="text/css" href="css/style.css"><!--Css file-->
 	<link rel="stylesheet" type="text/css" href="css/all.min.css"><!--Css file-->
+	<link rel="stylesheet" type="text/css" href="css/responsive.css"><!--Css file-->
 </head>
 <body>
 	<section class="dashboard-body">
 		<div class="container-fluid">
 			<div class="row heading">
 				<div class="col-sm-3"></div>
-				<div class="col-sm-9">
+				<div class="col-sm-8">
 					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+				<div class="col-sm-1">
+					<a href="evaluator-dashboard.html">GO BACK</a>
 				</div>
 			</div>
 			<div class="row">
@@ -92,7 +96,7 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 
-		var user = runValidations();
+		// var user = runValidations();
 		var accessToken = localStorage.getItem("accessToken");
 
 		if(user.status!='ACTIVE' || !user.roles.includes('evaluator')){

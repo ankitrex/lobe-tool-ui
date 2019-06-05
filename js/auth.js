@@ -3,7 +3,7 @@ $('#logout').click(function(){
 	window.location.replace("signup.html");
 });
 
-var basePath = 'http://localhost:8080';
+var basePath = 'http://ec2-13-233-122-114.ap-south-1.compute.amazonaws.com:8080';
 
 function runValidations(){
 

@@ -168,7 +168,7 @@
 
 		var browse='browse/';
 
-		// var user = runValidations();
+		var user = runValidations();
 		var accessToken = localStorage.getItem("accessToken");
 
 		if(user.status!='ACTIVE' || !user.roles.includes('generator')){

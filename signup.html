@@ -174,9 +174,10 @@
 						location.reload();
 					},
 					error: function(error){
-						var errorResp = error.responseJSON;
-						console.log(errorResp);
-						$('#register-error').html(errorResp.message);
+						console.log(error);
+						var errorMsg = error.responseJSON.message;
+						errorMsg = errorMsg.replace('register.email:', '').replace('register.name:','').replace('register.password:','').replace('register.affiliation:','').replace('register.roleId:','');
+						$('#register-error').html(errorMsg);
 					}
 				});
 			}

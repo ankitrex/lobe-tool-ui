@@ -9,16 +9,36 @@
 	.dashboard-body .user-panel h4, .dashboard-body .tool-panel h4,
 	.dashboard-body .analytics-admin-panel h4, .dashboard-body .rubric-modification-panel h4{font: 28px/33px 'Monts-reg';}
 	.new-user table thead th, .new-tool table thead th,
-	.new-analytics-admin table thead th, .table-panel table thead span{font: 17px/21px Monts-bld;}
+	.new-analytics-admin table thead th, .table-panel table thead span{font: 15px/20px Monts-bld;}
 	.new-user table tbody td, .new-tool table tbody td,
 	.new-analytics-admin table tbody td{font: 14px/19px Monts-reg;}
 	.dashboard-body .heading a{font-size: 14px; margin-top: 12px;}
 	.dashboard-body .analytics-admin-heading a{font: 16px/21px Monts-reg;}
 	.new-detail-cnt label{font: 16px/21px Monts-reg;}
-	.new-detail-cnt select{font: 14px/19px Monts-reg;}
+	.new-detail-cnt select, .table-panel table tbody p, .table-panel table tbody a,
+	.table-panel table tbody span.hidden{font: 14px/19px Monts-reg;}
 	.dashboard-body .content-panel h6{font: 20px/25px 'Monts-bld';}
+	.dashboard-body .generator-panel ul li label,
+	.dashboard-body .evaluator-panel .new-evaluator-cnt button,
+	.new-evaluator-pg-cnt button{font-size: 14px;}
+	.dashboard-body .generator-panel p, .assign-cnt ol li,
+	.generator-panel .track-cnt .table tbody span, .incomp-rubric-cnt .date, 
+	.comp-rubric-cnt .date, .incomp-rubric-cnt .num, .comp-rubric-cnt .num,
+	.evaluator-panel .track-cnt .table tbody span,
+	.dashboard-body .evaluator-panel p{font: 15px/20px 'Monts-reg';}
+	.incomp-rubric-cnt .title, .comp-rubric-cnt .title{font: 15px/20px Monts-bld;}
+	.assign-cnt span, .generator-panel .track-cnt .table thead span,
+	.evaluator-panel .track-cnt .table thead span{font: 15px/20px Monts-bld;}
+	.incomp-rubric-cnt a, .comp-rubric-cnt a, .assign-cnt a, #create-rubrik{font-size: 14px;}
+	.generator-panel .track-cnt .table a i{display: none;}
+	.generator-panel .track-cnt .table a{font: 14px/19px Monts-reg; padding: 2px 7px;}
 	.dashboard-body .content-panel span, .dashboard-body .content-panel input:not([type=radio]),
 	.signup form input{font: 15px/20px 'Monts-reg';}
+	.signup-mainbody{height: auto; padding: 3% 0;}
+	.signin h5{font: 24px/28px 'Orator';}
+	.signin form h6{font: 18px/23px 'Orator';}
+	.signin .role-ul label, .signin button{font-size: 15px;}
+	.signin form .haveanacc, btn-forget{font: 14px/19px 'Orator';}
 	.dashboard-body .dashboard-panel a, .signup form button, .signup form a,
 	.new-comp-cnt form button, .new-comp-cnt form #select-rubric-a, .new-comp-cnt form .company-name a, 
 	.new-results-cnt a,

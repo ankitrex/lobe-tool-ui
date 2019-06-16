@@ -218,7 +218,7 @@
 						var assignedBy = [];
 						for(var j=0; j<data.length; j++){
 							var lobe = data[j];
-							if(lobe.rubrikName==rubrik){
+							if(lobe.status=='assigned' && lobe.rubrikName==rubrik){
 								name.push(lobe.name);
 								createdTs.push(lobe.createdTs);
 								status.push(lobe.status);

@@ -846,6 +846,9 @@ select.form-control:focus{
 .table-panel table thead .question-tb .score span{
 	text-align: right;
 	display: block;
+	position: relative;
+    left: -110px;
+    top: -8px;
 }
 .table-panel table thead .question-tb .score{position: relative;}
 .table-panel table thead .question-tb .score:after{

@@ -143,9 +143,12 @@
 						html+='<span class="title">'+r.rubrikName+'</span>';
 						html+='</div>';
 						html+='<div class="col-sm-2">';
+						html+='<span class="date">'+r.name+'</span>';
+						html+='</div>';
+						html+='<div class="col-sm-2">';
 						html+='<span class="date">'+r.updatedTs.substring(0,r.updatedTs.indexOf('T'))+'</span>';
 						html+='</div>';
-						html+='<div class="col-sm-3">';
+						html+='<div class="col-sm-1">';
 						html+='<span class="percent">'+Math.floor(r.percentage)+'%</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
@@ -167,9 +170,12 @@
 						html+='<span class="title">'+r.rubrikName+'</span>';
 						html+='</div>';
 						html+='<div class="col-sm-2">';
+						html+='<span class="date">'+r.name+'</span>';
+						html+='</div>';
+						html+='<div class="col-sm-2">';
 						html+='<span class="date">'+r.updatedTs.substring(0,r.updatedTs.indexOf('T'))+'</span>';
 						html+='</div>';
-						html+='<div class="col-sm-3">';
+						html+='<div class="col-sm-1">';
 						html+='<span class="percent">'+Math.floor(r.percentage)+'%</span>';
 						html+='</div>';
 						html+='<div class="col-sm-3">';
@@ -203,16 +209,13 @@
 					var rubrik=data[i].rubrikName;
 					if(!allRubriks.includes(rubrik)){
 
-						html='<tr>';
-						html+='<th><span>'+rubrik+'</span></th>';
-
 						var name = [];
 						var createdTs = [];
 						var status = [];
 						var assignedBy = [];
 						for(var j=0; j<data.length; j++){
 							var lobe = data[j];
-							if(lobe.rubrikName==rubrik){
+							if(lobe.status=='assigned' && lobe.rubrikName==rubrik){
 								name.push(lobe.name);
 								createdTs.push(lobe.createdTs);
 								status.push(lobe.status);
@@ -220,35 +223,40 @@
 							}
 						}
 
-						html+='<th class="learning-tb">';
-						for(var j=0; j<assignedBy.length; j++){
-							html+='<span>'+assignedBy[j]+'</span>';
-						}
-						html+='</th>';
+						if(name.length>0){
 
-						html+='<th class="learning-tb">';
-						for(var j=0; j<name.length; j++){
-							html+='<span>'+name[j]+'</span>';
-						}
-						html+='</th>';
+							html='<tr>';
+							html+='<th><span>'+rubrik+'</span></th>';
 
-						html+='<th class="date-tb">';
-						for(var j=0; j<createdTs.length; j++){
-							html+='<span>'+createdTs[j].substring(0,createdTs[j].indexOf('T'))+'</span>';
-						}
-						html+='</th>';
+							html+='<th class="learning-tb">';
+							for(var j=0; j<assignedBy.length; j++){
+								html+='<span>'+assignedBy[j]+'</span>';
+							}
+							html+='</th>';
 
-						html+='<th class="date-tb">';
-						for(var j=0; j<status.length; j++){
-							html+='<span>'+status[j].toUpperCase()+'</span>';
-						}
-						html+='</th>';
+							html+='<th class="learning-tb">';
+							for(var j=0; j<name.length; j++){
+								html+='<span>'+name[j]+'</span>';
+							}
+							html+='</th>';
 
-						html+='</tr>';
-						
-						
-						$('.track-cnt tbody').append(html);
-						allRubriks.push(rubrik);
+							html+='<th class="date-tb">';
+							for(var j=0; j<createdTs.length; j++){
+								html+='<span>'+createdTs[j].substring(0,createdTs[j].indexOf('T'))+'</span>';
+							}
+							html+='</th>';
+
+							html+='<th class="date-tb">';
+							for(var j=0; j<status.length; j++){
+								html+='<span>'+status[j].toUpperCase()+'</span>';
+							}
+							html+='</th>';
+
+							html+='</tr>';
+
+							$('.track-cnt tbody').append(html);
+							allRubriks.push(rubrik);
+						}
 					}
 				}
 			},

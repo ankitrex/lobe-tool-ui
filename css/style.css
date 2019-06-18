@@ -834,10 +834,10 @@ select.form-control:focus{
 /*------------------------------------------------Generator Question Table-------------------------------------------------------*/
 .table-panel{padding: 2% 15px; background-color: #efefef;}
 .table-panel .nav-tabs{background-color: #f9f9f9;}
-.table-panel .nav-tabs li{color: #63468e; padding: 12px 22px; display: inline-block}
+.table-panel .nav-tabs li{color: #63468e; padding: 12px 22px; display: inline-block; cursor: pointer;}
 .table-panel .nav-tabs li.active{background-color: #63468e; color: #fff;}
 .table-panel table .checkbox-tb-head, .table-panel table .comments-tb-head{width: 3%;}
-.table-panel table .question-tb{width: 12%;}
+.table-panel table .question-tb{width: 20% ;}
 .table-panel table .score-0, .table-panel table .score-1, .table-panel table .score-2, .table-panel table .score-3{width: 20%;}
 .table-panel table thead{background-color: #49468e;}
 .table-panel table tbody{background-color: #fff;}

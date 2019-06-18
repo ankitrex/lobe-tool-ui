@@ -846,6 +846,16 @@ select.form-control:focus{
 .table-panel table thead .question-tb .score span{
 	text-align: right;
 	display: block;
+	position: relative;
+	top: -7px;
+	left: -100px
+}
+.table-panel table thead .question-tb .score span.score_40{
+	text-align: right;
+	display: block;
+	position: relative;
+	top: -7px;
+	left: -310px
 }
 .table-panel table thead .question-tb .score{position: relative;}
 .table-panel table thead .question-tb .score:after{

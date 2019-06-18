@@ -838,7 +838,7 @@ select.form-control:focus{
 .table-panel .nav-tabs li.active{background-color: #63468e; color: #fff;}
 .table-panel table .checkbox-tb-head, .table-panel table .comments-tb-head{width: 3%;}
 .table-panel table .question-tb{width: 20% ;}
-.table-panel table .score-0, .table-panel table .score-1, .table-panel table .score-2, .table-panel table .score-3{width: 20%;}
+.table-panel table .score-0, .table-panel table .score-1, .table-panel table .score-2, .table-panel table .score-3{width: 15%;}
 .table-panel table thead{background-color: #49468e;}
 .table-panel table tbody{background-color: #fff;}
 .table-panel table tbody th{padding: 25px 11px; position: relative;}
@@ -855,7 +855,7 @@ select.form-control:focus{
 	display: block;
 	position: relative;
 	top: -7px;
-	left: -310px
+	left: -285px
 }
 .table-panel table thead .question-tb .score{position: relative;}
 .table-panel table thead .question-tb .score:after{

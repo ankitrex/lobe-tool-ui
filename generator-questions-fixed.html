@@ -315,12 +315,13 @@
 					html='';
 					active = active=='' ? 'fade ' : active;
 
-					var widthcss = lobeLite ? 'style = "width:40%"' : '';
+					var widthcss = lobeLite ? ' style = "width:40%"' : '';
+					var score40 = lobeLite ? ' class = "score_40"' : '';
 					
 					html='<div id="'+divId+'" class="tab-pane '+active+'">'
 					html+='<table class="table table-bordered">';
 					html+='<thead>'
-					html+='<thead><tr><th class="question-tb"'+widthcss+'><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
+					html+='<thead><tr><th class="question-tb"'+widthcss+'><div class="score"><span'+score40+'>SCORE</span></div><div class="question"><span>QUESTION</span></div></th><th class="score-0"><span>0</span><span>(Missing)</span></th><th class="score-1"><span>1</span><span>(Inadequate)</span></th><th class="score-2"><span>2</span><span>(Almost)</span></th><th class="score-3"><span>3</span><span>(Target)</span></th></tr></thead>';
 					html+='<tbody>';
 					dimension.questions.forEach(function(question){
 						if(question.id!=optQuesId || showOpt){

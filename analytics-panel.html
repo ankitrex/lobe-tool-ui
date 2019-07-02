@@ -31,12 +31,12 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h4>GENERATOR DASHBOARD</h4>
+							<h4 id="dash-name"></h4>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a href="javascript:void(0)">Back to Dashboard</a>
+							<a href="javascript:void(0)" id="btd">Back to Dashboard</a>
 						</div>
 					</div>
 					<div class="row">
@@ -46,7 +46,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a href="">Logout</a>
+							<a href="" id="logout">Logout</a>
 						</div>
 					</div>
 				</div>
@@ -109,8 +109,27 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function () {
+
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
+
+		if(user.status!='ACTIVE'){
+			window.location.replace("signup.html");
+		}
+
+		if(user.roles.includes('evaluator')){
+			$("#btd").attr('href', 'evaluator-dashboard.html');
+			$('#dash-name').append('EVALUATOR DASHBOARD');
+		}
+		else{
+			$("#btd").attr('href', 'generator-dashboard.html');
+			$('#dash-name').append('GENERATOR DASHBOARD');
+		}
+
 		$('[data-toggle="tooltip"]').tooltip();
 	});
 </script>

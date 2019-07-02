@@ -31,7 +31,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h4>GENERATOR DASHBOARD</h4>
+							<h4 id="dash-name"></h4>
 						</div>
 					</div>
 					<div class="row">
@@ -46,7 +46,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a href="">Logout</a>
+							<a href="" id=logout>Logout</a>
 						</div>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 						<!-- Detailed Score -->
 						<h4>Detailed Scores</h4>
 						<div class="col-sm-12 new-detail-cnt table-panel">
-							<span>Learning Object Name 1</span>
+							<span id="lobe-name"></span>
 							<table class="table table-bordered">
 								<thead>
 									<thead>
@@ -87,81 +87,8 @@
 											</th>
 										</tr>
 									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<p>C1. Is the content accurate?*</p>
-												<a class="evaluate">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-												<span class="hidden" id="example-1">
-													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-												</span>
-											</th>
-											<th>
-												<p>
-												</p>
-											</th>
-											<th>
-												<p>
-													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception. 
-												</p>
-											</th>
-											<th>
-												<p>
-													 
-												</p>
-											</th>
-											<th>
-												<p>
-													
-												</p>
-											</th>
-										</tr>
-										<tr>
-											<th>
-												<p>C2.  Is the content sufficient and up-to-date  with respect to relevant advances in the topic in a grade appropriate manner?</p>
-												<a class="evaluate-1">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-												<span class="hidden" id="example-2">
-													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-												</span>
-											</th>
-											<th>
-												
-											</th>
-											<th>
-												
-											</th>
-											<th>
-												
-											</th>
-											<th>
-												<p>
-													Content is complete and sufficient to explain the topic, and it includes clear and correct descriptions of grade-appropriate relevant advances in the topic. 
-												</p>
-											</th>
-										</tr>
-										<tr>
-											<th>
-												<p>C3. Is the content situated in an appropriate context?</p>
-												<a class="evaluate-2">To evaluate this question &nbsp; <i class="fas fa-caret-right"></i></a>
-												<span class="hidden" id="example-3">
-													Some of the content is accurate, but there are one or more major errors such as incorrect explanations or examples or inaccurate activity solutions; or the way the content is presented is likely to cause major misconception.
-												</span>
-											</th>
-											<th>
-												<p>
-													A relevant context is provided for the content. However, the context maynot be sufficient for the specific topic. 
-												</p>
-											</th>
-											<th>
-												
-											</th>
-											<th>
-												
-											</th>
-											<th>
-												
-											</th>
-										</tr>
+									<tbody id="det-table">
+										
 									</tbody>
 								</thead>
 							</table>
@@ -176,26 +103,167 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function () {
-		$('[data-toggle="tooltip"]').tooltip();
 
-		$('.select-rubric a').click(function () {
-			$('.learning-rubric').show();
-			$('.select-rubric a').hide();
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
+
+		if(user.status!='ACTIVE'){
+			window.location.replace("signup.html");
+		}
+
+		var type;
+		if(user.roles.includes('evaluator')){
+			type='evaluator';
+			$('#dash-name').append('EVALUATOR DASHBOARD');
+		}
+		else{
+			type='generator';
+			$('#dash-name').append('GENERATOR DASHBOARD');
+		}
+
+		var url = new URL(window.location.href);
+		var lobeId = url.searchParams.get("lobeId");
+
+		$.ajax({
+			type: 'GET',
+			url: basePath+'/api/lobe/get-lobe-questions?lobeId='+lobeId,
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				console.log(response);
+				$('#lobe-name').append(response.data.name);
+
+				var i=0;
+				var ids=[];
+
+				html='';
+				response.data.dimensionVos.forEach(function(dimension){
+
+					dimension.questions.forEach(function(question){
+
+						var score = question.score;
+
+						html+='<tr>';
+
+						html+='<th>'
+						html+='<p>'+question.question+'</p>';
+						if(question.questionMeta!=''){
+							html+=question.questionMeta;
+						}
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score0+'</p>';
+						if(question.score0Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score0Images, id);
+							ids.push(id);
+						}
+
+						html+='<div class="radio-eva">';
+						html+='<input type="radio" name="'+question.id+'" value="0" ';
+						if(score==0){
+							html+='checked';
+						}
+						html+='>';
+						html+='</div>';
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score1+'</p>';
+						if(question.score1Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score1Images, id);
+							ids.push(id);
+						}
+						html+='<div class="radio-eva">';
+						html+='<input type="radio" name="'+question.id+'" value="1" ';
+						if(score==1){
+							html+='checked';
+						}
+						html+='>';
+						html+='</div>';
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score2+'</p>';
+						if(question.score2Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score2Images, id);
+							ids.push(id);
+						}
+						html+='<div class="radio-eva">';
+						html+='<input type="radio" name="'+question.id+'" value="2" ';
+						if(score==2){
+							html+='checked';
+						}
+						html+='>';
+						html+='</div>';
+						html+='</th>';
+
+						html+='<th>';
+						html+='<p>'+question.score3+'</p>';
+						if(question.score3Images.length>0){
+							var id = uniqueId();
+							html+=getImagesHtml(question.score3Images, id);
+							ids.push(id);
+						}
+						html+='<div class="radio-eva">';
+						html+='<input type="radio" name="'+question.id+'" value="3" ';
+						if(score==3){
+							html+='checked';
+						}
+						html+='>';
+						html+='</div>';
+						html+='</th>';
+						html+='</tr>';
+					})
+				});
+
+				$('#det-table').append(html);
+
+				ids.forEach(function(id){
+					$(".html5lightbox-"+id).html5lightbox();
+				});
+			},
+			error: function(error){
+				console.log(error);
+			}
 		});
 
-		$(".evaluate").click(function () {
-			$("span#example-1").slideToggle();
+		$(".evaluate").click(function(){
+			$(this).next().slideToggle();
 		});
 
-		$(".evaluate-1").click(function () {
-			$("span#example-2").slideToggle();
-		});
-
-		$(".evaluate-2").click(function () {
-			$("span#example-3").slideToggle();
-		});
 	});
+
+	function getImagesHtml(images, id) {
+
+		html='';
+
+		var iCnt=0;
+		images.forEach(function(img){
+			if(iCnt==0){
+				html+='<a href="'+img+'" class="html5lightbox-'+id+'" data-group="mygroup" data-thumbnail="'+img+'">See Examples &nbsp; <i class="fas fa-caret-right"></i></a>';
+			}
+			else{
+				html+='<a href="'+img+'" class="html5lightbox-'+id+'" data-group="mygroup" data-thumbnail="'+img+'" style="display:none"></a>';
+			}
+			iCnt++;
+		});
+
+		return html;
+	}
+
+	function uniqueId() {
+  		return 'id-' + Math.random().toString(36).substr(2, 16);
+  	}
 </script>
 </html>

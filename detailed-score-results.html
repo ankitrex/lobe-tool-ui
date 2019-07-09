@@ -103,6 +103,7 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/html5lightbox.js"></script><!--HTML5 slidehow-->
 <script type="text/javascript" src="js/auth.js"></script>
 
 <script type="text/javascript">
@@ -143,6 +144,8 @@
 				var i=0;
 				var ids=[];
 
+				var isLite = response.data.rubrikName.includes('LITE');
+
 				html='';
 				response.data.dimensionVos.forEach(function(dimension){
 
@@ -160,69 +163,68 @@
 						html+='</th>';
 
 						html+='<th>';
-						html+='<p>'+question.score0+'</p>';
-						if(question.score0Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score0Images, id);
-							ids.push(id);
-						}
-
-						html+='<div class="radio-eva">';
-						html+='<input type="radio" name="'+question.id+'" value="0" ';
 						if(score==0){
-							html+='checked';
+							if(isLite){
+								html+='<p>Score given</p>';
+							}
+							else{
+								html+='<p>'+question.score0+'</p>';
+								if(question.score0Images.length>0){
+									var id = uniqueId();
+									html+=getImagesHtml(question.score0Images, id);
+									ids.push(id);
+								}
+							}
 						}
-						html+='>';
-						html+='</div>';
 						html+='</th>';
 
 						html+='<th>';
-						html+='<p>'+question.score1+'</p>';
-						if(question.score1Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score1Images, id);
-							ids.push(id);
-						}
-						html+='<div class="radio-eva">';
-						html+='<input type="radio" name="'+question.id+'" value="1" ';
 						if(score==1){
-							html+='checked';
+							if(isLite){
+								html+='<p>Score given</p>';
+							}
+							else{
+								html+='<p>'+question.score1+'</p>';
+								if(question.score1Images.length>0){
+									var id = uniqueId();
+									html+=getImagesHtml(question.score1Images, id);
+									ids.push(id);
+								}
+							}
 						}
-						html+='>';
-						html+='</div>';
 						html+='</th>';
 
 						html+='<th>';
-						html+='<p>'+question.score2+'</p>';
-						if(question.score2Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score2Images, id);
-							ids.push(id);
-						}
-						html+='<div class="radio-eva">';
-						html+='<input type="radio" name="'+question.id+'" value="2" ';
 						if(score==2){
-							html+='checked';
+							if(isLite){
+								html+='<p>Score given</p>';
+							}
+							else{
+								html+='<p>'+question.score2+'</p>';
+								if(question.score2Images.length>0){
+									var id = uniqueId();
+									html+=getImagesHtml(question.score2Images, id);
+									ids.push(id);
+								}
+								html+='</th>';
+							}
 						}
-						html+='>';
-						html+='</div>';
-						html+='</th>';
 
 						html+='<th>';
-						html+='<p>'+question.score3+'</p>';
-						if(question.score3Images.length>0){
-							var id = uniqueId();
-							html+=getImagesHtml(question.score3Images, id);
-							ids.push(id);
-						}
-						html+='<div class="radio-eva">';
-						html+='<input type="radio" name="'+question.id+'" value="3" ';
 						if(score==3){
-							html+='checked';
+							if(isLite){
+								html+='<p>Score given</p>';
+							}
+							else{
+								html+='<p>'+question.score3+'</p>';
+								if(question.score3Images.length>0){
+									var id = uniqueId();
+									html+=getImagesHtml(question.score3Images, id);
+									ids.push(id);
+								}
+								html+='</th>';
+							}
 						}
-						html+='>';
-						html+='</div>';
-						html+='</th>';
 						html+='</tr>';
 					})
 				});

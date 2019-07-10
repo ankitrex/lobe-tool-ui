@@ -31,7 +31,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h4>GENERATOR DASHBOARD</h4>
+							<h4 id="dash-name"></h4>
 						</div>
 					</div>
 					<div class="row">
@@ -46,7 +46,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a href="">Logout</a>
+							<a href="" id="logout">Logout</a>
 						</div>
 					</div>
 				</div>
@@ -62,12 +62,9 @@
 										<div class="row">
 											<label class="control-label col-sm-2">Select the Rubric :</label>
 											<div class="col-sm-3">
-										      <select class="form-control" id="rub-detailed">
-										        <option>Select the rubric</option>
-										        <option>2</option>
-										        <option>3</option>
-										        <option>4</option>
-										      </select>
+											     <select class="form-control" id="rub-detailed">
+											        <option value="" disabled selected>Select the rubric</option>
+											      </select>
 										    </div>
 										</div>
 									</div>
@@ -75,75 +72,11 @@
 								</div>
 								<div class="learning-rubric">
 									<span>Select the Learning Objects &nbsp;<b data-toggle="tooltip" title="dynamic visualization (animation/simulation/video) as core component + associated components like learning activities/assessment questions/solved examples/stepwise lesson plans for teachers (either all or a subset of these components)">i</b> :</span>
-									<div class="row">
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-1</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-2</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-3</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-3</label>
-											</div>
-										</div>
+									<div class="row" id="lobes">
+										
 									</div>
-
-									<div class="row">
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-4</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-5</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-6</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-6</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-7</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-8</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-9</label>
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="radio">
-												<label><input type="checkbox" name="sw-check">&nbsp; Learning Object-6</label>
-											</div>
-										</div>
-									</div><br/>
-									<button type="submit">NEXT</button>
+									<br/>
+									<button type="button" id="v-summary">NEXT</button>
 								</div>
 							</form>
 						</div>
@@ -157,13 +90,100 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
-		$('[data-toggle="tooltip"]').tooltip();
+
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
+
+		if(user.status!='ACTIVE'){
+			window.location.replace("signup.html");
+		}
+
+		var type;
+		if(user.roles.includes('evaluator')){
+			type='evaluator';
+			$('#dash-name').append('EVALUATOR DASHBOARD');
+		}
+		else{
+			type='generator';
+			$('#dash-name').append('GENERATOR DASHBOARD');
+		}
+
+		$.ajax({
+			type: 'GET',
+			url: basePath+'/api/rubrik/all',
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				html='';
+				response.data.forEach(function(rubrik){
+					if(rubrik.status=='complete'){
+						html+='<option value="'+rubrik.id+'">'+rubrik.name+'</option>';
+					}
+				})
+				$('#rub-detailed').append(html);
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
 
 		$('.select-rubric a').click(function () {
-			$('.learning-rubric').show();
-			$('.select-rubric a').hide();
+
+			var rubrikId = $('#rub-detailed').val();
+
+			if(rubrikId!=null){
+
+				$.ajax({
+					type: 'GET',
+					url: basePath+'/api/analytics/all-lobes?rubrikId='+rubrikId+'&type='+type,
+					dataType: 'json',
+					async: false,
+					headers : {
+						'Authorization': 'Bearer '+accessToken,
+					},
+					success: function(response){
+						html='';
+						response.data.forEach(function(lobe){
+							html+='<div class="col-sm-3">';
+							html+='<div class="radio">';
+							html+='<label><input type="checkbox" name="objradio" value="'+lobe.id+'">&nbsp;'+lobe.name+'</label>';
+							html+='</div>';
+							html+='</div>';	
+						});
+						$('#lobes').append(html);
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
+				$('.learning-rubric').show();
+				$('.select-rubric a').hide();
+			}
+		});
+
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$('#v-summary').click(function(){
+			var lobes = $('input[name=objradio]:checked');
+			if(lobes!=undefined){
+				console.log(lobes);
+				var lobeIds='';
+				lobes.each(function(){
+					if(lobeIds.length>0){
+						lobeIds+=',';
+					}
+					lobeIds+=$(this).val();
+				})
+				if(lobeIds.length>0){
+					window.location = "strength-weakness-results.html?lobeIds="+lobeIds;
+				}
+			}
 		});
 	});
 </script>

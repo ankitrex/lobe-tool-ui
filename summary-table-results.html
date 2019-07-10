@@ -31,7 +31,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h4>GENERATOR DASHBOARD</h4>
+							<h4 id="dash-name"></h4>
 						</div>
 					</div>
 					<div class="row">
@@ -46,7 +46,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a href="">Logout</a>
+							<a href="" id="logout">Logout</a>
 						</div>
 					</div>
 				</div>
@@ -67,210 +67,24 @@
 												<span>Learning Object Name</span>
 											</th>
 											<th class="cont">
-												<span>Content Quality (C)<br/> (Out Of 21 Marks)</span>
+												<span>Content Quality (C)<br/></span>
 											</th>
 											<th class="ped">
-												<span>Pedagogical Alignment (P)<br/> (Out of 48 marks)</span>
+												<span>Pedagogical Alignment (P)<br/></span>
 											</th>
 											<th class="des">
-												<span>Design Efficacy(D)<br/> (Out of 30 marks)</span>
+												<span>Design Efficacy(D)<br/></span>
 											</th>
 											<th class="tech">
-												<span>Technology Intregation (T)<br/> (Out of 18 marks)</span>
+												<span>Technology Intregation (T)<br/> </span>
 											</th>
 											<th class="aggregate">
-												<span>Aggregate CPDT scores<br/> (Out of 117 marks)</span>
+												<span>Aggregate CPDT scores<br/></span>
 											</th>
 										</tr>
 									</thead>
-									<tbody>
-										<tr>
-											<th></th>
-											<th>
-												<span>Learning Object Name 1</span>
-											</th>
-											<th>
-												<span>16</span>
-											</th>
-											<th>
-												<span>24</span>
-											</th>
-											<th>
-												<span>15</span>
-											</th>
-											<th>
-												<span>26</span>
-											</th>
-											<th>
-												<span>55</span>
-											</th>
-										</tr>
-										<tr>
-											<th></th>
-											<th>
-												<span>Learning Object Name 2</span>
-											</th>
-											<th>
-												<span>15</span>
-											</th>
-											<th>
-												<span>25</span>
-											</th>
-											<th>
-												<span>13</span>
-											</th>
-											<th>
-												<span>28</span>
-											</th>
-											<th>
-												<span>56</span>
-											</th>
-										</tr>
-										<tr>
-											<th></th>
-											<th>
-												<span>Learning Object Name 3</span>
-											</th>
-											<th>
-												<span>18</span>
-											</th>
-											<th>
-												<span>28</span>
-											</th>
-											<th>
-												<span>17</span>
-											</th>
-											<th>
-												<span>15</span>
-											</th>
-											<th>
-												<span>57</span>
-											</th>
-										</tr>
-										<tr>
-											<th></th>
-											<th>
-												<span>Learning Object Name 4</span>
-											</th>
-											<th>
-												<span>16</span>
-											</th>
-											<th>
-												<span>24</span>
-											</th>
-											<th>
-												<span>15</span>
-											</th>
-											<th>
-												<span>26</span>
-											</th>
-											<th>
-												<span>55</span>
-											</th>
-										</tr>
-										<tr>
-											<th></th>
-											<th>
-												<span>Learning Object Name 5</span>
-											</th>
-											<th>
-												<span>18</span>
-											</th>
-											<th>
-												<span>20</span>
-											</th>
-											<th>
-												<span>13</span>
-											</th>
-											<th>
-												<span>22</span>
-											</th>
-											<th>
-												<span>50</span>
-											</th>
-										</tr>
-										<tr>
-											<th></th>
-											<th>
-												<span>Learning Object Name 6</span>
-											</th>
-											<th>
-												<span>16</span>
-											</th>
-											<th>
-												<span>24</span>
-											</th>
-											<th>
-												<span>15</span>
-											</th>
-											<th>
-												<span>26</span>
-											</th>
-											<th>
-												<span>55</span>
-											</th>
-										</tr>
-										<tr>
-											<th></th>
-											<th>
-												<span>Learning Object Name 7</span>
-											</th>
-											<th>
-												<span>16</span>
-											</th>
-											<th>
-												<span>24</span>
-											</th>
-											<th>
-												<span>15</span>
-											</th>
-											<th>
-												<span>26</span>
-											</th>
-											<th>
-												<span>55</span>
-											</th>
-										</tr>
-										<tr class="average-score">
-											<th colspan="2">
-												<span>Average Score</span>
-											</th>
-											<th>
-												<span>16.1</span>
-											</th>
-											<th>
-												<span>24.1</span>
-											</th>
-											<th>
-												<span>15.8</span>
-											</th>
-											<th>
-												<span>26.5</span>
-											</th>
-											<th>
-												<span>58.3</span>
-											</th>
-										</tr>
-										<tr class="average-percent">
-											<th colspan="2">
-												<span>Average Percentage</span>
-											</th>
-											<th>
-												<span>89%</span>
-											</th>
-											<th>
-												<span>66%</span>
-											</th>
-											<th>
-												<span>78%</span>
-											</th>
-											<th>
-												<span>66%</span>
-											</th>
-											<th>
-												<span>74%</span>
-											</th>
-										</tr>
+									<tbody class="alSc">
+										
 									</tbody>
 								</thead>
 							</table>
@@ -285,9 +99,165 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
+
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
+
+		if(user.status!='ACTIVE'){
+			window.location.replace("signup.html");
+		}
+
+		var type;
+		if(user.roles.includes('evaluator')){
+			type='evaluator';
+			$('#dash-name').append('EVALUATOR DASHBOARD');
+		}
+		else{
+			type='generator';
+			$('#dash-name').append('GENERATOR DASHBOARD');
+		}
+
+		var url = new URL(window.location.href);
+		var lobeIds = url.searchParams.get("lobeIds");
+
 		$('[data-toggle="tooltip"]').tooltip();
+
+		$.ajax({
+			type: 'GET',
+			url: basePath+'/api/analytics/lobe-summary?lobeIds='+lobeIds,
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+				console.log(response);
+				var i=0;
+				var cTotal=0;
+				var pTotal=0;
+				var dTotal=0;
+				var tTotal=0;
+				var hTotal=0;
+				var cMax=0;
+				var pMax=0;
+				var dMax=0;
+				var tMax=0;
+				var hMax=0;
+				html='';
+				var totalLobes = 0;
+				response.data.forEach(function(lobe){
+					totalLobes++;
+					if(i==0){
+						var maxTotal=0;
+						lobe.dimensionAggScores.forEach(function(aggScore){
+
+							var dimName = aggScore.dimensionName;
+							var scoreStr = '(Out Of '+aggScore.maxScore+' Marks)';
+
+							maxTotal+=aggScore.maxScore;
+
+							if(dimName=='Content Quality'){
+								cMax+=aggScore.maxScore;
+								$('.cont span').append(scoreStr);
+							}
+							else if(dimName=='Pedagogical Alignment'){
+								pMax+=aggScore.maxScore;
+								$('.ped span').append(scoreStr);
+							}
+							if(dimName=='Design Efficacy'){
+								dMax+=aggScore.maxScore;
+								$('.des span').append(scoreStr);
+							}
+							if(dimName=='Technological Integration'){
+								tMax+=aggScore.maxScore;
+								$('.tech span').append(scoreStr);
+							}
+
+						});
+						$('.aggregate span').append('(Out Of '+maxTotal+' Marks)');
+						hMax+=maxTotal;
+					}
+					i++;
+
+					var x=0;
+
+					html+='<tr>';
+					html+='<th></th>';
+					html+='<th><span>'+lobe.learningObjectName+'</span></th>';
+
+					var horizontalTotal=0;
+					lobe.dimensionAggScores.forEach(function(aggScore){
+
+						var dimName = aggScore.dimensionName;
+						horizontalTotal+=aggScore.scoreObtained;
+
+						if(x==0){
+							cTotal+=aggScore.scoreObtained;
+							if(dimName=='Content Quality'){
+								html+='<th><span>'+aggScore.scoreObtained+'</span></th>';
+							}
+							else{
+								html+='<th></th>';
+							}
+						}
+						else if(x==1){
+							pTotal+=aggScore.scoreObtained;
+							if(dimName=='Pedagogical Alignment'){
+								html+='<th><span>'+aggScore.scoreObtained+'</span></th>';
+							}
+							else{
+								html+='<th></th>';
+							}
+						}
+						else if(x==2){
+							dTotal+=aggScore.scoreObtained;
+							if(dimName=='Design Efficacy'){
+								html+='<th><span>'+aggScore.scoreObtained+'</span></th>';
+							}
+							else{
+								html+='<th></th>';
+							}
+						}
+						else if(x==3){
+							tTotal+=aggScore.scoreObtained;
+							if(dimName=='Technological Integration'){
+								html+='<th><span>'+aggScore.scoreObtained+'</span></th>';
+							}
+							else{
+								html+='<th></th>';
+							}
+						}
+						x++;
+					});
+					hTotal+=horizontalTotal;
+					html+='<th><span>'+horizontalTotal+'</span></th>';
+					html+'</tr>';
+				});
+				html+='<tr class="average-score">';
+				html+='<th colspan="2"><span>Average Score</span></th>';
+				html+='<th><span>'+(cTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+='<th><span>'+(pTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+='<th><span>'+(dTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+='<th><span>'+(tTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+='<th><span>'+(hTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+='</tr>';
+
+				html+='<tr class="average-percentage">';
+				html+='<th colspan="2"><span>Average Percentage</span></th>';
+				html+='<th><span>'+(cTotal/totalLobes*100/cMax).toFixed(2)+'%</span></th>';
+				html+='<th><span>'+(pTotal/totalLobes*100/pMax).toFixed(2)+'%</span></th>';
+				html+='<th><span>'+(dTotal/totalLobes*100/dMax).toFixed(2)+'%</span></th>';
+				html+='<th><span>'+(tTotal/totalLobes*100/tMax).toFixed(2)+'%</span></th>';
+				html+='<th><span>'+(hTotal/totalLobes*100/hMax).toFixed(2)+'%</span></th>';
+				html+='</tr>';
+
+				$('.alSc').append(html);
+				console.log(hMax);
+			}
+		});
 
 		$('.select-rubric a').click(function () {
 			$('.learning-rubric').show();

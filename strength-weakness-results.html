@@ -31,7 +31,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h4>GENERATOR DASHBOARD</h4>
+							<h4 id="dash-name"></h4>
 						</div>
 					</div>
 					<div class="row">
@@ -46,7 +46,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a href="">Logout</a>
+							<a href="" id="logout">Logout</a>
 						</div>
 					</div>
 				</div>
@@ -57,26 +57,30 @@
 						<h4>Strength Weakness Analysis</h4>
 						<div class="col-sm-12 new-sw-cnt">
 							<div class="row">
-								<div class="col-sm-3 zero">
-									<a href="javascript:void(0)" class="zero-link">
-										Zero to Minimal remedial effort &nbsp;<span data-toggle="tooltip" title="You are very strong in">i</span>
+								<div class="col-sm-2 zero">
+									<a href="javascript:void(0)" class="zero-link" id="zone-0">
+										Non-significant remedial effort &nbsp;<span data-toggle="tooltip" title="You are very strong in">i</span>
 									</a>
 								</div>
-
-								<div class="col-sm-3 moderate">
-									<a href="javascript:void(0)" class="mode-link">
+								<div class="col-sm-2 zero" style="background-color: #008080;">
+									<a href="javascript:void(0)" class="zero-link" id="zone-1">
+										Minor remedial effort &nbsp;<span data-toggle="tooltip" title="You are very strong in">i</span>
+									</a>
+								</div>
+								<div class="col-sm-2 moderate">
+									<a href="javascript:void(0)" class="mode-link" id="zone-2">
 										Moderate remedial effort &nbsp;<span data-toggle="tooltip" title="You are strong in">i</span>
 									</a>
 								</div>
 
-								<div class="col-sm-3 high">
-									<a href="javascript:void(0)" class="high-link">
+								<div class="col-sm-2 high">
+									<a href="javascript:void(0)" class="high-link" id="zone-3">
 										High remedial effort &nbsp;<span data-toggle="tooltip" title="You are weak in">i</span>
 									</a>
 								</div>
 
-								<div class="col-sm-3 danger">
-									<a href="javascript:void(0)" class="dang-link">
+								<div class="col-sm-2 danger">
+									<a href="javascript:void(0)" class="dang-link" id="zone-4">
 										Danger Zone &nbsp;<span data-toggle="tooltip" title="You are very weak in">i</span>
 									</a>
 								</div>
@@ -84,547 +88,32 @@
 							</div>
 
 							<!-- Zero to minimal remedial effect TABLE -->
-							<div class="zero-display">
-								<h5>Zero to minimal remedial effort</h5>
+							<div class="zero-display" id="display-0">
+								<h5>Non-significant remedial effort </h5>
 
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th class="quality-heading" colspan="5">
-												<span>Content Quality</span>
-											</th>
-										</tr>
-									</thead>
-									<thead>
-										<tr>
-											<th class="question-tb">
-												<div class="score">
-													<span>SCORE</span>
-												</div>
-												<div class="question">
-													<span>QUESTION</span>
-												</div>
-											</th>
-											<th class="score-0">
-												<span>Score 0</span>
-												<span>(Missing)</span>
-											</th>
-											<th class="score-1">
-												<span>Score 1</span>
-												<span>(Inadequate)</span>
-											</th>
-											<th class="score-2">
-												<span>Score 2</span>
-												<span>(Almost)</span>
-											</th>
-											<th class="score-3">
-												<span>Score 3</span>
-												<span>(Target)</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<span>C1. Is the content accurate?*</span>
-											</th>
-											<th>
-												<span>
-													0%
-												</span>
-											</th>
-											<th>
-												<span>
-													0% 
-												</span>
-											</th>
-											<th>
-												<span>
-													47% 
-												</span>
-											</th>
-											<th>
-												<span>
-													53%
-												</span>
-											</th>
-										</tr>
-									</tbody>
-								</table>
+							</div>
 
+							<div class="zero-display" id="display-1">
+								<h5 style="color: #008080">Minor remedial effort </h5>
 
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th class="quality-heading" colspan="5">
-												<span>Technological Integration</span>
-											</th>
-										</tr>
-									</thead>
-									<thead>
-										<tr>
-											<th class="question-tb">
-												<div class="score">
-													<span>SCORE</span>
-												</div>
-												<div class="question">
-													<span>QUESTION</span>
-												</div>
-											</th>
-											<th class="score-0">
-												<span>Score 0</span>
-												<span>(Missing)</span>
-											</th>
-											<th class="score-1">
-												<span>Score 1</span>
-												<span>(Inadequate)</span>
-											</th>
-											<th class="score-2">
-												<span>Score 2</span>
-												<span>(Almost)</span>
-											</th>
-											<th class="score-3">
-												<span>Score 3</span>
-												<span>(Target)</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<span>T15. Have any segments from the dynamic   visualization been reused, such as in the activities or assessment questions? </span>
-											</th>
-											<th>
-												<span>
-													0%
-												</span>
-											</th>
-											<th>
-												<span>
-													5% 
-												</span>
-											</th>
-											<th>
-												<span>
-													50% 
-												</span>
-											</th>
-											<th>
-												<span>
-													84%
-												</span>
-											</th>
-										</tr>
-									</tbody>
-								</table>
 							</div>
 
 							<!-- Moderate remedial effect TABLE -->
-							<div class="mode-display">
+							<div class="mode-display" id="display-2">
 								<h5>Moderate remedial effort</h5>
 
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th class="quality-heading" colspan="5">
-												<span>Content Quality</span>
-											</th>
-										</tr>
-									</thead>
-									<thead>
-										<tr>
-											<th class="question-tb">
-												<div class="score">
-													<span>SCORE</span>
-												</div>
-												<div class="question">
-													<span>QUESTION</span>
-												</div>
-											</th>
-											<th class="score-0">
-												<span>Score 0</span>
-												<span>(Missing)</span>
-											</th>
-											<th class="score-1">
-												<span>Score 1</span>
-												<span>(Inadequate)</span>
-											</th>
-											<th class="score-2">
-												<span>Score 2</span>
-												<span>(Almost)</span>
-											</th>
-											<th class="score-3">
-												<span>Score 3</span>
-												<span>(Target)</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<span>C1. Is the content accurate?*</span>
-											</th>
-											<th>
-												<span>
-													0%
-												</span>
-											</th>
-											<th>
-												<span>
-													0% 
-												</span>
-											</th>
-											<th>
-												<span>
-													47% 
-												</span>
-											</th>
-											<th>
-												<span>
-													53%
-												</span>
-											</th>
-										</tr>
-									</tbody>
-								</table>
-
-
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th class="quality-heading" colspan="5">
-												<span>Technological Integration</span>
-											</th>
-										</tr>
-									</thead>
-									<thead>
-										<tr>
-											<th class="question-tb">
-												<div class="score">
-													<span>SCORE</span>
-												</div>
-												<div class="question">
-													<span>QUESTION</span>
-												</div>
-											</th>
-											<th class="score-0">
-												<span>Score 0</span>
-												<span>(Missing)</span>
-											</th>
-											<th class="score-1">
-												<span>Score 1</span>
-												<span>(Inadequate)</span>
-											</th>
-											<th class="score-2">
-												<span>Score 2</span>
-												<span>(Almost)</span>
-											</th>
-											<th class="score-3">
-												<span>Score 3</span>
-												<span>(Target)</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<span>T15. Have any segments from the dynamic   visualization been reused, such as in the activities or assessment questions? </span>
-											</th>
-											<th>
-												<span>
-													0%
-												</span>
-											</th>
-											<th>
-												<span>
-													5% 
-												</span>
-											</th>
-											<th>
-												<span>
-													50% 
-												</span>
-											</th>
-											<th>
-												<span>
-													84%
-												</span>
-											</th>
-										</tr>
-									</tbody>
-								</table>
 							</div>
 
 							<!-- High remedial effect TABLE -->
-							<div class="high-display">
+							<div class="high-display" id="display-3">
 								<h5>High remedial effort</h5>
 
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th class="quality-heading" colspan="5">
-												<span>Content Quality</span>
-											</th>
-										</tr>
-									</thead>
-									<thead>
-										<tr>
-											<th class="question-tb">
-												<div class="score">
-													<span>SCORE</span>
-												</div>
-												<div class="question">
-													<span>QUESTION</span>
-												</div>
-											</th>
-											<th class="score-0">
-												<span>Score 0</span>
-												<span>(Missing)</span>
-											</th>
-											<th class="score-1">
-												<span>Score 1</span>
-												<span>(Inadequate)</span>
-											</th>
-											<th class="score-2">
-												<span>Score 2</span>
-												<span>(Almost)</span>
-											</th>
-											<th class="score-3">
-												<span>Score 3</span>
-												<span>(Target)</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<span>C1. Is the content accurate?*</span>
-											</th>
-											<th>
-												<span>
-													0%
-												</span>
-											</th>
-											<th>
-												<span>
-													0% 
-												</span>
-											</th>
-											<th>
-												<span>
-													47% 
-												</span>
-											</th>
-											<th>
-												<span>
-													53%
-												</span>
-											</th>
-										</tr>
-									</tbody>
-								</table>
-
-
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th class="quality-heading" colspan="5">
-												<span>Technological Integration</span>
-											</th>
-										</tr>
-									</thead>
-									<thead>
-										<tr>
-											<th class="question-tb">
-												<div class="score">
-													<span>SCORE</span>
-												</div>
-												<div class="question">
-													<span>QUESTION</span>
-												</div>
-											</th>
-											<th class="score-0">
-												<span>Score 0</span>
-												<span>(Missing)</span>
-											</th>
-											<th class="score-1">
-												<span>Score 1</span>
-												<span>(Inadequate)</span>
-											</th>
-											<th class="score-2">
-												<span>Score 2</span>
-												<span>(Almost)</span>
-											</th>
-											<th class="score-3">
-												<span>Score 3</span>
-												<span>(Target)</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<span>T15. Have any segments from the dynamic   visualization been reused, such as in the activities or assessment questions? </span>
-											</th>
-											<th>
-												<span>
-													0%
-												</span>
-											</th>
-											<th>
-												<span>
-													5% 
-												</span>
-											</th>
-											<th>
-												<span>
-													50% 
-												</span>
-											</th>
-											<th>
-												<span>
-													84%
-												</span>
-											</th>
-										</tr>
-									</tbody>
-								</table>
 							</div>
 
 							<!-- High remedial effect TABLE -->
-							<div class="dang-display">
+							<div class="dang-display" id="display-4">
 								<h5>Danger Zone</h5>
 
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th class="quality-heading" colspan="5">
-												<span>Content Quality</span>
-											</th>
-										</tr>
-									</thead>
-									<thead>
-										<tr>
-											<th class="question-tb">
-												<div class="score">
-													<span>SCORE</span>
-												</div>
-												<div class="question">
-													<span>QUESTION</span>
-												</div>
-											</th>
-											<th class="score-0">
-												<span>Score 0</span>
-												<span>(Missing)</span>
-											</th>
-											<th class="score-1">
-												<span>Score 1</span>
-												<span>(Inadequate)</span>
-											</th>
-											<th class="score-2">
-												<span>Score 2</span>
-												<span>(Almost)</span>
-											</th>
-											<th class="score-3">
-												<span>Score 3</span>
-												<span>(Target)</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<span>C1. Is the content accurate?*</span>
-											</th>
-											<th>
-												<span>
-													0%
-												</span>
-											</th>
-											<th>
-												<span>
-													0% 
-												</span>
-											</th>
-											<th>
-												<span>
-													47% 
-												</span>
-											</th>
-											<th>
-												<span>
-													53%
-												</span>
-											</th>
-										</tr>
-									</tbody>
-								</table>
-
-
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th class="quality-heading" colspan="5">
-												<span>Technological Integration</span>
-											</th>
-										</tr>
-									</thead>
-									<thead>
-										<tr>
-											<th class="question-tb">
-												<div class="score">
-													<span>SCORE</span>
-												</div>
-												<div class="question">
-													<span>QUESTION</span>
-												</div>
-											</th>
-											<th class="score-0">
-												<span>Score 0</span>
-												<span>(Missing)</span>
-											</th>
-											<th class="score-1">
-												<span>Score 1</span>
-												<span>(Inadequate)</span>
-											</th>
-											<th class="score-2">
-												<span>Score 2</span>
-												<span>(Almost)</span>
-											</th>
-											<th class="score-3">
-												<span>Score 3</span>
-												<span>(Target)</span>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<span>T15. Have any segments from the dynamic   visualization been reused, such as in the activities or assessment questions? </span>
-											</th>
-											<th>
-												<span>
-													0%
-												</span>
-											</th>
-											<th>
-												<span>
-													5% 
-												</span>
-											</th>
-											<th>
-												<span>
-													50% 
-												</span>
-											</th>
-											<th>
-												<span>
-													84%
-												</span>
-											</th>
-										</tr>
-									</tbody>
-								</table>
 							</div>
 						</div>
 					</div>
@@ -637,33 +126,108 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('[data-toggle="tooltip"]').tooltip();
 
-		$('.select-rubric a').click(function () {
-			$('.learning-rubric').show();
-			$('.select-rubric a').hide();
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
+
+		if(user.status!='ACTIVE'){
+			window.location.replace("signup.html");
+		}
+
+		var type;
+		if(user.roles.includes('evaluator')){
+			type='evaluator';
+			$('#dash-name').append('EVALUATOR DASHBOARD');
+		}
+		else{
+			type='generator';
+			$('#dash-name').append('GENERATOR DASHBOARD');
+		}
+
+		var url = new URL(window.location.href);
+		var lobeIds = url.searchParams.get("lobeIds");
+
+		$.ajax({
+			type: 'GET',
+			url: basePath+'/api/analytics/strength-weakness?lobeIds='+lobeIds,
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+
+				response.data.forEach(function(z){
+					z.swDimensions.forEach(function(dimension){
+
+						html='';
+						if(dimension.swQuestions.length>0){
+
+							html+='<table class="table table-bordered">';
+							html+='<thead><tr><th class="quality-heading" colspan="5"><span>'+dimension.dimensionName+'</span></th></tr></thead>';
+							html+='<thead><tr><th class="question-tb"><div class="score"><span>SCORE</span></div><div class="question"><span>QUESTIO</span></div></th><th class="score-0"><span>Score 0</span><span>(Missing)</span></th><th class="score-1"><span>Score 1</span><span>(Inadequate)</span></th><th class="score-2"><span>Score 2</span>';
+							html+='<span>(Almost)</span></th><th class="score-3"><span>Score 3</span><span>(Target)</span></th></tr></thead>';
+							html+='<tbody>';
+							dimension.swQuestions.forEach(function(q){
+								html+='<tr>';
+								html+='<th><span>'+q.question+'</span></th>';
+								html+='<th><span>'+q.score0.toFixed(2)+'%</span></th>';
+								html+='<th><span>'+q.score1.toFixed(2)+'%</span></th>';
+								html+='<th><span>'+q.score2.toFixed(2)+'%</span></th>';
+								html+='<th><span>'+q.score3.toFixed(2)+'%</span></th>';
+								html+='</tr>';
+							});
+							html+='</tbody>';
+							html+='</table>';
+						}
+						if(z.zone=='green'){
+							$('#display-0').append(html);
+						}
+						else if(z.zone=='teal'){
+							$('#display-1').append(html);
+						}
+						else if(z.zone=='yellow'){
+							$('#display-2').append(html);
+						}
+						else if(z.zone=='orange'){
+							$('#display-3').append(html);
+						}
+						else if(z.zone=='red'){
+							$('#display-4').append(html);
+						}
+					});
+				})
+			}
 		});
 
-		$('.zero-link').click(function () {
-			$('.zero-display').show();
-			$('.high-display, .mode-display, .dang-display').hide();
+		$('#zone-0').click(function () {
+			$('#display-0').show();
+			$('#display-1, #display-2, #display-3, #display-4').hide();
 		});
 
-		$('.mode-link').click(function () {
-			$('.mode-display').show();
-			$('.high-display, .zero-display, .dang-display').hide();
+		$('#zone-1').click(function () {
+			$('#display-1').show();
+			$('#display-0, #display-2, #display-3, #display-4').hide();
 		});
 
-		$('.high-link').click(function () {
-			$('.high-display').show();
-			$('.zero-display, .mode-display, .dang-display').hide();
+		$('#zone-2').click(function () {
+			$('#display-2').show();
+			$('#display-1, #display-0, #display-3, #display-4').hide();
 		});
 
-		$('.dang-link').click(function () {
-			$('.dang-display').show();
-			$('.zero-display, .mode-display, .high-display').hide();
+		$('#zone-3').click(function () {
+			$('#display-3').show();
+			$('#display-1, #display-2, #display-0, #display-4').hide();
+		});
+
+		$('#zone-4').click(function () {
+			$('#display-4').show();
+			$('#display-1, #display-2, #display-3, #display-0').hide();
 		});
 	});
 </script>

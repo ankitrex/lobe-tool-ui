@@ -1590,7 +1590,7 @@ select.form-control:focus{
 .new-comp-cnt table thead span{ color: #fff; display: block; padding: 15px 0;}
 .new-comp-cnt table tbody .circle{text-align: center;}
 .new-comp-cnt table tbody .circle .danger-circle, .new-comp-cnt table tbody .circle .moderate-circle, .new-comp-cnt table tbody .circle .high-circle,
-.new-comp-cnt table tbody .circle .zero-circle{
+.new-comp-cnt table tbody .circle .zero-circle, .new-comp-cnt table tbody .circle .teal-circle{
 	border-radius: 50px;
 	padding: 12px;
 	width: 15px;
@@ -1600,6 +1600,7 @@ select.form-control:focus{
 .new-comp-cnt table tbody .circle .zero-circle{background-color: #209157;}
 .new-comp-cnt table tbody .circle .moderate-circle{background-color: #cfc50f;}
 .new-comp-cnt table tbody .circle .high-circle{background-color: #cd8323;}
+.new-comp-cnt table tbody .circle .teal-circle{background-color: #008080;}
 
 .learning-rubric b{
 	display: inline-block;

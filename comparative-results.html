@@ -31,7 +31,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h4>GENERATOR DASHBOARD</h4>
+							<h4 id="dash-name"></h4>
 						</div>
 					</div>
 					<div class="row">
@@ -46,7 +46,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a href="">Logout</a>
+							<a href="" id="logout">Logout</a>
 						</div>
 					</div>
 				</div>
@@ -58,26 +58,30 @@
 						<span class="legend-span">LEGEND :</span>
 						<div class="col-sm-12 new-comp-cnt">
 							<div class="row">
-								<div class="col-sm-3 zero">
-									<a href="javascript:void(0)" class="zero-link">
-										Zero to Minimal remedial effort &nbsp;<span data-toggle="tooltip" title="You are very strong in">i</span>
+								<div class="col-sm-2 zero">
+									<a href="javascript:void(0)" class="zero-link" id="zone-0">
+										Non-significant remedial effort &nbsp;<span data-toggle="tooltip" title="You are very strong in">i</span>
 									</a>
 								</div>
-
-								<div class="col-sm-3 moderate">
-									<a href="javascript:void(0)" class="mode-link">
+								<div class="col-sm-2 zero" style="background-color: #008080;">
+									<a href="javascript:void(0)" class="zero-link" id="zone-1">
+										Minor remedial effort &nbsp;<span data-toggle="tooltip" title="You are very strong in">i</span>
+									</a>
+								</div>
+								<div class="col-sm-2 moderate">
+									<a href="javascript:void(0)" class="mode-link" id="zone-2">
 										Moderate remedial effort &nbsp;<span data-toggle="tooltip" title="You are strong in">i</span>
 									</a>
 								</div>
 
-								<div class="col-sm-3 high">
-									<a href="javascript:void(0)" class="high-link">
+								<div class="col-sm-2 high">
+									<a href="javascript:void(0)" class="high-link" id="zone-3">
 										High remedial effort &nbsp;<span data-toggle="tooltip" title="You are weak in">i</span>
 									</a>
 								</div>
 
-								<div class="col-sm-3 danger">
-									<a href="javascript:void(0)" class="dang-link">
+								<div class="col-sm-2 danger">
+									<a href="javascript:void(0)" class="dang-link" id="zone-4">
 										Danger Zone &nbsp;<span data-toggle="tooltip" title="You are very weak in">i</span>
 									</a>
 								</div>
@@ -453,33 +457,104 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/auth.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('[data-toggle="tooltip"]').tooltip();
 
-		$('.select-rubric a').click(function () {
-			$('.learning-rubric').show();
-			$('.select-rubric a').hide();
-		});
+		var user = runValidations();
+		var accessToken = localStorage.getItem("accessToken");
 
-		$('.zero-link').click(function () {
-			$('.zero-display').show();
-			$('.high-display, .mode-display, .dang-display').hide();
-		});
+		if(user.status!='ACTIVE'){
+			window.location.replace("signup.html");
+		}
 
-		$('.mode-link').click(function () {
-			$('.mode-display').show();
-			$('.high-display, .zero-display, .dang-display').hide();
-		});
+		var type;
+		if(user.roles.includes('evaluator')){
+			type='evaluator';
+			$('#dash-name').append('EVALUATOR DASHBOARD');
+		}
+		else{
+			type='generator';
+			$('#dash-name').append('GENERATOR DASHBOARD');
+		}
 
-		$('.high-link').click(function () {
-			$('.high-display').show();
-			$('.zero-display, .mode-display, .dang-display').hide();
-		});
+		var url = new URL(window.location.href);
+		var lobeIds = url.searchParams.get("lobeIds");
 
-		$('.dang-link').click(function () {
-			$('.dang-display').show();
-			$('.zero-display, .mode-display, .high-display').hide();
+		$.ajax({
+			type: 'GET',
+			url: basePath+'/api/analytics/comparative-analysis?lobeIds='+lobeIds,
+			dataType: 'json',
+			async: false,
+			headers : {
+				'Authorization': 'Bearer '+accessToken,
+			},
+			success: function(response){
+
+				var allRepos = [];
+				var cData = [];
+				var pData = [];
+				var dData = [];
+				var tData = [];
+
+				var i=0;
+				response.data.forEach(function(repoData){
+
+					allRepos.push(repoData.repositoryName);
+
+					repoData.cmpDimensions.forEach(function(dimension){
+
+						var x=0;
+						dimension.cmpQuestions.forEach(function(question){
+
+							var dimensionName = dimension.dimensionName;
+
+							if(dimensionName=='Content Quality'){
+								if(i==0){
+									cData[x]={};
+									cData[x].zones=[];
+								}
+								cData[x].question=question.question;
+								cData[x].zones.push(question.zone);
+							}
+							else if(dimensionName=='Pedagogical Alignment'){
+								if(i==0){
+									pData[x]={};
+									pData[x].zones=[];
+								}
+								pData[x].question=question.question;
+								pData[x].zones.push(question.zone);
+							}
+							else if(dimensionName=='Design Efficacy'){
+								if(i==0){
+									dData[x]={};
+									dData[x].zones=[];
+								}
+								dData[x].question=question.question;
+								dData[x].zones.push(question.zone);
+							}
+							else if(dimensionName=='Technological Integration'){
+								if(i==0){
+									tData[x]={};
+									tData[x].zones=[];
+								}
+								tData[x].question=question.question;
+								tData[x].zones.push(question.zone);
+							}
+							x++;
+						});
+
+					});
+					i++;
+				});
+
+				console.log(cData);
+				console.log(pData);
+				console.log(dData);
+				console.log(tData);
+			}
 		});
 	});
 </script>

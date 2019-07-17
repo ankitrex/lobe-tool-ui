@@ -164,66 +164,50 @@
 
 						html+='<th>';
 						if(score==0){
-							if(isLite){
-								html+='<p>Your score:</p>';
-							}
-							else{
-								html+='<p>'+question.score0+'</p>';
-								if(question.score0Images.length>0){
-									var id = uniqueId();
-									html+=getImagesHtml(question.score0Images, id);
-									ids.push(id);
-								}
+							html+='<p>Your score:</p>';
+							html+='<p>'+question.score0+'</p>';
+							if(question.score0Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score0Images, id);
+								ids.push(id);
 							}
 						}
 						html+='</th>';
 
 						html+='<th>';
 						if(score==1){
-							if(isLite){
-								html+='<p>Your score:</p>';
-							}
-							else{
-								html+='<p>'+question.score1+'</p>';
-								if(question.score1Images.length>0){
-									var id = uniqueId();
-									html+=getImagesHtml(question.score1Images, id);
-									ids.push(id);
-								}
+							html+='<p>Your score:</p>';
+							html+='<p>'+question.score1+'</p>';
+							if(question.score1Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score1Images, id);
+								ids.push(id);
 							}
 						}
 						html+='</th>';
 
 						html+='<th>';
 						if(score==2){
-							if(isLite){
-								html+='<p>Your score:</p>';
+							html+='<p>Your score:</p>';
+							html+='<p>'+question.score2+'</p>';
+							if(question.score2Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score2Images, id);
+								ids.push(id);
 							}
-							else{
-								html+='<p>'+question.score2+'</p>';
-								if(question.score2Images.length>0){
-									var id = uniqueId();
-									html+=getImagesHtml(question.score2Images, id);
-									ids.push(id);
-								}
-								html+='</th>';
-							}
+							html+='</th>';
 						}
 
 						html+='<th>';
 						if(score==3){
-							if(isLite){
-								html+='<p>Your score:</p>';
+							html+='<p>Your score:</p>';
+							html+='<p>'+question.score3+'</p>';
+							if(question.score3Images.length>0){
+								var id = uniqueId();
+								html+=getImagesHtml(question.score3Images, id);
+								ids.push(id);
 							}
-							else{
-								html+='<p>'+question.score3+'</p>';
-								if(question.score3Images.length>0){
-									var id = uniqueId();
-									html+=getImagesHtml(question.score3Images, id);
-									ids.push(id);
-								}
-								html+='</th>';
-							}
+							html+='</th>';
 						}
 						html+='</tr>';
 					})

@@ -1604,9 +1604,9 @@ select.form-control:focus{
 
 .learning-rubric b{
 	display: inline-block;
-    font: 14px/18px 'Monts-reg';
+    font: 14px/16px 'Monts-reg';
     text-transform: lowercase;
-    padding: 6px 13px;
+    padding: 4px 11px;
     border-radius: 50px;
     background-color: #64368e;
     color: #fff;

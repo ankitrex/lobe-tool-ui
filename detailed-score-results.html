@@ -139,7 +139,7 @@
 			},
 			success: function(response){
 				console.log(response);
-				$('#lobe-name').append(response.data.name);
+				$('#lobe-name').append(response.data.name+' ; '+response.data.rubrikName);
 
 				var i=0;
 				var ids=[];
@@ -165,7 +165,7 @@
 						html+='<th>';
 						if(score==0){
 							if(isLite){
-								html+='<p>Score given</p>';
+								html+='<p>Your score:</p>';
 							}
 							else{
 								html+='<p>'+question.score0+'</p>';
@@ -181,7 +181,7 @@
 						html+='<th>';
 						if(score==1){
 							if(isLite){
-								html+='<p>Score given</p>';
+								html+='<p>Your score:</p>';
 							}
 							else{
 								html+='<p>'+question.score1+'</p>';
@@ -197,7 +197,7 @@
 						html+='<th>';
 						if(score==2){
 							if(isLite){
-								html+='<p>Score given</p>';
+								html+='<p>Your score:</p>';
 							}
 							else{
 								html+='<p>'+question.score2+'</p>';
@@ -213,7 +213,7 @@
 						html+='<th>';
 						if(score==3){
 							if(isLite){
-								html+='<p>Score given</p>';
+								html+='<p>Your score:</p>';
 							}
 							else{
 								html+='<p>'+question.score3+'</p>';

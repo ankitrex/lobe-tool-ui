@@ -175,14 +175,21 @@
 			if(lobes!=undefined){
 				console.log(lobes);
 				var lobeIds='';
+				var i=0;
 				lobes.each(function(){
 					if(lobeIds.length>0){
 						lobeIds+=',';
 					}
 					lobeIds+=$(this).val();
+					i++;
 				})
 				if(lobeIds.length>0){
-					window.location = "summary-table-results.html?lobeIds="+lobeIds;
+					if(i==1){
+						alert('summary can’t be done for one learning object');
+					}
+					else{
+						window.location = "summary-table-results.html?lobeIds="+lobeIds;
+					}
 				}
 			}
 		});

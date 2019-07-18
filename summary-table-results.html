@@ -182,86 +182,86 @@
 					}
 					i++;
 
-					var x=0;
-
 					html+='<tr>';
 					html+='<th></th>';
 					html+='<th><span>'+lobe.learningObjectName+'</span></th>';
 
 					var horizontalTotal=0;
+
+					var cPres=false;
+					var pPres=false;
+					var dPres=false;
+					var tPres=false;
+
 					lobe.dimensionAggScores.forEach(function(aggScore){
 
 						var dimName = aggScore.dimensionName;
 						horizontalTotal+=aggScore.scoreObtained;
 
-						if(x==0){
-							if(dimName=='Content Quality'){
-								cTotal+=aggScore.scoreObtained;				
-							}
-							else if(dimName=='Pedagogical Alignment'){
-								pTotal+=aggScore.scoreObtained;
-								html+='<th></th>';
-							}
-							else if(dimName=='Design Efficacy'){
-								dTotal+=aggScore.scoreObtained;
-								html+='<th></th>';
-								html+='<th></th>';
-							}
-							else if(dimName=='Technological Integration'){
-								tTotal+=aggScore.scoreObtained;
-								html+='<th></th>';
-								html+='<th></th>';
+						if(dimName=='Content Quality'){
+							cTotal+=aggScore.scoreObtained;
+							cPres=true;
+						}
+						else if(dimName=='Pedagogical Alignment'){
+							pTotal+=aggScore.scoreObtained;
+							pPres=true;
+							if(!cPres){
 								html+='<th></th>';
 							}
 						}
-						else if(x==1){
-							if(dimName=='Pedagogical Alignment'){
-								pTotal+=aggScore.scoreObtained;
-							}
-							else if(dimName=='Design Efficacy'){
-								dTotal+=aggScore.scoreObtained;
+						else if(dimName=='Design Efficacy'){
+							dTotal+=aggScore.scoreObtained;
+							dPres=true;
+							if(!cPres){
 								html+='<th></th>';
 							}
-							else if(dimName=='Technological Integration'){
-								tTotal+=aggScore.scoreObtained;
-								html+='<th></th>';
+							if(!pPres){
 								html+='<th></th>';
 							}
 						}
-						else if(x==2){
-							if(dimName=='Design Efficacy'){
-								dTotal+=aggScore.scoreObtained;
-							}
-							else if(dimName=='Technological Integration'){
-								tTotal+=aggScore.scoreObtained;
-								html+='<th></th>';
-							}
-						}
-						else if(x==4){
+						else if(dimName=='Technological Integration'){
 							tTotal+=aggScore.scoreObtained;
+							tPres=true;
+							if(!cPres){
+								html+='<th></th>';
+							}
+							if(!pPres){
+								html+='<th></th>';
+							}
+							if(!dPres){
+								html+='<th></th>';
+							}
 						}
 						html+='<th><span>'+aggScore.scoreObtained+'</span></th>';
-						x++;
 					});
+					if(!tPres){
+						html+='<th></th>';
+						if(!dPres){
+							html+='<th></th>';
+							if(!pPres){
+								html+='<th></th>';
+							}
+						}
+					}
 					hTotal+=horizontalTotal;
 					html+='<th><span>'+horizontalTotal+'</span></th>';
 					html+'</tr>';
 				});
 				html+='<tr class="average-percentage">';
 				html+='<th colspan="2"><span>Average Score</span></th>';
-				html+=cTotal==0?'<th></th>':'<th><span>'+(cTotal/totalLobes).toFixed(2)+'</span></th>';
-				html+=pTotal==0?'<th></th>':'<th><span>'+(pTotal/totalLobes).toFixed(2)+'</span></th>';
-				html+=dTotal==0?'<th></th>':'<th><span>'+(dTotal/totalLobes).toFixed(2)+'</span></th>';
-				html+=tTotal==0?'<th></th>':'<th><span>'+(tTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+=cMax==0?'<th></th>':'<th><span>'+(cTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+=pMax==0?'<th></th>':'<th><span>'+(pTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+=dMax==0?'<th></th>':'<th><span>'+(dTotal/totalLobes).toFixed(2)+'</span></th>';
+				html+=tMax==0?'<th></th>':'<th><span>'+(tTotal/totalLobes).toFixed(2)+'</span></th>';
 				html+='<th><span>'+(hTotal/totalLobes).toFixed(2)+'</span></th>';
 				html+='</tr>';
 
 				html+='<tr class="average-percentage">';
 				html+='<th colspan="2"><span>Average Percentage</span></th>';
-				html+=cTotal==0?'<th></th>':'<th><span>'+(cTotal/totalLobes*100/cMax).toFixed(2)+'%</span></th>';
-				html+=pTotal==0?'<th></th>':'<th><span>'+(pTotal/totalLobes*100/pMax).toFixed(2)+'%</span></th>';
-				html+=dTotal==0?'<th></th>':'<th><span>'+(dTotal/totalLobes*100/dMax).toFixed(2)+'%</span></th>';
-				html+=tTotal==0?'<th></th>':'<th><span>'+(tTotal/totalLobes*100/tMax).toFixed(2)+'%</span></th>';
+				html+=cMax==0?'<th></th>':'<th><span>'+(cTotal/totalLobes*100/cMax).toFixed(2)+'%</span></th>';
+				html+=pMax==0?'<th></th>':'<th><span>'+(pTotal/totalLobes*100/pMax).toFixed(2)+'%</span></th>';
+				html+=dMax==0?'<th></th>':'<th><span>'+(dTotal/totalLobes*100/dMax).toFixed(2)+'%</span></th>';
+				html+=tMax==0?'<th></th>':'<th><span>'+(tTotal/totalLobes*100/tMax).toFixed(2)+'%</span></th>';
 				html+='<th><span>'+(hTotal/totalLobes*100/hMax).toFixed(2)+'%</span></th>';
 				html+='</tr>';
 

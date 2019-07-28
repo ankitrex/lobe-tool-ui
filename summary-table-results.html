@@ -14,8 +14,11 @@
 		<div class="container-fluid">
 			<div class="row heading">
 				<div class="col-sm-3"></div>
-				<div class="col-sm-8">
+				<div class="col-sm-7">
 					<h5>LEARNING OBJECT EVALUATION TOOL</h5>
+				</div>
+				<div class="col-sm-1 go-bck-btn">
+					<a href="javascript:void(0)" id="generate-pdf">Save as PDF</a>
 				</div>
 				<div class="col-sm-1 go-bck-btn">
 					<a href="analytics-panel.html">Go Back</a>
@@ -51,10 +54,10 @@
 					</div>
 				</div>
 				<!-- Main Content body -->
-				<div class="col-sm-9 result-panel summary-form-results">
+				<div class="col-sm-9 result-panel summary-form-results" id="pdf-html">
 					<div class="row new-summary">
 						<!-- Summary Table -->
-						<h4>Summary Table</h4>
+						<h4 style="padding-left:17px">Summary Table</h4>
 						<div class="col-sm-12 new-summary-cnt">
 							<table class="table table-bordered">
 								<thead>
@@ -99,6 +102,9 @@
 <script type="text/javascript" src="js/jquery-ui.min.js"></script><!--Jquery UI File-->
 <script type="text/javascript" src="js/umd/popper.min.js"></script><!--popper-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script><!--bootstrap-->
+<script type="text/javascript" src="js/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
 <script type="text/javascript" src="js/auth.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
@@ -272,6 +278,40 @@
 		$('.select-rubric a').click(function () {
 			$('.learning-rubric').show();
 			$('.select-rubric a').hide();
+		});
+
+		$('#generate-pdf').click(function() {
+
+			html2canvas(document.querySelector("#pdf-html")).then(canvas => {
+
+	            try {
+		            contentH = $('#pdf-html').height();
+		            var img = canvas.toDataURL("image/png", 1.0);
+		            $w = $actw = canvas.width;
+		            $h = $acth = canvas.height;
+		            var pdf = new jsPDF("p", "mm", "a4");
+		            var width = $maxw = pdf.internal.pageSize.width;
+		            var height = $maxh = pdf.internal.pageSize.height;
+		            if (!$maxw) $maxw = width;
+		            if (!$maxh) $maxh = height;
+		            if ($w > $maxw) {
+		                $w = $maxw;
+		                $h = Math.round($acth / $actw * $maxw);
+		            }
+		            pdf.addImage(img, 'JPEG', 0, 0, $w, $h);
+		            $count = Math.ceil($h) / Math.ceil($maxh);
+		            $count = Math.ceil($count);
+		            for (var i = 1; i < $count; i++) {
+		                position = - $maxh * i
+		                pdf.addPage(img, 'JPEG', 0, 0, $w, $h);
+		                pdf.addImage(img, 'JPEG', 0, position, $w, $h);
+		            }
+		            pdf.save("summary-table.pdf");
+		        } catch (e) {
+		            alert("Error description: " + e.message);
+		        }
+			});
+		    
 		});
 	});
 </script>

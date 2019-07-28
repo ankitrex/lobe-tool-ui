@@ -261,58 +261,36 @@
 
   	$('#generate-pdf').click(function() {
 
-	 //    var win = window.open();
-	 //    var doc = win.document;
-	 //    doc.open();
-		// doc.write('<html><head><title>Print it!</title>');
-		// doc.write('<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">');
-		// doc.write('<link rel="stylesheet" type="text/css" href="css/style.css">');
-		// doc.write('<link rel="stylesheet" type="text/css" href="css/all.min.css">');
-		// doc.write('<link rel="stylesheet" type="text/css" href="css/responsive.css">');
-		// doc.write('</head><body>');
-		// doc.write(document.getElementById("pdf-html").innerHTML);
-		// doc.write('</body></html>');
-		// doc.close();
+		html2canvas(document.querySelector("#pdf-html")).then(canvas => {
 
-		// var div = $("#pdf-html")[0];
-		// var rect = div.getBoundingClientRect();
-
-		// var canvas = document.createElement("canvas");
-		// canvas.width = rect.width;
-		// canvas.height = rect.height;
-
-		// var ctx = canvas.getContext("2d");
-		// ctx.translate(-rect.left,-rect.top);
-
-		// html2canvas(div, {
-		//     canvas:canvas,
-		//     height:rect.height,
-		//     width:rect.width,
-		//     onrendered: function(canvas) {
-		//         var image = canvas.toDataURL("image/png");
-		//         var pHtml = "<img src="+image+" />";
-		//         $("#parent").append(pHtml);
-		//     }
-		// });
-
-		// html2canvas(document.querySelector("#pdf-html")).then(canvas => {
-		//     //document.body.appendChild(canvas);
-		//     var dataUrl = canvas.toDataURL(); //attempt to save base64 string to server using this var  
-		// 	var windowContent = '<!DOCTYPE html>';
-		// 	windowContent += '<html>'
-		// 	windowContent += '<head><title>Print canvas</title></head>';
-		// 	windowContent += '<body>'
-		// 	windowContent += '<img src="' + dataUrl + '">';
-		// 	windowContent += '</body>';
-		// 	windowContent += '</html>';
-		// 	var printWin = window.open('','','width=340,height=260');
-		// 	printWin.document.open();
-		// 	printWin.document.write(windowContent);
-		// 	printWin.document.close();
-		// 	printWin.focus();
-		// 	printWin.print();
-		// 	printWin.close();
-		// });
+            try {
+	            contentH = $('#pdf-html').height();
+	            var img = canvas.toDataURL("image/png", 1.0);
+	            $w = $actw = canvas.width;
+	            $h = $acth = canvas.height;
+	            var pdf = new jsPDF("p", "mm", "a4");
+	            var width = $maxw = pdf.internal.pageSize.width;
+	            var height = $maxh = pdf.internal.pageSize.height;
+	            if (!$maxw) $maxw = width;
+	            if (!$maxh) $maxh = height;
+	            if ($w > $maxw) {
+	                $w = $maxw;
+	                $h = Math.round($acth / $actw * $maxw);
+	            }
+	            pdf.addImage(img, 'JPEG', 0, 0, $w, $h);
+	            $count = Math.ceil($h) / Math.ceil($maxh);
+	            $count = Math.ceil($count);
+	            for (var i = 1; i < $count; i++) {
+	                position = - $maxh * i
+	                pdf.addPage(img, 'JPEG', 0, 0, $w, $h);
+	                pdf.addImage(img, 'JPEG', 0, position, $w, $h);
+	            }
+	            pdf.save("detailed-score.pdf");
+	        } catch (e) {
+	            alert("Error description: " + e.message);
+	        }
+		});
+	    
 	});
 
 </script>

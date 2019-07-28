@@ -158,6 +158,8 @@
 			},
 			success: function(response){
 
+				console.log(response);
+
 				var allRepos = [];
 				var cData = [];
 				var pData = [];
@@ -297,7 +299,7 @@
 	                pdf.addPage(img, 'JPEG', 0, 0, $w, $h);
 	                pdf.addImage(img, 'JPEG', 0, position, $w, $h);
 	            }
-	            pdf.save("detailed-score.pdf");
+	            pdf.save("comparative-analysis.pdf");
 	        } catch (e) {
 	            alert("Error description: " + e.message);
 	        }

@@ -160,6 +160,7 @@
 						'Authorization': 'Bearer '+accessToken,
 					},
 					success: function(response){
+						allLobes=[];
 
 						var repositories = [];
 						response.data.forEach(function(lobe){
@@ -171,12 +172,12 @@
 						uniqueRepos.forEach(function(repo){
 							html+='<div class="col-sm-3">';
 							html+='<div class="radio">';
-							html+='<label><input type="checkbox" name="comp-name-check" value="'+repo+'">&nbsp; '+repo+'</label>';
+							html+='<label><input type="checkbox" class="chk1" name="comp-name-check" value="'+repo+'">&nbsp; '+repo+'</label>';
 							html+='</div>';
 							html+='</div>';
 						});
 
-						$('#repos').append(html);
+						$('#repos').html(html);
 					},
 					error: function(error){
 						console.log(error);
@@ -184,6 +185,47 @@
 				});
 				$('.company-name').show();
 				$('.select-rubric a').hide();
+			}
+		});
+
+		$('#rub-detailed').change(function(){
+
+			var rubrikId = $('#rub-detailed').val();
+
+			if(rubrikId!=null){
+
+				$.ajax({
+					type: 'GET',
+					url: basePath+'/api/analytics/all-lobes?rubrikId='+rubrikId+'&type='+type,
+					dataType: 'json',
+					async: false,
+					headers : {
+						'Authorization': 'Bearer '+accessToken,
+					},
+					success: function(response){
+						allLobes=[];
+
+						var repositories = [];
+						response.data.forEach(function(lobe){
+							allLobes.push(lobe);
+							repositories.push(lobe.repositoryName);
+						});
+						var uniqueRepos = Array.from(new Set(repositories));
+						html='';
+						uniqueRepos.forEach(function(repo){
+							html+='<div class="col-sm-3">';
+							html+='<div class="radio">';
+							html+='<label><input type="checkbox" class="chk1" name="comp-name-check" value="'+repo+'">&nbsp; '+repo+'</label>';
+							html+='</div>';
+							html+='</div>';
+						});
+
+						$('#repos').html(html);
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
 			}
 		});
 
@@ -206,10 +248,33 @@
 						html+='</div>';	
 					}
 				});
-				$('#lobes').append(html);
+				$('#lobes').html(html);
 
 				$('.company-name a').hide();
 				$('.learning-rubric').show();
+			}
+		});
+
+		$(document).on("change", ".chk1", function(){
+		    
+		    var repos = $('input[name=comp-name-check]:checked');
+			var selectedNames = [];
+			if(repos!=undefined){
+				repos.each(function(){
+					selectedNames.push($(this).val());
+				});
+
+				html='';
+				allLobes.forEach(function(lobe){
+					if(selectedNames.includes(lobe.repositoryName)){
+						html+='<div class="col-sm-3">';
+						html+='<div class="radio">';
+						html+='<label><input type="checkbox" name="objradio" value="'+lobe.id+'">&nbsp;'+lobe.name+'</label>';
+						html+='</div>';
+						html+='</div>';	
+					}
+				});
+				$('#lobes').html(html);
 			}
 		});
 

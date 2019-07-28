@@ -296,6 +296,7 @@
 						var createdTs = [];
 						var percentage = [];
 						var assignedTo = [];
+						var lobeId = [];
 						for(var j=0; j<data.length; j++){
 							var lobe = data[j];
 							if(lobe.rubrikName==rubrik){
@@ -306,6 +307,7 @@
 								}
 								percentage.push(lobe.percentage);
 								assignedTo.push(lobe.assignedTo);
+								lobeId.push(lobe.id);
 							}
 						}
 
@@ -332,7 +334,7 @@
 							html+='<div class="row">';
 							html+='<div class="col-sm-8">';
 							if(percentage[j]==100){
-								html+='<a href="javascript:void(0)"><i class="fas fa-eye"></i> &nbsp;View Results</a>';
+								html+='<a href="detailed-score-results.html?lobeId='+lobeId[j]+'">View Results</a>';
 							}
 							else{
 								html+='<div class="progress">';

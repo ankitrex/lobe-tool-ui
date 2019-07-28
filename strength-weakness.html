@@ -167,6 +167,38 @@
 			}
 		});
 
+		$('#rub-detailed').change(function(){
+
+			var rubrikId = $('#rub-detailed').val();
+
+			if(rubrikId!=null){
+
+				$.ajax({
+					type: 'GET',
+					url: basePath+'/api/analytics/all-lobes?rubrikId='+rubrikId+'&type='+type,
+					dataType: 'json',
+					async: false,
+					headers : {
+						'Authorization': 'Bearer '+accessToken,
+					},
+					success: function(response){
+						html='';
+						response.data.forEach(function(lobe){
+							html+='<div class="col-sm-3">';
+							html+='<div class="radio">';
+							html+='<label><input type="checkbox" name="objradio" value="'+lobe.id+'">&nbsp;'+lobe.name+'</label>';
+							html+='</div>';
+							html+='</div>';	
+						});
+						$('#lobes').html(html);
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
+			}
+		});
+
 		$('[data-toggle="tooltip"]').tooltip();
 
 		$('#v-summary').click(function(){

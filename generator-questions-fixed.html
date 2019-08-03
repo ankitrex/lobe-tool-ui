@@ -177,6 +177,7 @@
 
 		var url = new URL(window.location.href);
 		var rubrikType = url.searchParams.get("rubrikType");
+		var allowCreation = url.searchParams.get("arc");
 
 		var status = url.searchParams.get("status");
 		if(status=="complete"){
@@ -203,7 +204,13 @@
 
 		$("#submit").click(function(){
 
-			createRubrik(accessToken, rubrikTypeId, optionalSel, optQuesId);
+			if(allowCreation!='y'){
+				alert("You've already created a "+rubrikType+". Use that for evaluation.");
+				window.location.replace('generator-dashboard.html');
+			}
+			else{
+				createRubrik(accessToken, rubrikTypeId, optionalSel, optQuesId);
+			}
 		})
 
 		$('[data-toggle="tooltip"]').tooltip();
@@ -427,7 +434,7 @@
 			},
 			success: function(response){
 				console.log(response);
-					$('#complete').modal('show');
+				$('#complete').modal('show');
 			},
 			error: function(error){
 				console.log(error);

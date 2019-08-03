@@ -180,6 +180,12 @@
 			window.location.replace("signup.html");
 		}
 
+		var liteRubrikId = 1;
+		var premiumRubrikId = 2;
+
+		var liteEx = false;
+		var premiumEx = false;
+
 		var rubrikTypes, dimensions;
 		$.ajax({
 			type: 'GET',
@@ -221,6 +227,12 @@
 				var i=1;
 				var j=1;
 				response.data.forEach(function(r){
+					if(r.rubrikTypeId==liteRubrikId){
+						liteEx=true;
+					}
+					if(r.rubrikTypeId==premiumRubrikId){
+						premiumEx=true;
+					}
 					var ref = 'generator-questions.html';
 
 					var rubrikStatus = r.status;
@@ -364,9 +376,6 @@
 
 		$('#create-rubrik').click(function(){
 
-			var liteRubrikId = 1;
-			var premiumRubrikId = 2;
-
 			var lobe = $('input[name=lobe]:checked').val();
 			var lobeId;
 			rubrikTypes.forEach(function(type){
@@ -378,6 +387,7 @@
 			var selectedDim='';
 
 			var sampleId = premiumRubrikId;
+			var arc = !premiumEx;
 
 			if(lobe=='Lobe Custom'){
 				$('input[name=lobe-cst]:checked').each(function(){
@@ -401,8 +411,10 @@
 				
 				if(lobe=='Lobe Lite'){
 					sampleId = liteRubrikId;
+					arc = !liteEx;
 				}
-				window.location = "generator-questions-fixed.html?rubrikId="+sampleId+'&rubrikType='+lobe;
+				var allow = arc ? '&arc=y' : '';
+				window.location = "generator-questions-fixed.html?rubrikId="+sampleId+'&rubrikType='+lobe+allow;
 			}
 		});
 
